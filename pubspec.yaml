@@ -19,12 +19,18 @@ dependencies:
   flutter_modular: ^3.3.1
   mockito: ^5.0.14
   flutter_mobx: ^2.0.2
-  mobx: ^2.0.4
+  mobx: ^2.0.4 
   injectable: ^1.4.1
+  freezed_annotation: ^0.14.2
+  freezed: ^0.14.2
+  equatable: ^2.0.3
 
 dev_dependencies:
   injectable_generator: ^1.4.1
   build_runner: ^2.1.0
+  json_serializable: ^4.1.4
+  mobx_codegen: ^2.0.2
+  
   flutter_test:
     sdk: flutter
 
