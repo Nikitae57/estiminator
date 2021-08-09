@@ -5,7 +5,6 @@ import 'package:injectable/injectable.dart';
 import '../di.dart';
 import 'app_theme.dart';
 
-@injectable
 class App extends StatelessWidget {
   App({Key? key}) : super(key: key);
 

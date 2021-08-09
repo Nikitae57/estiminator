@@ -8,6 +8,8 @@ import 'login_store.dart';
 class LoginPage extends StatelessWidget {
   LoginPage({Key? key}) : super(key: key);
 
+  static const route = '/';
+
   final _loginStore = getIt<LoginStore>();
   final _theme = getIt<AppTheme>();
 
