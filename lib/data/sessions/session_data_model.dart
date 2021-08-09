@@ -11,7 +11,7 @@ class SessionDataModel with _$SessionDataModel {
     required String title,
     @JsonKey(name: 'creator_uid') required String creatorUid,
     @JsonKey(name: 'is_finished') required bool isFinished,
-    @JsonKey(name: 'current_task_index') required int currentTaskIndex,
+    @JsonKey(name: 'current_task_index') int? currentTaskIndex,
     @JsonKey(name: 'estimation_scale')
         required EstimationScaleDataModel estimationScale,
     required List<TaskDataModel> tasks,

@@ -6,7 +6,7 @@ part 'estimation_data_model.g.dart';
 @freezed
 class EstimationDataModel with _$EstimationDataModel {
   factory EstimationDataModel({
-    @JsonKey(name: 'estimation_value') required String estimationValue,
+    @JsonKey(name: 'value') required String estimationValue,
     @JsonKey(name: 'creator_uid') required String creatorUid,
   }) = _EstimationDataModel;
 

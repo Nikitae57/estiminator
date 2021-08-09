@@ -12,6 +12,4 @@ class SessionsDataModel with _$SessionsDataModel {
 
   factory SessionsDataModel.fromJson(Map<String, dynamic> map) =>
       _$SessionsDataModelFromJson(map);
-
-  SessionsDataModel._();
 }
