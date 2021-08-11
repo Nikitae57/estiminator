@@ -8,6 +8,7 @@ part 'session_data_model.g.dart';
 @freezed
 class SessionDataModel with _$SessionDataModel {
   factory SessionDataModel({
+    required String id,
     required String title,
     @JsonKey(name: 'creator_uid') required String creatorUid,
     @JsonKey(name: 'is_finished') required bool isFinished,

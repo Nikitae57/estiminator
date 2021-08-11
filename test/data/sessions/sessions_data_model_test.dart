@@ -11,6 +11,7 @@ const _SESSIONS_JSON = '''
 {
    "sessions":[
       {
+         "id": "id",
          "title":"Title",
          "is_finished":false,
          "current_task_index":null,
@@ -79,6 +80,7 @@ const _SESSIONS_JSON = '''
 
 final _dataModel = SessionsDataModel(sessions: [
   SessionDataModel(
+      id: 'id',
       title: 'Title',
       creatorUid: 'uid1',
       isFinished: false,

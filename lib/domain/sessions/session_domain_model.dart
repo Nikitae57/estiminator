@@ -8,6 +8,7 @@ part 'session_domain_model.freezed.dart';
 @freezed
 class SessionDomainModel with _$SessionDomainModel {
   factory SessionDomainModel({
+    required String id,
     required String title,
     @JsonKey(name: 'creator_uid') required String creatorUid,
     @JsonKey(name: 'current_task_index') required int? currentTaskIndex,

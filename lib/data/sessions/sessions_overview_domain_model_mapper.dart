@@ -1,4 +1,4 @@
-import 'package:estiminator/app/core/mapper.dart';
+import 'package:estiminator/domain/core/mapper.dart';
 import 'package:estiminator/domain/sessions/session_overview_domain_model.dart';
 import 'package:estiminator/domain/sessions/sessions_overview_domain_model.dart';
 
