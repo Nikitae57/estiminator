@@ -4,6 +4,7 @@ import 'package:injectable/injectable.dart';
 
 const _BACKGROUND_COLOR = Color(0xFF0A0E21);
 const _PRIMARY_COLOR = Color(0xFF1D1E33);
+const _PRIMARY_COLOR_DARK = Color(0xFF101327);
 const _INACTIVE_CARD_COLOR = Color(0xFF111328);
 const _ACCENT_COLOR = Color(0xfffd2a4d);
 
@@ -14,6 +15,7 @@ class AppTheme {
     scaffoldBackgroundColor: _BACKGROUND_COLOR,
     accentColor: _ACCENT_COLOR,
     primaryColor: _PRIMARY_COLOR,
+    primaryColorDark: _PRIMARY_COLOR_DARK,
     cardColor: _INACTIVE_CARD_COLOR,
     textTheme: ThemeData.dark().textTheme.copyWith(
           headline1: ThemeData.dark().textTheme.headline1?.copyWith(
@@ -45,7 +47,11 @@ class AppTheme {
         ),
   );
 
-  final defaultMargin = 32.0;
+  final bigMargin = 32.0;
+
+  final defaultmarginMargin = 16.0;
+
+  final smallMargin = 8.0;
 
   final fadeAnimationDuration = const Duration(milliseconds: 100);
 

@@ -6,8 +6,6 @@ part 'sessions_state_model.freezed.dart';
 class SessionsStateModel with _$SessionsStateModel {
   factory SessionsStateModel({
     required String appBarTitle,
-    required String greeting,
+    required String username,
   }) = State;
-
-  SessionsStateModel._();
 }

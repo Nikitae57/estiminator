@@ -19,14 +19,14 @@ class LoginPage extends StatelessWidget {
       appBar: AppBar(title: _appBarObserver),
       body: SafeArea(
         child: Container(
-          margin: EdgeInsets.symmetric(horizontal: _theme.defaultMargin),
+          margin: EdgeInsets.symmetric(horizontal: _theme.bigMargin),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               _titleObserver,
-              SizedBox(height: _theme.defaultMargin),
+              SizedBox(height: _theme.bigMargin),
               _loginInputObserver,
-              SizedBox(height: _theme.defaultMargin),
+              SizedBox(height: _theme.bigMargin),
               _loginButtonObserver
             ],
           ),
@@ -64,7 +64,7 @@ class LoginPage extends StatelessWidget {
           opacity: _loginStore.shouldShowLoginButton ? 1.0 : 0.0,
           child: ElevatedButton(
             child: Text(_loginStore.loginStateView.loginButtonText),
-            onPressed: () {},
+            onPressed: _loginStore.onLoginButtonPressed,
           ),
         ),
       );

@@ -1,4 +1,7 @@
 import 'package:estiminator/app/login/login_state_model.dart';
+import 'package:estiminator/app/sessions/models/sessions_bundle_model.dart';
+import 'package:estiminator/app/sessions/sessions_page.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:injectable/injectable.dart';
 import 'package:mobx/mobx.dart';
 
@@ -8,6 +11,8 @@ part 'login_store.g.dart';
 class LoginStore = _LoginStore with _$LoginStore;
 
 abstract class _LoginStore with Store {
+  String _userName = '';
+
   @observable
   var _loginStateView = LoginStateModel(
     appBarTitle: 'Login',
@@ -26,6 +31,17 @@ abstract class _LoginStore with Store {
   bool get shouldShowLoginButton => _shouldShowLoginButton;
 
   @action
-  void onLoginFieldChange(final String text) =>
-      _shouldShowLoginButton = text.trim().isNotEmpty;
+  void onLoginFieldChange(String text) {
+    text = text.trim();
+    _shouldShowLoginButton = text.isNotEmpty;
+    _userName = text;
+  }
+
+  @action
+  void onLoginButtonPressed() {
+    Modular.to.pushNamed(
+      SessionsPage.route,
+      arguments: SessionsBundleModel(userName: _userName),
+    );
+  }
 }
