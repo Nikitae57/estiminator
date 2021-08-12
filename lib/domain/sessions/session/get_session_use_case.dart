@@ -18,10 +18,7 @@ class GetSessionUserCase {
     try {
       return ResultWrapper.result(await _sessionRepo.getSession(id));
     } on Exception catch (ex) {
-      final errorModel = ErrorModel(
-        cause: ex,
-        retryAction: () => getSessionById(id),
-      );
+      final errorModel = ErrorModel(cause: ex);
 
       return ResultWrapper.error(errorModel);
     }

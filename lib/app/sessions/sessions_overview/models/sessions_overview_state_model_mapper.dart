@@ -12,7 +12,8 @@ class SessionsOverviewStateModelMapper
   @override
   SessionsOverviewStateModel map(SessionsOverviewDomainModel input) =>
       SessionsOverviewStateModel(
-          sessions: input.sessions.map(_mapSessionOverview).toList());
+        sessions: input.sessions.map(_mapSessionOverview).toList(),
+      );
 
   SessionOverviewStateModel _mapSessionOverview(
     SessionOverviewDomainModel domainModel,

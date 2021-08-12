@@ -19,11 +19,11 @@ class SessionListItem extends StatelessWidget {
     return Column(
       children: [
         Padding(
-          padding: EdgeInsets.all(_theme.defaultmarginMargin),
+          padding: EdgeInsets.all(_theme.defaultMargin),
           child: Column(
             children: <Widget>[
               Padding(
-                padding: EdgeInsets.only(bottom: _theme.defaultmarginMargin),
+                padding: EdgeInsets.only(bottom: _theme.defaultMargin),
                 child: _creatorName(_stateModel.creatorName),
               ),
               _titleAndTasksNumber(_stateModel.title, _stateModel.numTasksText),
@@ -59,7 +59,7 @@ class SessionListItem extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(left: _theme.defaultmarginMargin),
+            padding: EdgeInsets.only(left: _theme.defaultMargin),
             child: Text(
               _stateModel.numTasksText,
               style: _theme.textTheme.bodyText1,

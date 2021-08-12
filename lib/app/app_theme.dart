@@ -49,7 +49,7 @@ class AppTheme {
 
   final bigMargin = 32.0;
 
-  final defaultmarginMargin = 16.0;
+  final defaultMargin = 16.0;
 
   final smallMargin = 8.0;
 

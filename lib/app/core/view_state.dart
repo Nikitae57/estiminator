@@ -6,7 +6,7 @@ part 'view_state.freezed.dart';
 class ViewState<SuccessType, FailType> with _$ViewState<SuccessType, FailType> {
   factory ViewState.data(SuccessType data) = Data;
   factory ViewState.lodaing() = Loading;
-  factory ViewState.error({FailType? error}) = Error;
+  factory ViewState.error({required FailType error}) = Error;
 
   ViewState._();
 }
