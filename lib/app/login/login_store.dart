@@ -1,6 +1,6 @@
 import 'package:estiminator/app/login/login_state_model.dart';
-import 'package:estiminator/app/sessions/sessions_overview/models/sessions_bundle_model.dart';
-import 'package:estiminator/app/sessions/sessions_overview/sessions_overview_page.dart';
+import 'package:estiminator/app/sessions_overview/models/sessions_bundle_model.dart';
+import 'package:estiminator/app/sessions_overview/sessions_overview_page.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:mobx/mobx.dart';
 

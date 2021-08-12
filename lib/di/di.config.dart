@@ -10,18 +10,17 @@ import 'package:injectable/injectable.dart' as _i2;
 import '../app/app_theme.dart' as _i11;
 import '../app/login/login_page.dart' as _i8;
 import '../app/login/login_store.dart' as _i12;
-import '../app/sessions/sessions_overview/sessions_overview_page.dart' as _i9;
-import '../app/sessions/sessions_overview/sessions_overview_store.dart' as _i13;
-import '../data/sessions/sessions_overview/fake_sessions_overview_repo/fake_sessions_json_provider.dart'
+import '../app/sessions_overview/sessions_overview_page.dart' as _i9;
+import '../app/sessions_overview/sessions_overview_store.dart' as _i13;
+import '../data/sessions_overview/fake_sessions_overview_repo/fake_sessions_json_provider.dart'
     as _i3;
-import '../data/sessions/sessions_overview/fake_sessions_overview_repo/fake_sessions_overview_repo.dart'
+import '../data/sessions_overview/fake_sessions_overview_repo/fake_sessions_overview_repo.dart'
     as _i7;
-import '../domain/sessions/session/get_session_use_case.dart' as _i4;
-import '../domain/sessions/session/session_repo.dart' as _i5;
-import '../domain/sessions/sessions_overview/get_sessions_overview_use_case.dart'
+import '../domain/session/get_session_use_case.dart' as _i4;
+import '../domain/session/session_repo.dart' as _i5;
+import '../domain/sessions_overview/get_sessions_overview_use_case.dart'
     as _i10;
-import '../domain/sessions/sessions_overview/sessions_overview_repo.dart'
-    as _i6;
+import '../domain/sessions_overview/sessions_overview_repo.dart' as _i6;
 import 'app_module.dart' as _i14; // ignore_for_file: unnecessary_lambdas
 
 // ignore_for_file: lines_longer_than_80_chars

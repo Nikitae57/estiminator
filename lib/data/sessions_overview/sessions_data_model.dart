@@ -1,4 +1,4 @@
-import 'package:estiminator/data/sessions/session/session_data_model.dart';
+import 'package:estiminator/data/session/session_data_model.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'sessions_data_model.freezed.dart';

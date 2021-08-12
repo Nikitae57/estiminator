@@ -1,4 +1,4 @@
-import 'package:estiminator/domain/sessions/session/task_domain_model.dart';
+import 'package:estiminator/domain/session/task_domain_model.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import 'estimation_scale_domain_model.dart';

@@ -1,8 +1,8 @@
-import 'package:estiminator/app/sessions/sessions_overview/models/session_overview_state_model.dart';
-import 'package:estiminator/app/sessions/sessions_overview/models/sessions_overview_state_model.dart';
+import 'package:estiminator/app/sessions_overview/models/session_overview_state_model.dart';
+import 'package:estiminator/app/sessions_overview/models/sessions_overview_state_model.dart';
 import 'package:estiminator/domain/core/mapper.dart';
-import 'package:estiminator/domain/sessions/sessions_overview/session_overview_domain_model.dart';
-import 'package:estiminator/domain/sessions/sessions_overview/sessions_overview_domain_model.dart';
+import 'package:estiminator/domain/sessions_overview/session_overview_domain_model.dart';
+import 'package:estiminator/domain/sessions_overview/sessions_overview_domain_model.dart';
 
 final SessionsOverviewStateModelMapper sessionsOverviewStateModelMapper =
     SessionsOverviewStateModelMapper();

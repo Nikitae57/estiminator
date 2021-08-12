@@ -1,9 +1,9 @@
 import 'package:estiminator/app/app_theme.dart';
 import 'package:estiminator/app/core/error_state_model.dart';
-import 'package:estiminator/app/sessions/sessions_overview/models/sessions_overview_error_state_model.dart';
-import 'package:estiminator/app/sessions/sessions_overview/models/sessions_overview_state_model.dart';
-import 'package:estiminator/app/sessions/sessions_overview/session_list_item.dart';
-import 'package:estiminator/app/sessions/sessions_overview/sessions_overview_store.dart';
+import 'package:estiminator/app/sessions_overview/models/sessions_overview_error_state_model.dart';
+import 'package:estiminator/app/sessions_overview/models/sessions_overview_state_model.dart';
+import 'package:estiminator/app/sessions_overview/session_list_item.dart';
+import 'package:estiminator/app/sessions_overview/sessions_overview_store.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 

@@ -1,7 +1,7 @@
 import 'package:estiminator/app/login/login_page.dart';
-import 'package:estiminator/app/sessions/sessions_overview/models/sessions_bundle_model.dart';
-import 'package:estiminator/app/sessions/sessions_overview/sessions_overview_page.dart';
-import 'package:estiminator/app/sessions/sessions_overview/sessions_overview_store.dart';
+import 'package:estiminator/app/sessions_overview/models/sessions_bundle_model.dart';
+import 'package:estiminator/app/sessions_overview/sessions_overview_page.dart';
+import 'package:estiminator/app/sessions_overview/sessions_overview_store.dart';
 import 'package:estiminator/di/di.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 

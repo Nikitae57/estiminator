@@ -1,8 +1,8 @@
-import 'package:estiminator/data/sessions/sessions_overview/session_overview_data_model.dart';
-import 'package:estiminator/data/sessions/sessions_overview/sessions_overview_data_model.dart';
+import 'package:estiminator/data/sessions_overview/session_overview_data_model.dart';
+import 'package:estiminator/data/sessions_overview/sessions_overview_data_model.dart';
 import 'package:estiminator/domain/core/mapper.dart';
-import 'package:estiminator/domain/sessions/sessions_overview/session_overview_domain_model.dart';
-import 'package:estiminator/domain/sessions/sessions_overview/sessions_overview_domain_model.dart';
+import 'package:estiminator/domain/sessions_overview/session_overview_domain_model.dart';
+import 'package:estiminator/domain/sessions_overview/sessions_overview_domain_model.dart';
 
 final sessionsDomainModelMapper = SessionsOverviewDomainModelMapper();
 

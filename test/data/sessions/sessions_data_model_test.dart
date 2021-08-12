@@ -1,10 +1,10 @@
 import 'dart:convert';
 
-import 'package:estiminator/data/sessions/session/estimations/estimation_data_model.dart';
-import 'package:estiminator/data/sessions/session/scales/estimation_scale_data_model.dart';
-import 'package:estiminator/data/sessions/session/session_data_model.dart';
-import 'package:estiminator/data/sessions/session/tasks/task_data_model.dart';
-import 'package:estiminator/data/sessions/sessions_overview/sessions_data_model.dart';
+import 'package:estiminator/data/session/estimations/estimation_data_model.dart';
+import 'package:estiminator/data/session/scales/estimation_scale_data_model.dart';
+import 'package:estiminator/data/session/session_data_model.dart';
+import 'package:estiminator/data/session/tasks/task_data_model.dart';
+import 'package:estiminator/data/sessions_overview/sessions_data_model.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 const _SESSIONS_JSON = '''
@@ -78,7 +78,7 @@ const _SESSIONS_JSON = '''
    ]
 }''';
 
-final _dataModel = SessionsDataModel(sessions: [
+final _dataModel = SessionsDataModel(sessions: <SessionDataModel>[
   SessionDataModel(
       id: 'id',
       title: 'Title',

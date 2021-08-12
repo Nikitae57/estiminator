@@ -1,5 +1,5 @@
-import 'package:estiminator/data/sessions/session/scales/estimation_scale_data_model.dart';
-import 'package:estiminator/data/sessions/session/tasks/task_data_model.dart';
+import 'package:estiminator/data/session/scales/estimation_scale_data_model.dart';
+import 'package:estiminator/data/session/tasks/task_data_model.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'session_data_model.freezed.dart';

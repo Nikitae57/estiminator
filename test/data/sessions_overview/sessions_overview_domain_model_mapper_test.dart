@@ -1,8 +1,8 @@
-import 'package:estiminator/data/sessions/sessions_overview/session_overview_data_model.dart';
-import 'package:estiminator/data/sessions/sessions_overview/sessions_overview_data_model.dart';
-import 'package:estiminator/data/sessions/sessions_overview/sessions_overview_domain_model_mapper.dart';
-import 'package:estiminator/domain/sessions/sessions_overview/session_overview_domain_model.dart';
-import 'package:estiminator/domain/sessions/sessions_overview/sessions_overview_domain_model.dart';
+import 'package:estiminator/data/sessions_overview/session_overview_data_model.dart';
+import 'package:estiminator/data/sessions_overview/sessions_overview_data_model.dart';
+import 'package:estiminator/data/sessions_overview/sessions_overview_domain_model_mapper.dart';
+import 'package:estiminator/domain/sessions_overview/session_overview_domain_model.dart';
+import 'package:estiminator/domain/sessions_overview/sessions_overview_domain_model.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 const _TITLE = 'Title';
@@ -10,7 +10,8 @@ const _IS_FINISHED = true;
 const _NUM_TASKS = 3;
 const _CREATOR_UID = 'uid';
 
-final _dataModel = SessionsOverviewDataModel(sessions: [
+final _dataModel =
+    SessionsOverviewDataModel(sessions: <SessionOverviewDataModel>[
   SessionOverviewDataModel(
     title: _TITLE,
     isFinished: _IS_FINISHED,
@@ -19,7 +20,8 @@ final _dataModel = SessionsOverviewDataModel(sessions: [
   )
 ]);
 
-final _domainModel = SessionsOverviewDomainModel(sessions: [
+final _domainModel =
+    SessionsOverviewDomainModel(sessions: <SessionOverviewDomainModel>[
   SessionOverviewDomainModel(
     title: _TITLE,
     isFinished: _IS_FINISHED,
