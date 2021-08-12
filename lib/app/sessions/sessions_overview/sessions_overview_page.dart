@@ -4,24 +4,22 @@ import 'package:estiminator/app/sessions/sessions_overview/models/sessions_overv
 import 'package:estiminator/app/sessions/sessions_overview/models/sessions_overview_state_model.dart';
 import 'package:estiminator/app/sessions/sessions_overview/session_list_item.dart';
 import 'package:estiminator/app/sessions/sessions_overview/sessions_overview_store.dart';
-import 'package:estiminator/di.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 
-import 'models/sessions_bundle_model.dart';
-
 class SessionsPage extends StatelessWidget {
-  SessionsPage({
+  const SessionsPage(
+    SessionsOverviewStore sessionsOverviewStore,
+    AppTheme appTheme, {
     Key? key,
-    required SessionsBundleModel bundle,
-  }) : super(key: key) {
-    _store.setUsername(bundle.userName);
-  }
+  })  : _store = sessionsOverviewStore,
+        _theme = appTheme,
+        super(key: key);
 
   static const route = '/sessions';
 
-  final _store = getIt<SessionsOverviewStore>();
-  final _theme = getIt<AppTheme>();
+  final SessionsOverviewStore _store;
+  final AppTheme _theme;
 
   @override
   Widget build(BuildContext context) {

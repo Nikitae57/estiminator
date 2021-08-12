@@ -1,17 +1,21 @@
+import 'package:estiminator/app/app_theme.dart';
+import 'package:estiminator/app/login/login_store.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 
-import '../../di.dart';
-import '../app_theme.dart';
-import 'login_store.dart';
-
 class LoginPage extends StatelessWidget {
-  LoginPage({Key? key}) : super(key: key);
+  const LoginPage(
+    LoginStore loginStore,
+    AppTheme appTheme, {
+    Key? key,
+  })  : _loginStore = loginStore,
+        _theme = appTheme,
+        super(key: key);
 
   static const route = '/';
 
-  final _loginStore = getIt<LoginStore>();
-  final _theme = getIt<AppTheme>();
+  final LoginStore _loginStore;
+  final AppTheme _theme;
 
   @override
   Widget build(BuildContext context) {

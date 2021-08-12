@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
-import '../di.dart';
+import '../di/di.dart';
 import 'app_theme.dart';
 
 class App extends StatelessWidget {

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:injectable/injectable.dart';
 
 const _BACKGROUND_COLOR = Color(0xFF0A0E21);
 const _PRIMARY_COLOR = Color(0xFF1D1E33);
@@ -8,7 +7,6 @@ const _PRIMARY_COLOR_DARK = Color(0xFF101327);
 const _INACTIVE_CARD_COLOR = Color(0xFF111328);
 const _ACCENT_COLOR = Color(0xfffd2a4d);
 
-@injectable
 class AppTheme {
   final theme = ThemeData.dark().copyWith(
     backgroundColor: _BACKGROUND_COLOR,

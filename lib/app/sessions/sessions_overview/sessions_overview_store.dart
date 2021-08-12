@@ -9,13 +9,11 @@ import 'package:estiminator/domain/sessions/sessions_overview/get_sessions_overv
 import 'package:estiminator/domain/sessions/sessions_overview/sessions_overview_domain_model.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:injectable/injectable.dart';
 import 'package:mobx/mobx.dart';
 import 'package:estiminator/app/core/error_state_model.dart';
 
 part 'sessions_overview_store.g.dart';
 
-@injectable
 class SessionsOverviewStore = _SessionOverviewStore
     with _$SessionsOverviewStore;
 
