@@ -1,8 +1,8 @@
-import 'package:estiminator/data/sessions/overview/session_overview_data_model.dart';
-import 'package:estiminator/data/sessions/overview/sessions_overview_data_model.dart';
-import 'package:estiminator/data/sessions/sessions_overview_domain_model_mapper.dart';
-import 'package:estiminator/domain/sessions/session_overview_domain_model.dart';
-import 'package:estiminator/domain/sessions/sessions_overview_domain_model.dart';
+import 'package:estiminator/data/sessions/sessions_overview/session_overview_data_model.dart';
+import 'package:estiminator/data/sessions/sessions_overview/sessions_overview_data_model.dart';
+import 'package:estiminator/data/sessions/sessions_overview/sessions_overview_domain_model_mapper.dart';
+import 'package:estiminator/domain/sessions/sessions_overview/session_overview_domain_model.dart';
+import 'package:estiminator/domain/sessions/sessions_overview/sessions_overview_domain_model.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 const _TITLE = 'Title';

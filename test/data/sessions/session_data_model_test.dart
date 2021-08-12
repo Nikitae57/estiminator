@@ -1,9 +1,9 @@
 import 'dart:convert';
 
-import 'package:estiminator/data/sessions/estimations/estimation_data_model.dart';
-import 'package:estiminator/data/sessions/scales/estimation_scale_data_model.dart';
-import 'package:estiminator/data/sessions/session_data_model.dart';
-import 'package:estiminator/data/sessions/tasks/task_data_model.dart';
+import 'package:estiminator/data/sessions/session/estimations/estimation_data_model.dart';
+import 'package:estiminator/data/sessions/session/scales/estimation_scale_data_model.dart';
+import 'package:estiminator/data/sessions/session/session_data_model.dart';
+import 'package:estiminator/data/sessions/session/tasks/task_data_model.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 const _NULL = 'null';

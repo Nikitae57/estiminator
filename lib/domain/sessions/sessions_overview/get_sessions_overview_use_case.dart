@@ -1,7 +1,7 @@
 import 'package:estiminator/domain/core/error_model.dart';
 import 'package:estiminator/domain/core/result_wrapper.dart';
-import 'package:estiminator/domain/sessions/sessions_overview_domain_model.dart';
-import 'package:estiminator/domain/sessions/repo/sessions_overview_repo.dart';
+import 'package:estiminator/domain/sessions/sessions_overview/sessions_overview_domain_model.dart';
+import 'package:estiminator/domain/sessions/sessions_overview/sessions_overview_repo.dart';
 import 'package:injectable/injectable.dart';
 
 @injectable

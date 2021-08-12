@@ -1,11 +1,12 @@
 import 'package:estiminator/app/app_theme.dart';
-import 'package:estiminator/app/sessions/models/sessions_bundle_model.dart';
-import 'package:estiminator/app/sessions/models/sessions_overview_state_model.dart';
-import 'package:estiminator/app/sessions/session_list_item.dart';
-import 'package:estiminator/app/sessions/sessions_store.dart';
+import 'package:estiminator/app/sessions/sessions_overview/models/sessions_overview_state_model.dart';
+import 'package:estiminator/app/sessions/sessions_overview/session_list_item.dart';
+import 'package:estiminator/app/sessions/sessions_overview/sessions_overview_store.dart';
 import 'package:estiminator/di.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
+
+import 'models/sessions_bundle_model.dart';
 
 class SessionsPage extends StatelessWidget {
   SessionsPage({
@@ -17,7 +18,7 @@ class SessionsPage extends StatelessWidget {
 
   static const route = '/sessions';
 
-  final _store = getIt<SessionsStore>();
+  final _store = getIt<SessionsOverviewStore>();
   final _theme = getIt<AppTheme>();
 
   @override

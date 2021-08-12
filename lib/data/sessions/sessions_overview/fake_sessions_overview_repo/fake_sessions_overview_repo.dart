@@ -1,8 +1,8 @@
-import 'package:estiminator/data/sessions/fake_sessions_repo/fake_sessions_json_provider.dart';
-import 'package:estiminator/data/sessions/overview/sessions_overview_data_model.dart';
-import 'package:estiminator/data/sessions/sessions_overview_domain_model_mapper.dart';
-import 'package:estiminator/domain/sessions/sessions_overview_domain_model.dart';
-import 'package:estiminator/domain/sessions/repo/sessions_overview_repo.dart';
+import 'package:estiminator/data/sessions/sessions_overview/fake_sessions_overview_repo/fake_sessions_json_provider.dart';
+import 'package:estiminator/data/sessions/sessions_overview/sessions_overview_data_model.dart';
+import 'package:estiminator/data/sessions/sessions_overview/sessions_overview_domain_model_mapper.dart';
+import 'package:estiminator/domain/sessions/sessions_overview/sessions_overview_domain_model.dart';
+import 'package:estiminator/domain/sessions/sessions_overview/sessions_overview_repo.dart';
 import 'package:flutter/foundation.dart';
 import 'package:injectable/injectable.dart';
 

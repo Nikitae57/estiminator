@@ -1,38 +1,40 @@
 import 'dart:math';
 
 import 'package:estiminator/app/core/view_state.dart';
-import 'package:estiminator/app/sessions/models/session_overview_state_model.dart';
-import 'package:estiminator/app/sessions/models/sessions_overview_state_model.dart';
-import 'package:estiminator/app/sessions/models/sessions_overview_state_model_mapper.dart';
-import 'package:estiminator/app/sessions/models/sessions_state_model.dart';
+import 'package:estiminator/app/sessions/sessions_overview/models/sessions_overview_state_model.dart';
+import 'package:estiminator/app/sessions/sessions_overview/models/sessions_overview_state_model_mapper.dart';
+import 'package:estiminator/app/sessions/sessions_overview/models/sessions_state_model.dart';
 import 'package:estiminator/domain/core/error_model.dart';
 import 'package:estiminator/domain/core/result_wrapper.dart';
-import 'package:estiminator/domain/sessions/use_case/get_sessions_overview_use_case.dart';
-import 'package:estiminator/domain/sessions/sessions_overview_domain_model.dart';
+import 'package:estiminator/domain/sessions/sessions_overview/get_sessions_overview_use_case.dart';
+import 'package:estiminator/domain/sessions/sessions_overview/sessions_overview_domain_model.dart';
 import 'package:flutter/foundation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:mobx/mobx.dart';
 
-part 'sessions_store.g.dart';
+part 'sessions_overview_store.g.dart';
 
 @injectable
-class SessionsStore = _SessionsStore with _$SessionsStore;
+class SessionsOverviewStore = _SessionOverviewStore
+    with _$SessionsOverviewStore;
 
 ViewState<SessionsOverviewStateModel, ErrorModel>
     _mapSessionsOverviewStateModel(
   ResultWrapper<SessionsOverviewDomainModel, ErrorModel> result,
 ) {
-  return result.when(
-    result: (sessionsOverviewDomainModel) =>
-        ViewState<SessionsOverviewStateModel, ErrorModel>.data(
-            sessionsOverviewStateModelMapper.map(sessionsOverviewDomainModel)),
-    error: (error) =>
-        ViewState<SessionsOverviewStateModel, ErrorModel>.error(error: error),
-  );
+  return result.when(result: (sessionsOverviewDomainModel) {
+    return ViewState<SessionsOverviewStateModel, ErrorModel>.data(
+      sessionsOverviewStateModelMapper.map(sessionsOverviewDomainModel),
+    );
+  }, error: (error) {
+    return ViewState<SessionsOverviewStateModel, ErrorModel>.error(
+      error: error,
+    );
+  });
 }
 
-abstract class _SessionsStore with Store {
-  _SessionsStore(this._getSessionsOverviewUseCase);
+abstract class _SessionOverviewStore with Store {
+  _SessionOverviewStore(this._getSessionsOverviewUseCase);
 
   final GetSessionsOverviewUseCase _getSessionsOverviewUseCase;
 

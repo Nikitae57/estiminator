@@ -1,5 +1,5 @@
 import 'package:estiminator/app/app_theme.dart';
-import 'package:estiminator/app/sessions/models/session_overview_state_model.dart';
+import 'package:estiminator/app/sessions/sessions_overview/models/session_overview_state_model.dart';
 import 'package:estiminator/di.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
