@@ -143,13 +143,12 @@ class __$LoginStateModelCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_LoginStateModel extends _LoginStateModel {
-  _$_LoginStateModel(
+class _$_LoginStateModel implements _LoginStateModel {
+  const _$_LoginStateModel(
       {required this.appBarTitle,
       required this.title,
       required this.hint,
-      required this.loginButtonText})
-      : super._();
+      required this.loginButtonText});
 
   @override
   final String appBarTitle;
@@ -195,13 +194,12 @@ class _$_LoginStateModel extends _LoginStateModel {
       __$LoginStateModelCopyWithImpl<_LoginStateModel>(this, _$identity);
 }
 
-abstract class _LoginStateModel extends LoginStateModel {
-  factory _LoginStateModel(
+abstract class _LoginStateModel implements LoginStateModel {
+  const factory _LoginStateModel(
       {required String appBarTitle,
       required String title,
       required String hint,
       required String loginButtonText}) = _$_LoginStateModel;
-  _LoginStateModel._() : super._();
 
   @override
   String get appBarTitle => throw _privateConstructorUsedError;
