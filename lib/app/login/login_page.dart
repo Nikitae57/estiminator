@@ -6,7 +6,9 @@ import '../app_theme.dart';
 import 'login_store.dart';
 
 class LoginPage extends StatelessWidget {
-  LoginPage({Key? key}) : super(key: key);
+  LoginPage({
+    Key? key,
+  }) : super(key: key);
 
   static const route = '/';
 
@@ -15,8 +17,27 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    FutureBuilder(
+      future: _loginStore.fooBar,
+      builder: (context, status) {
+        if (status.hasData) {
+          return Placeholder();
+        } else {
+          return SizedBox();
+        }
+      },
+    );
     return Scaffold(
-      appBar: AppBar(title: _appBarObserver),
+      appBar: AppBar(
+        title: Observer(
+          builder: (context) {
+            return Text(
+              _loginStore.loginStateView.appBarTitle,
+              style: _theme.textTheme.headline4,
+            );
+          },
+        ),
+      ),
       body: SafeArea(
         child: Container(
           margin: EdgeInsets.symmetric(horizontal: _theme.defaultMargin),

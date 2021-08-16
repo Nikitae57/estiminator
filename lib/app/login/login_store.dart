@@ -26,6 +26,9 @@ abstract class _LoginStore with Store {
   bool get shouldShowLoginButton => _shouldShowLoginButton;
 
   @action
-  void onLoginFieldChange(final String text) =>
-      _shouldShowLoginButton = text.trim().isNotEmpty;
+  void onLoginFieldChange(final String text) => _shouldShowLoginButton = text.trim().isNotEmpty;
+
+  ObservableFuture<String> get fooBar {
+    return ObservableFuture.value('');
+  }
 }
