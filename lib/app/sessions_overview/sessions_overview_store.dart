@@ -32,10 +32,11 @@ ViewState<SessionsOverviewStateModel,
         ErrorStateModel<SessionsOverviewErrorStateModel>>.error(
       error: ErrorStateModel(
           stateModel: SessionsOverviewErrorStateModel(
-              errorMessage:
-                  "Sorry, we're unable to get estimations sessions 😔. Try again later",
-              retryButtonText: 'RETRY',
-              retryButtonIcon: Icons.replay_rounded),
+            errorMessage:
+                "Sorry, we're unable to get estimations sessions 😔. Try again later",
+            retryButtonText: 'RETRY',
+            retryButtonIcon: Icons.replay_rounded,
+          ),
           errorModel: error),
     );
   });

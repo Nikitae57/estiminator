@@ -1,11 +1,13 @@
 import 'package:estiminator/app/app_theme.dart';
 import 'package:estiminator/app/core/error_state_model.dart';
+import 'package:estiminator/app/create_session/view/create_session_page.dart';
 import 'package:estiminator/app/sessions_overview/models/sessions_overview_error_state_model.dart';
 import 'package:estiminator/app/sessions_overview/models/sessions_overview_state_model.dart';
 import 'package:estiminator/app/sessions_overview/session_list_item.dart';
 import 'package:estiminator/app/sessions_overview/sessions_overview_store.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 
 class SessionsPage extends StatelessWidget {
   const SessionsPage(
@@ -45,7 +47,9 @@ class SessionsPage extends StatelessWidget {
         return _store.sessionsOverviewViewState.when(
           data: (_) {
             return FloatingActionButton(
-              onPressed: () {},
+              onPressed: () {
+                Modular.to.pushNamed(CreateSessionPage.route);
+              },
               backgroundColor: _theme.theme.accentColor,
               child: const Icon(Icons.add),
             );

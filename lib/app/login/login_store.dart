@@ -12,7 +12,7 @@ abstract class _LoginStore with Store {
   String _userName = '';
 
   @observable
-  var _loginStateView = LoginStateModel(
+  var _loginStateView = const LoginStateModel(
     appBarTitle: 'Login',
     title: 'Enter your name here 👇',
     hint: 'Your name',

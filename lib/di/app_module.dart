@@ -1,4 +1,6 @@
 import 'package:estiminator/app/app_theme.dart';
+import 'package:estiminator/app/create_session/store/mx_create_session.dart';
+import 'package:estiminator/app/create_session/store/s_create_session.dart';
 import 'package:estiminator/app/login/login_page.dart';
 import 'package:estiminator/app/login/login_store.dart';
 import 'package:estiminator/app/sessions_overview/sessions_overview_page.dart';
@@ -27,4 +29,7 @@ abstract class AppDiModule {
 
   @singleton
   LoginStore get loginStore;
+
+  @Injectable(as: CreateSessionS)
+  CreateSessionMx get createSessionStore;
 }

@@ -16,32 +16,16 @@ class AppTheme {
     primaryColorDark: _PRIMARY_COLOR_DARK,
     cardColor: _INACTIVE_CARD_COLOR,
     textTheme: ThemeData.dark().textTheme.copyWith(
-          headline1: ThemeData.dark().textTheme.headline1?.copyWith(
-              fontSize: 80, color: Colors.white, fontWeight: FontWeight.bold),
-          headline2: ThemeData.dark()
+          headline1: ThemeData.dark()
               .textTheme
-              .headline2
-              ?.copyWith(fontSize: 50, color: Colors.white),
-          headline3: ThemeData.dark()
-              .textTheme
-              .headline3
-              ?.copyWith(fontSize: 30, fontWeight: FontWeight.w200),
-          headline4: ThemeData.dark()
-              .textTheme
-              .headline4
-              ?.copyWith(fontSize: 25, fontWeight: FontWeight.w200),
-          headline5: ThemeData.dark()
-              .textTheme
-              .headline5
-              ?.copyWith(fontSize: 20, fontWeight: FontWeight.w200),
-          headline6: ThemeData.dark()
-              .textTheme
-              .headline6
-              ?.copyWith(fontSize: 18, fontWeight: FontWeight.w200),
-          bodyText1: ThemeData.dark()
-              .textTheme
-              .bodyText1
-              ?.copyWith(fontSize: 17, fontWeight: FontWeight.w300),
+              .headline1
+              ?.copyWith(fontSize: 80, color: Colors.white, fontWeight: FontWeight.bold),
+          headline2: ThemeData.dark().textTheme.headline2?.copyWith(fontSize: 50, color: Colors.white),
+          headline3: ThemeData.dark().textTheme.headline3?.copyWith(fontSize: 30, fontWeight: FontWeight.w200),
+          headline4: ThemeData.dark().textTheme.headline4?.copyWith(fontSize: 25, fontWeight: FontWeight.w200),
+          headline5: ThemeData.dark().textTheme.headline5?.copyWith(fontSize: 20, fontWeight: FontWeight.w200),
+          headline6: ThemeData.dark().textTheme.headline6?.copyWith(fontSize: 18, fontWeight: FontWeight.w200),
+          bodyText1: ThemeData.dark().textTheme.bodyText1?.copyWith(fontSize: 17, fontWeight: FontWeight.w300),
         ),
   );
 
@@ -52,6 +36,10 @@ class AppTheme {
   final smallMargin = 8.0;
 
   final fadeAnimationDuration = const Duration(milliseconds: 100);
+
+  final defaultBorderRadius = 32.0;
+
+  final bottomButtonHeight = 48.0;
 
   TextTheme get textTheme => theme.textTheme;
 }
