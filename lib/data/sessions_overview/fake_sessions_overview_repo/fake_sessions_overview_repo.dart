@@ -1,27 +1,20 @@
-import 'package:estiminator/data/sessions_overview/fake_sessions_overview_repo/fake_sessions_json_provider.dart';
-import 'package:estiminator/data/sessions_overview/sessions_overview_data_model.dart';
-import 'package:estiminator/data/sessions_overview/sessions_overview_domain_model_mapper.dart';
+import 'package:estiminator/domain/sessions_overview/session_overview_domain_model.dart';
 import 'package:estiminator/domain/sessions_overview/sessions_overview_domain_model.dart';
 import 'package:estiminator/domain/sessions_overview/sessions_overview_repo.dart';
-import 'package:flutter/foundation.dart';
 import 'package:injectable/injectable.dart';
 
-SessionsOverviewDomainModel _getSessionsOverview(Map<String, dynamic> json) {
-  final dataModel = SessionsOverviewDataModel.fromJson(json);
-  return sessionsDomainModelMapper.map(dataModel);
-}
-
-@Injectable(as: ISessionsOverviewRepo)
+@Singleton(as: ISessionsOverviewRepo)
 class FakeSessionsOverviewRepo implements ISessionsOverviewRepo {
-  FakeSessionsOverviewRepo(this._jsonProvider);
-
-  final FakeSessionsJsonProvider _jsonProvider;
+  final fakeSessionsOverviewDomainModel = SessionsOverviewDomainModel(
+    sessions: [
+      SessionOverviewDomainModel(title: 'Title 1', isFinished: false, numTasks: 10, creatorUid: 'Matt'),
+      SessionOverviewDomainModel(title: 'Title 2', isFinished: false, numTasks: 15, creatorUid: 'Anna'),
+      SessionOverviewDomainModel(title: 'Title 3', isFinished: false, numTasks: 5, creatorUid: 'Dan'),
+    ],
+  );
 
   @override
   Future<SessionsOverviewDomainModel> getSessionsOverview() async {
-    return compute<Map<String, dynamic>, SessionsOverviewDomainModel>(
-      _getSessionsOverview,
-      _jsonProvider.getFakeSessionsJson(),
-    );
+    return fakeSessionsOverviewDomainModel;
   }
 }

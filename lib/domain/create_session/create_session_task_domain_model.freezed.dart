@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
-part of 'task_state_model.dart';
+part of 'create_session_task_domain_model.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -13,12 +13,12 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-class _$TaskStateModelTearOff {
-  const _$TaskStateModelTearOff();
+class _$CreateSessionTaskDomainModelTearOff {
+  const _$CreateSessionTaskDomainModelTearOff();
 
-  _TaskStateModel call(
+  _CreateSessionTaskDomainModel call(
       {required String title, String? description, String? jiraLink}) {
-    return _TaskStateModel(
+    return _CreateSessionTaskDomainModel(
       title: title,
       description: description,
       jiraLink: jiraLink,
@@ -27,35 +27,36 @@ class _$TaskStateModelTearOff {
 }
 
 /// @nodoc
-const $TaskStateModel = _$TaskStateModelTearOff();
+const $CreateSessionTaskDomainModel = _$CreateSessionTaskDomainModelTearOff();
 
 /// @nodoc
-mixin _$TaskStateModel {
+mixin _$CreateSessionTaskDomainModel {
   String get title => throw _privateConstructorUsedError;
   String? get description => throw _privateConstructorUsedError;
   String? get jiraLink => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $TaskStateModelCopyWith<TaskStateModel> get copyWith =>
-      throw _privateConstructorUsedError;
+  $CreateSessionTaskDomainModelCopyWith<CreateSessionTaskDomainModel>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $TaskStateModelCopyWith<$Res> {
-  factory $TaskStateModelCopyWith(
-          TaskStateModel value, $Res Function(TaskStateModel) then) =
-      _$TaskStateModelCopyWithImpl<$Res>;
+abstract class $CreateSessionTaskDomainModelCopyWith<$Res> {
+  factory $CreateSessionTaskDomainModelCopyWith(
+          CreateSessionTaskDomainModel value,
+          $Res Function(CreateSessionTaskDomainModel) then) =
+      _$CreateSessionTaskDomainModelCopyWithImpl<$Res>;
   $Res call({String title, String? description, String? jiraLink});
 }
 
 /// @nodoc
-class _$TaskStateModelCopyWithImpl<$Res>
-    implements $TaskStateModelCopyWith<$Res> {
-  _$TaskStateModelCopyWithImpl(this._value, this._then);
+class _$CreateSessionTaskDomainModelCopyWithImpl<$Res>
+    implements $CreateSessionTaskDomainModelCopyWith<$Res> {
+  _$CreateSessionTaskDomainModelCopyWithImpl(this._value, this._then);
 
-  final TaskStateModel _value;
+  final CreateSessionTaskDomainModel _value;
   // ignore: unused_field
-  final $Res Function(TaskStateModel) _then;
+  final $Res Function(CreateSessionTaskDomainModel) _then;
 
   @override
   $Res call({
@@ -81,25 +82,28 @@ class _$TaskStateModelCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$TaskStateModelCopyWith<$Res>
-    implements $TaskStateModelCopyWith<$Res> {
-  factory _$TaskStateModelCopyWith(
-          _TaskStateModel value, $Res Function(_TaskStateModel) then) =
-      __$TaskStateModelCopyWithImpl<$Res>;
+abstract class _$CreateSessionTaskDomainModelCopyWith<$Res>
+    implements $CreateSessionTaskDomainModelCopyWith<$Res> {
+  factory _$CreateSessionTaskDomainModelCopyWith(
+          _CreateSessionTaskDomainModel value,
+          $Res Function(_CreateSessionTaskDomainModel) then) =
+      __$CreateSessionTaskDomainModelCopyWithImpl<$Res>;
   @override
   $Res call({String title, String? description, String? jiraLink});
 }
 
 /// @nodoc
-class __$TaskStateModelCopyWithImpl<$Res>
-    extends _$TaskStateModelCopyWithImpl<$Res>
-    implements _$TaskStateModelCopyWith<$Res> {
-  __$TaskStateModelCopyWithImpl(
-      _TaskStateModel _value, $Res Function(_TaskStateModel) _then)
-      : super(_value, (v) => _then(v as _TaskStateModel));
+class __$CreateSessionTaskDomainModelCopyWithImpl<$Res>
+    extends _$CreateSessionTaskDomainModelCopyWithImpl<$Res>
+    implements _$CreateSessionTaskDomainModelCopyWith<$Res> {
+  __$CreateSessionTaskDomainModelCopyWithImpl(
+      _CreateSessionTaskDomainModel _value,
+      $Res Function(_CreateSessionTaskDomainModel) _then)
+      : super(_value, (v) => _then(v as _CreateSessionTaskDomainModel));
 
   @override
-  _TaskStateModel get _value => super._value as _TaskStateModel;
+  _CreateSessionTaskDomainModel get _value =>
+      super._value as _CreateSessionTaskDomainModel;
 
   @override
   $Res call({
@@ -107,7 +111,7 @@ class __$TaskStateModelCopyWithImpl<$Res>
     Object? description = freezed,
     Object? jiraLink = freezed,
   }) {
-    return _then(_TaskStateModel(
+    return _then(_CreateSessionTaskDomainModel(
       title: title == freezed
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -126,10 +130,9 @@ class __$TaskStateModelCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_TaskStateModel extends _TaskStateModel {
-  const _$_TaskStateModel(
-      {required this.title, this.description, this.jiraLink})
-      : super._();
+class _$_CreateSessionTaskDomainModel implements _CreateSessionTaskDomainModel {
+  _$_CreateSessionTaskDomainModel(
+      {required this.title, this.description, this.jiraLink});
 
   @override
   final String title;
@@ -140,13 +143,13 @@ class _$_TaskStateModel extends _TaskStateModel {
 
   @override
   String toString() {
-    return 'TaskStateModel(title: $title, description: $description, jiraLink: $jiraLink)';
+    return 'CreateSessionTaskDomainModel(title: $title, description: $description, jiraLink: $jiraLink)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _TaskStateModel &&
+        (other is _CreateSessionTaskDomainModel &&
             (identical(other.title, title) ||
                 const DeepCollectionEquality().equals(other.title, title)) &&
             (identical(other.description, description) ||
@@ -166,16 +169,17 @@ class _$_TaskStateModel extends _TaskStateModel {
 
   @JsonKey(ignore: true)
   @override
-  _$TaskStateModelCopyWith<_TaskStateModel> get copyWith =>
-      __$TaskStateModelCopyWithImpl<_TaskStateModel>(this, _$identity);
+  _$CreateSessionTaskDomainModelCopyWith<_CreateSessionTaskDomainModel>
+      get copyWith => __$CreateSessionTaskDomainModelCopyWithImpl<
+          _CreateSessionTaskDomainModel>(this, _$identity);
 }
 
-abstract class _TaskStateModel extends TaskStateModel {
-  const factory _TaskStateModel(
+abstract class _CreateSessionTaskDomainModel
+    implements CreateSessionTaskDomainModel {
+  factory _CreateSessionTaskDomainModel(
       {required String title,
       String? description,
-      String? jiraLink}) = _$_TaskStateModel;
-  const _TaskStateModel._() : super._();
+      String? jiraLink}) = _$_CreateSessionTaskDomainModel;
 
   @override
   String get title => throw _privateConstructorUsedError;
@@ -185,6 +189,6 @@ abstract class _TaskStateModel extends TaskStateModel {
   String? get jiraLink => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$TaskStateModelCopyWith<_TaskStateModel> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$CreateSessionTaskDomainModelCopyWith<_CreateSessionTaskDomainModel>
+      get copyWith => throw _privateConstructorUsedError;
 }

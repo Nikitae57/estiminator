@@ -9,8 +9,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
-class SessionsPage extends StatelessWidget {
-  const SessionsPage(
+class SessionsOverviewPage extends StatefulWidget {
+  const SessionsOverviewPage(
     SessionsOverviewStore sessionsOverviewStore,
     AppTheme appTheme, {
     Key? key,
@@ -24,69 +24,104 @@ class SessionsPage extends StatelessWidget {
   final AppTheme _theme;
 
   @override
-  Widget build(BuildContext context) {
-    _store.loadSessions();
+  _SessionsOverviewPageState createState() => _SessionsOverviewPageState();
+}
 
+class _SessionsOverviewPageState extends State<SessionsOverviewPage> {
+  @override
+  void initState() {
+    print('sdfsdf');
+    super.initState();
+    WidgetsBinding.instance?.addPostFrameCallback((_) {
+      widget._store.loadSessions();
+      widget._store.loadUsername();
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: _appBarTitleObserver),
+      appBar: AppBar(
+          title: Text(
+        'Sessions',
+        style: widget._theme.textTheme.headline4,
+      )),
       body: SizedBox(
         width: double.infinity,
         height: double.infinity,
         child: Column(
           children: <Widget>[
-            _usernameObserver,
-            _sessionsOverviewObserver,
+            Observer(builder: (context) {
+              return FutureBuilder(
+                  future: widget._store.userNameFuture,
+                  builder: (BuildContext context, AsyncSnapshot<String> snapshot) {
+                    return ColoredBox(
+                      color: widget._theme.theme.primaryColorDark,
+                      child: Padding(
+                        padding: EdgeInsets.all(widget._theme.defaultMargin),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            const Icon(Icons.account_circle_rounded),
+                            SizedBox(width: widget._theme.defaultMargin),
+                            if (snapshot.hasData)
+                              Text(snapshot.data!, style: widget._theme.textTheme.bodyText1)
+                            else
+                              const CircularProgressIndicator.adaptive(),
+                          ],
+                        ),
+                      ),
+                    );
+                  });
+            }),
+            Observer(builder: (context) {
+              return widget._store.sessionsOverviewViewState.when<Widget>(
+                data: _sessionsOverviewDataState,
+                lodaing: _loadingState,
+                error: _errorState,
+              );
+            }),
           ],
         ),
       ),
-      floatingActionButton: _fabObserver,
-    );
-  }
-
-  Observer get _fabObserver => Observer(builder: (context) {
-        return _store.sessionsOverviewViewState.when(
+      floatingActionButton: Observer(builder: (context) {
+        return widget._store.sessionsOverviewViewState.when(
           data: (_) {
             return FloatingActionButton(
               onPressed: () {
                 Modular.to.pushNamed(CreateSessionPage.route);
               },
-              backgroundColor: _theme.theme.accentColor,
+              backgroundColor: widget._theme.theme.accentColor,
               child: const Icon(Icons.add),
             );
           },
           lodaing: () => const SizedBox(),
           error: (_) => const SizedBox(),
         );
-      });
-
-  Observer get _sessionsOverviewObserver => Observer(builder: (context) {
-        return _store.sessionsOverviewViewState.when<Widget>(
-          data: _sessionsOverviewDataState,
-          lodaing: _loadingState,
-          error: _errorState,
-        );
-      });
+      }),
+    );
+  }
 
   Widget _errorState(
     ErrorStateModel<SessionsOverviewErrorStateModel> errorStateModel,
   ) {
     return Expanded(
       child: Padding(
-        padding: EdgeInsets.all(_theme.bigMargin),
+        padding: EdgeInsets.all(widget._theme.bigMargin),
         child: Column(
           children: [
             Text(
               errorStateModel.stateModel.errorMessage,
-              style: _theme.textTheme.headline4,
+              style: widget._theme.textTheme.headline4,
             ),
-            SizedBox(height: _theme.defaultMargin),
+            SizedBox(height: widget._theme.defaultMargin),
             TextButton.icon(
               /*
               It supposed to be like that, but mapping happends in isolate and it prohibits
               passing non static functions references 🤬
               */
               // onPressed: errorStateModel.errorModel.retryAction,
-              onPressed: () => _store.loadSessions(),
+              onPressed: () => widget._store.loadSessions(),
               icon: Icon(errorStateModel.stateModel.retryButtonIcon),
               label: Text(errorStateModel.stateModel.retryButtonText),
             )
@@ -112,33 +147,4 @@ class SessionsPage extends StatelessWidget {
           }),
     );
   }
-
-  Observer get _appBarTitleObserver => Observer(
-        builder: (context) => Text(
-          _store.sessionsPageStateModel.appBarTitle,
-          style: _theme.textTheme.headline4,
-        ),
-      );
-
-  Observer get _usernameObserver => Observer(builder: (context) {
-        final username = _store.sessionsPageStateModel.username;
-        if (username.isNotEmpty) {
-          return ColoredBox(
-            color: _theme.theme.primaryColorDark,
-            child: Padding(
-              padding: EdgeInsets.all(_theme.defaultMargin),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  const Icon(Icons.account_circle_rounded),
-                  SizedBox(width: _theme.defaultMargin),
-                  Text(username, style: _theme.textTheme.bodyText1),
-                ],
-              ),
-            ),
-          );
-        } else {
-          return const SizedBox();
-        }
-      });
 }

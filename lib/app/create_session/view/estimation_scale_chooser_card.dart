@@ -69,12 +69,12 @@ class EstimationScaleChooserCard extends StatelessWidget {
                                         _store.onScaleChange(scaleName);
                                       }
                                     },
-                                    value: _store.scaleStateModel.value?.name,
+                                    value: _store.scale.value?.name,
                                   ),
                                   SizedBox(height: _theme.defaultMargin),
                                   Wrap(
                                     direction: Axis.horizontal,
-                                    children: _store.scaleStateModel.value?.values
+                                    children: _store.scale.value?.values
                                             .map((e) => Container(
                                                   margin: EdgeInsets.symmetric(
                                                     horizontal: _theme.smallMargin,

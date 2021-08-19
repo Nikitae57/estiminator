@@ -9,14 +9,6 @@ part of 'sessions_overview_store.dart';
 // ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic
 
 mixin _$SessionsOverviewStore on _SessionOverviewStore, Store {
-  Computed<SessionsStateModel>? _$sessionsPageStateModelComputed;
-
-  @override
-  SessionsStateModel get sessionsPageStateModel =>
-      (_$sessionsPageStateModelComputed ??= Computed<SessionsStateModel>(
-              () => super.sessionsPageStateModel,
-              name: '_SessionOverviewStore.sessionsPageStateModel'))
-          .value;
   Computed<
           ViewState<SessionsOverviewStateModel,
               ErrorStateModel<SessionsOverviewErrorStateModel>>>?
@@ -33,20 +25,19 @@ mixin _$SessionsOverviewStore on _SessionOverviewStore, Store {
                   name: '_SessionOverviewStore.sessionsOverviewViewState'))
               .value;
 
-  final _$_sessionsPageStateModelAtom =
-      Atom(name: '_SessionOverviewStore._sessionsPageStateModel');
+  final _$userNameFutureAtom =
+      Atom(name: '_SessionOverviewStore.userNameFuture');
 
   @override
-  SessionsStateModel get _sessionsPageStateModel {
-    _$_sessionsPageStateModelAtom.reportRead();
-    return super._sessionsPageStateModel;
+  ObservableFuture<String>? get userNameFuture {
+    _$userNameFutureAtom.reportRead();
+    return super.userNameFuture;
   }
 
   @override
-  set _sessionsPageStateModel(SessionsStateModel value) {
-    _$_sessionsPageStateModelAtom
-        .reportWrite(value, super._sessionsPageStateModel, () {
-      super._sessionsPageStateModel = value;
+  set userNameFuture(ObservableFuture<String>? value) {
+    _$userNameFutureAtom.reportWrite(value, super.userNameFuture, () {
+      super.userNameFuture = value;
     });
   }
 
@@ -84,11 +75,11 @@ mixin _$SessionsOverviewStore on _SessionOverviewStore, Store {
       ActionController(name: '_SessionOverviewStore');
 
   @override
-  void setUsername(String username) {
+  void loadUsername() {
     final _$actionInfo = _$_SessionOverviewStoreActionController.startAction(
-        name: '_SessionOverviewStore.setUsername');
+        name: '_SessionOverviewStore.loadUsername');
     try {
-      return super.setUsername(username);
+      return super.loadUsername();
     } finally {
       _$_SessionOverviewStoreActionController.endAction(_$actionInfo);
     }
@@ -97,7 +88,7 @@ mixin _$SessionsOverviewStore on _SessionOverviewStore, Store {
   @override
   String toString() {
     return '''
-sessionsPageStateModel: ${sessionsPageStateModel},
+userNameFuture: ${userNameFuture},
 sessionsOverviewViewState: ${sessionsOverviewViewState}
     ''';
   }

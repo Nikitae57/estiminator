@@ -88,6 +88,14 @@ class MockAppTheme extends _i1.Mock implements _i5.AppTheme {
       (super.noSuchMethod(Invocation.getter(#fadeAnimationDuration),
           returnValue: _FakeDuration_2()) as Duration);
   @override
+  double get defaultBorderRadius =>
+      (super.noSuchMethod(Invocation.getter(#defaultBorderRadius),
+          returnValue: 0.0) as double);
+  @override
+  double get bottomButtonHeight =>
+      (super.noSuchMethod(Invocation.getter(#bottomButtonHeight),
+          returnValue: 0.0) as double);
+  @override
   _i3.TextTheme get textTheme =>
       (super.noSuchMethod(Invocation.getter(#textTheme),
           returnValue: _FakeTextTheme_3()) as _i3.TextTheme);

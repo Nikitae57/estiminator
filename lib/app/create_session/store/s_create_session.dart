@@ -8,18 +8,24 @@ abstract class CreateSessionS {
 
   Future<EstimationScalesStateModel>? get estimationScalesFuture;
 
+  Future<void>? get createSessionFuture;
+
   List<TaskStateModel> get tasks;
 
   Input<String?> get taskTitle;
   Input<String?> get taskDescription;
   Input<String?> get taskJiraLink;
 
-  Input<EstimationScaleStateModel?> get scaleStateModel;
+  Input<EstimationScaleStateModel?> get scale;
 
   Future<void> loadScales();
 
   Future<void> onScaleChange(String scaleName);
 
-  /// bool indicates whether task added or not
+  /// If returned null then task not added
   Future<TaskStateModel?> onAddTask();
+
+  Future<void> createSession();
+
+  bool get createdSession;
 }

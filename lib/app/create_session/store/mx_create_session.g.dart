@@ -27,6 +27,22 @@ mixin _$CreateSessionMx on _CreateSessionMx, Store {
     });
   }
 
+  final _$createSessionFutureAtom =
+      Atom(name: '_CreateSessionMx.createSessionFuture');
+
+  @override
+  ObservableFuture<void>? get createSessionFuture {
+    _$createSessionFutureAtom.reportRead();
+    return super.createSessionFuture;
+  }
+
+  @override
+  set createSessionFuture(ObservableFuture<void>? value) {
+    _$createSessionFutureAtom.reportWrite(value, super.createSessionFuture, () {
+      super.createSessionFuture = value;
+    });
+  }
+
   final _$tasksAtom = Atom(name: '_CreateSessionMx.tasks');
 
   @override
@@ -39,6 +55,21 @@ mixin _$CreateSessionMx on _CreateSessionMx, Store {
   set tasks(ObservableList<TaskStateModel> value) {
     _$tasksAtom.reportWrite(value, super.tasks, () {
       super.tasks = value;
+    });
+  }
+
+  final _$createdSessionAtom = Atom(name: '_CreateSessionMx.createdSession');
+
+  @override
+  bool get createdSession {
+    _$createdSessionAtom.reportRead();
+    return super.createdSession;
+  }
+
+  @override
+  set createdSession(bool value) {
+    _$createdSessionAtom.reportWrite(value, super.createdSession, () {
+      super.createdSession = value;
     });
   }
 
@@ -65,11 +96,21 @@ mixin _$CreateSessionMx on _CreateSessionMx, Store {
     return _$onAddTaskAsyncAction.run(() => super.onAddTask());
   }
 
+  final _$createSessionAsyncAction =
+      AsyncAction('_CreateSessionMx.createSession');
+
+  @override
+  Future<void> createSession() {
+    return _$createSessionAsyncAction.run(() => super.createSession());
+  }
+
   @override
   String toString() {
     return '''
 estimationScalesFuture: ${estimationScalesFuture},
-tasks: ${tasks}
+createSessionFuture: ${createSessionFuture},
+tasks: ${tasks},
+createdSession: ${createdSession}
     ''';
   }
 }

@@ -25,7 +25,7 @@ class BottomButton extends StatelessWidget {
       color: backgroundColor ?? Theme.of(context).accentColor,
       borderRadius: radius,
       child: InkWell(
-        onTap: () {},
+        onTap: onPressed,
         borderRadius: radius,
         child: Container(
           padding: EdgeInsets.all(paddnig),

@@ -6,7 +6,10 @@ import 'package:estiminator/app/create_session/model/estimation_scales_state_mod
 import 'package:estiminator/app/create_session/scales_state_model_mapper.dart';
 import 'package:estiminator/app/create_session/model/task_state_model.dart';
 import 'package:estiminator/app/create_session/store/s_create_session.dart';
+import 'package:estiminator/domain/create_session/create_session_use_case.dart';
 import 'package:estiminator/domain/create_session/get_estimation_scales_use_case.dart';
+import 'package:estiminator/domain/create_session/create_session_domain_model.dart';
+import 'package:estiminator/domain/credentials/user_credentials_provider.dart';
 import 'package:mobx/mobx.dart';
 
 part 'mx_create_session.g.dart';
@@ -14,15 +17,19 @@ part 'mx_create_session.g.dart';
 class CreateSessionMx = _CreateSessionMx with _$CreateSessionMx;
 
 abstract class _CreateSessionMx with Store implements CreateSessionS {
-  _CreateSessionMx(
-    GetEstimationScalesUseCase getEstimationScalesUseCase,
-  ) : _getEstimationScalesUseCase = getEstimationScalesUseCase;
+  _CreateSessionMx(this._getEstimationScalesUseCase, this._createSessionUseCase, this._userCredentialsprovider);
 
   final GetEstimationScalesUseCase _getEstimationScalesUseCase;
+  final CreateSessionUseCase _createSessionUseCase;
+  final IUserCredentialsprovider _userCredentialsprovider;
 
   @observable
   @override
   ObservableFuture<EstimationScalesStateModel>? estimationScalesFuture;
+
+  @observable
+  @override
+  ObservableFuture<void>? createSessionFuture;
 
   @override
   Input<String?> sessionTitle = DataInput<String?>(validator: nonEmptyValidator);
@@ -41,9 +48,13 @@ abstract class _CreateSessionMx with Store implements CreateSessionS {
   ObservableList<TaskStateModel> tasks = ObservableList();
 
   @override
-  Input<EstimationScaleStateModel?> scaleStateModel = DataInput<EstimationScaleStateModel?>();
+  Input<EstimationScaleStateModel?> scale = DataInput<EstimationScaleStateModel?>();
 
   EstimationScalesStateModel? _scalesStateModel;
+
+  @observable
+  @override
+  bool createdSession = false;
 
   @action
   @override
@@ -52,7 +63,7 @@ abstract class _CreateSessionMx with Store implements CreateSessionS {
       _getEstimationScalesUseCase.getScales().then(estimationScalesStateModelMapper.map).then(
         (value) {
           _scalesStateModel = value;
-          scaleStateModel.set(value.scales[0]);
+          scale.set(value.scales[0]);
           return value;
         },
       ),
@@ -63,7 +74,7 @@ abstract class _CreateSessionMx with Store implements CreateSessionS {
   @override
   Future<void> onScaleChange(String? newScaleName) async {
     final newScaleStateModel = _scalesStateModel?.scales.firstWhere((element) => element.name == newScaleName);
-    scaleStateModel.set(newScaleStateModel);
+    scale.set(newScaleStateModel);
   }
 
   @action
@@ -76,6 +87,36 @@ abstract class _CreateSessionMx with Store implements CreateSessionS {
     }
 
     return taskStateModel;
+  }
+
+  @action
+  @override
+  Future<void> createSession() async {
+    final domainModel = await _getCreateSessionDomainModel();
+    if (domainModel == null) {
+      return;
+    }
+
+    createSessionFuture = ObservableFuture(
+      _createSessionUseCase.createSession(domainModel).then((_) => createdSession = true),
+    );
+  }
+
+  Future<CreateSessionDomainModel?> _getCreateSessionDomainModel() async {
+    sessionTitle.validate();
+
+    if (scale.value == null || !(sessionTitle.isValid ?? false)) {
+      return null;
+    }
+
+    final userCredentials = await _userCredentialsprovider.getUserCredentials();
+
+    return CreateSessionDomainModel(
+      creatorUid: userCredentials.uId,
+      scaleName: scale.value!.name,
+      sessionTitle: sessionTitle.value!,
+      tasks: tasks.map((element) => element.toDomainModel()).toList(),
+    );
   }
 
   TaskStateModel? _createTaskStateModel() {

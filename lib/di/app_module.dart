@@ -15,7 +15,7 @@ abstract class AppDiModule {
   AppTheme get appTheme;
 
   @injectable
-  SessionsPage sessionsPage() => SessionsPage(
+  SessionsOverviewPage sessionsPage() => SessionsOverviewPage(
         getIt<SessionsOverviewStore>(),
         getIt<AppTheme>(),
         key: UniqueKey(),

@@ -1,14 +1,22 @@
 import 'package:estiminator/app/app_theme.dart';
+import 'package:estiminator/app/core/multiple_reactions_disposer.dart';
 import 'package:estiminator/app/core/strings.dart';
-import 'package:estiminator/app/core/widgets/bottom_button.dart';
 import 'package:estiminator/app/create_session/store/s_create_session.dart';
-import 'package:estiminator/app/create_session/view/estimation_scale_chooser_card.dart';
-import 'package:estiminator/app/create_session/view/task_creation_card.dart';
+import 'package:estiminator/app/core/extension/scope_functions.dart';
+import 'package:estiminator/app/create_session/view/create_session_page_content.dart';
+import 'package:estiminator/app/sessions_overview/sessions_overview_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:flutter_modular/flutter_modular.dart';
+import 'package:mobx/mobx.dart';
 
-class CreateSessionPage extends StatelessWidget {
-  CreateSessionPage(this._theme, this._store, this._strings, {Key? key}) : super(key: key) {
+class CreateSessionPage extends StatefulWidget {
+  CreateSessionPage(
+    this._theme,
+    this._store,
+    this._strings, {
+    Key? key,
+  }) : super(key: key) {
     _store.loadScales();
   }
 
@@ -19,66 +27,62 @@ class CreateSessionPage extends StatelessWidget {
   final Strings _strings;
 
   @override
+  _CreateSessionPageState createState() => _CreateSessionPageState();
+}
+
+class _CreateSessionPageState extends State<CreateSessionPage> {
+  final multiDisposer = MultipleReactionsDisposer();
+
+  @override
+  void initState() {
+    super.initState();
+    initReactions();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    multiDisposer.onDispose();
+  }
+
+  void initReactions() {
+    reaction((_) => widget._store.createdSession, (createdSession) {
+      Modular.to.pushNamedAndRemoveUntil(
+        SessionsOverviewPage.route,
+        ModalRoute.withName(SessionsOverviewPage.route),
+      );
+    }).also(multiDisposer.add);
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          _strings.get(SId.CREATE_SESSION_APPBAR_TITLE),
-          style: _theme.textTheme.headline4,
+          widget._strings.get(SId.CREATE_SESSION_APPBAR_TITLE),
+          style: widget._theme.textTheme.headline4,
         ),
       ),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: EdgeInsets.all(_theme.defaultMargin),
-          child: Column(
-            children: [
-              /// Session title
-              TextField(
-                autofocus: false,
-                decoration: InputDecoration(
-                  labelText: _strings.get(SId.CREATE_SESSION_TITLE_HINT),
-                ),
-                onChanged: _store.sessionTitle.set,
-              ),
-
-              /// Estimation scale
-              Container(
-                margin: EdgeInsets.only(top: _theme.defaultMargin, bottom: _theme.smallMargin),
-                width: double.infinity,
-                child: EstimationScaleChooserCard(
-                  store: _store,
-                  theme: _theme,
-                  strings: _strings,
-                ),
-              ),
-
-              /// Tasks creation
-              Container(
-                margin: EdgeInsets.only(top: _theme.defaultMargin, bottom: _theme.smallMargin),
-                width: double.infinity,
-                child: TaskCreationCard(
-                  theme: _theme,
-                  store: _store,
-                  strings: _strings,
-                ),
-              ),
-              SizedBox(height: _theme.defaultMargin),
-              Observer(builder: (context) {
-                return AnimatedOpacity(
-                  opacity: _store.tasks.isNotEmpty ? 1.0 : 0.0,
-                  duration: _theme.fadeAnimationDuration,
-                  child: BottomButton(
-                    borderRadius: _theme.defaultBorderRadius,
-                    size: Size(double.infinity, _theme.bottomButtonHeight),
-                    onPressed: () {},
-                    child: Text(_strings.get(SId.CREATE_SESSION_DONE_BUTTON_TEXT)),
-                  ),
-                );
-              }),
-            ],
-          ),
-        ),
-      ),
+      body: Observer(builder: (context) {
+        return FutureBuilder(
+          future: widget._store.createSessionFuture,
+          builder: (BuildContext context, AsyncSnapshot snapshot) {
+            if (snapshot.connectionState == ConnectionState.active ||
+                snapshot.connectionState == ConnectionState.waiting) {
+              return const SizedBox(
+                height: double.infinity,
+                child: Center(child: CircularProgressIndicator.adaptive()),
+              );
+            } else {
+              return CreateSessionPageContent(
+                theme: widget._theme,
+                strings: widget._strings,
+                store: widget._store,
+              );
+            }
+          },
+        );
+      }),
     );
   }
 }

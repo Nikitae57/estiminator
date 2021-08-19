@@ -38,7 +38,7 @@ abstract class _LoginStore with Store {
   @action
   void onLoginButtonPressed() {
     Modular.to.pushNamed(
-      SessionsPage.route,
+      SessionsOverviewPage.route,
       arguments: SessionsBundleModel(userName: _userName),
     );
   }
