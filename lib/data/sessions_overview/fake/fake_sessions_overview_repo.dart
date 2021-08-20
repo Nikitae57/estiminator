@@ -1,9 +1,7 @@
 import 'package:estiminator/domain/sessions_overview/session_overview_domain_model.dart';
 import 'package:estiminator/domain/sessions_overview/sessions_overview_domain_model.dart';
 import 'package:estiminator/domain/sessions_overview/sessions_overview_repo.dart';
-import 'package:injectable/injectable.dart';
 
-@Singleton(as: ISessionsOverviewRepo)
 class FakeSessionsOverviewRepo implements ISessionsOverviewRepo {
   final fakeSessionsOverviewDomainModel = SessionsOverviewDomainModel(
     sessions: [

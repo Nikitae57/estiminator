@@ -5,7 +5,9 @@ import 'package:estiminator/app/login/login_page.dart';
 import 'package:estiminator/app/login/login_store.dart';
 import 'package:estiminator/app/sessions_overview/sessions_overview_page.dart';
 import 'package:estiminator/app/sessions_overview/sessions_overview_store.dart';
+import 'package:estiminator/data/sessions_overview/firebase/session_overview_service.dart';
 import 'package:estiminator/di/di.dart';
+import 'package:estiminator/domain/sessions_overview/sessions_overview_repo.dart';
 import 'package:flutter/widgets.dart';
 import 'package:injectable/injectable.dart';
 
@@ -32,4 +34,7 @@ abstract class AppDiModule {
 
   @Injectable(as: CreateSessionS)
   CreateSessionMx get createSessionStore;
+
+  @Injectable(as: ISessionsOverviewRepo)
+  FirebaseSessionsOverviewService get firebaseSessionsOverviewService;
 }

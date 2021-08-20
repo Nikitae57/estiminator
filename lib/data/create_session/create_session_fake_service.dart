@@ -1,12 +1,11 @@
 import 'dart:math';
 
+import 'package:estiminator/data/sessions_overview/fake/fake_sessions_overview_repo.dart';
 import 'package:estiminator/domain/create_session/create_session_domain_model.dart';
 import 'package:estiminator/domain/create_session/create_session_service.dart';
 import 'package:estiminator/domain/sessions_overview/session_overview_domain_model.dart';
 import 'package:estiminator/domain/sessions_overview/sessions_overview_repo.dart';
 import 'package:injectable/injectable.dart';
-
-import 'package:estiminator/data/sessions_overview/fake_sessions_overview_repo/fake_sessions_overview_repo.dart';
 
 @Injectable(as: ICreateSessionService)
 class CreateSessionFakeService implements ICreateSessionService {
