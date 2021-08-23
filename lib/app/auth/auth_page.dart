@@ -1,11 +1,11 @@
 import 'package:estiminator/app/app_theme.dart';
-import 'package:estiminator/app/login/login_store.dart';
+import 'package:estiminator/app/auth/auth_store.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 
-class LoginPage extends StatelessWidget {
-  const LoginPage(
-    LoginStore loginStore,
+class AuthPage extends StatelessWidget {
+  const AuthPage(
+    AuthStore loginStore,
     AppTheme appTheme, {
     Key? key,
   })  : _loginStore = loginStore,
@@ -14,7 +14,7 @@ class LoginPage extends StatelessWidget {
 
   static const route = '/';
 
-  final LoginStore _loginStore;
+  final AuthStore _loginStore;
   final AppTheme _theme;
 
   @override
@@ -62,7 +62,7 @@ class LoginPage extends StatelessWidget {
                   opacity: _loginStore.shouldShowLoginButton ? 1.0 : 0.0,
                   child: ElevatedButton(
                     child: Text(_loginStore.loginStateView.loginButtonText),
-                    onPressed: _loginStore.onLoginButtonPressed,
+                    onPressed: _loginStore.onLogin,
                   ),
                 ),
               )

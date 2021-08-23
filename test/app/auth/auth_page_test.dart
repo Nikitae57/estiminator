@@ -1,13 +1,13 @@
 import 'package:estiminator/app/app_theme.dart';
-import 'package:estiminator/app/login/login_page.dart';
-import 'package:estiminator/app/login/login_state_model.dart';
-import 'package:estiminator/app/login/login_store.dart';
+import 'package:estiminator/app/auth/auth_page.dart';
+import 'package:estiminator/app/auth/auth_state_model.dart';
+import 'package:estiminator/app/auth/auth_store.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 
-import 'login_page_test.mocks.dart';
+import 'auth_page_test.mocks.dart';
 
 const _APP_BAR_TITLE = 'App bar title';
 const _TITLE = 'title';
@@ -18,23 +18,23 @@ const _TEST_INPUT = 'test input';
 
 const _SHOULD_SHOW_LOGIN_BUTTON = true;
 
-const _LOGIN_STATE_MODEL = LoginStateModel(
+const _LOGIN_STATE_MODEL = AuthStateModel(
   appBarTitle: _APP_BAR_TITLE,
   title: _TITLE,
   hint: _HINT,
   loginButtonText: _LOGIN_BUTTON_TEXT,
 );
 
-Widget _getWidget(LoginStore store, AppTheme theme) => MediaQuery(
+Widget _getWidget(AuthStore store, AppTheme theme) => MediaQuery(
       data: const MediaQueryData(),
       child: MaterialApp(
-        home: LoginPage(store, theme),
+        home: AuthPage(store, theme),
       ),
     );
 
-@GenerateMocks([LoginStore, AppTheme])
+@GenerateMocks([AuthStore, AppTheme])
 void main() {
-  final store = MockLoginStore();
+  final store = MockAuthStore();
   final theme = MockAppTheme();
 
   setUp(() {
@@ -82,7 +82,7 @@ void main() {
 
       await tester.tap(find.text(_LOGIN_BUTTON_TEXT));
 
-      verify(store.onLoginButtonPressed()).called(1);
+      verify(store.onLogin()).called(1);
     });
   });
 }

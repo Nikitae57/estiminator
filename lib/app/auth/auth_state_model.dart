@@ -1,14 +1,14 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'login_state_model.freezed.dart';
+part 'auth_state_model.freezed.dart';
 
 @immutable
 @freezed
-class LoginStateModel with _$LoginStateModel {
-  const factory LoginStateModel({
+class AuthStateModel with _$AuthStateModel {
+  const factory AuthStateModel({
     required String appBarTitle,
     required String title,
     required String hint,
     required String loginButtonText,
-  }) = _LoginStateModel;
+  }) = _AuthStateModel;
 }

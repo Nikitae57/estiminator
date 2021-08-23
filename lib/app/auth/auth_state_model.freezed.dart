@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
-part of 'login_state_model.dart';
+part of 'auth_state_model.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -13,15 +13,15 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-class _$LoginStateModelTearOff {
-  const _$LoginStateModelTearOff();
+class _$AuthStateModelTearOff {
+  const _$AuthStateModelTearOff();
 
-  _LoginStateModel call(
+  _AuthStateModel call(
       {required String appBarTitle,
       required String title,
       required String hint,
       required String loginButtonText}) {
-    return _LoginStateModel(
+    return _AuthStateModel(
       appBarTitle: appBarTitle,
       title: title,
       hint: hint,
@@ -31,37 +31,37 @@ class _$LoginStateModelTearOff {
 }
 
 /// @nodoc
-const $LoginStateModel = _$LoginStateModelTearOff();
+const $AuthStateModel = _$AuthStateModelTearOff();
 
 /// @nodoc
-mixin _$LoginStateModel {
+mixin _$AuthStateModel {
   String get appBarTitle => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
   String get hint => throw _privateConstructorUsedError;
   String get loginButtonText => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $LoginStateModelCopyWith<LoginStateModel> get copyWith =>
+  $AuthStateModelCopyWith<AuthStateModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $LoginStateModelCopyWith<$Res> {
-  factory $LoginStateModelCopyWith(
-          LoginStateModel value, $Res Function(LoginStateModel) then) =
-      _$LoginStateModelCopyWithImpl<$Res>;
+abstract class $AuthStateModelCopyWith<$Res> {
+  factory $AuthStateModelCopyWith(
+          AuthStateModel value, $Res Function(AuthStateModel) then) =
+      _$AuthStateModelCopyWithImpl<$Res>;
   $Res call(
       {String appBarTitle, String title, String hint, String loginButtonText});
 }
 
 /// @nodoc
-class _$LoginStateModelCopyWithImpl<$Res>
-    implements $LoginStateModelCopyWith<$Res> {
-  _$LoginStateModelCopyWithImpl(this._value, this._then);
+class _$AuthStateModelCopyWithImpl<$Res>
+    implements $AuthStateModelCopyWith<$Res> {
+  _$AuthStateModelCopyWithImpl(this._value, this._then);
 
-  final LoginStateModel _value;
+  final AuthStateModel _value;
   // ignore: unused_field
-  final $Res Function(LoginStateModel) _then;
+  final $Res Function(AuthStateModel) _then;
 
   @override
   $Res call({
@@ -92,26 +92,26 @@ class _$LoginStateModelCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$LoginStateModelCopyWith<$Res>
-    implements $LoginStateModelCopyWith<$Res> {
-  factory _$LoginStateModelCopyWith(
-          _LoginStateModel value, $Res Function(_LoginStateModel) then) =
-      __$LoginStateModelCopyWithImpl<$Res>;
+abstract class _$AuthStateModelCopyWith<$Res>
+    implements $AuthStateModelCopyWith<$Res> {
+  factory _$AuthStateModelCopyWith(
+          _AuthStateModel value, $Res Function(_AuthStateModel) then) =
+      __$AuthStateModelCopyWithImpl<$Res>;
   @override
   $Res call(
       {String appBarTitle, String title, String hint, String loginButtonText});
 }
 
 /// @nodoc
-class __$LoginStateModelCopyWithImpl<$Res>
-    extends _$LoginStateModelCopyWithImpl<$Res>
-    implements _$LoginStateModelCopyWith<$Res> {
-  __$LoginStateModelCopyWithImpl(
-      _LoginStateModel _value, $Res Function(_LoginStateModel) _then)
-      : super(_value, (v) => _then(v as _LoginStateModel));
+class __$AuthStateModelCopyWithImpl<$Res>
+    extends _$AuthStateModelCopyWithImpl<$Res>
+    implements _$AuthStateModelCopyWith<$Res> {
+  __$AuthStateModelCopyWithImpl(
+      _AuthStateModel _value, $Res Function(_AuthStateModel) _then)
+      : super(_value, (v) => _then(v as _AuthStateModel));
 
   @override
-  _LoginStateModel get _value => super._value as _LoginStateModel;
+  _AuthStateModel get _value => super._value as _AuthStateModel;
 
   @override
   $Res call({
@@ -120,7 +120,7 @@ class __$LoginStateModelCopyWithImpl<$Res>
     Object? hint = freezed,
     Object? loginButtonText = freezed,
   }) {
-    return _then(_LoginStateModel(
+    return _then(_AuthStateModel(
       appBarTitle: appBarTitle == freezed
           ? _value.appBarTitle
           : appBarTitle // ignore: cast_nullable_to_non_nullable
@@ -143,8 +143,8 @@ class __$LoginStateModelCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_LoginStateModel implements _LoginStateModel {
-  const _$_LoginStateModel(
+class _$_AuthStateModel implements _AuthStateModel {
+  const _$_AuthStateModel(
       {required this.appBarTitle,
       required this.title,
       required this.hint,
@@ -161,13 +161,13 @@ class _$_LoginStateModel implements _LoginStateModel {
 
   @override
   String toString() {
-    return 'LoginStateModel(appBarTitle: $appBarTitle, title: $title, hint: $hint, loginButtonText: $loginButtonText)';
+    return 'AuthStateModel(appBarTitle: $appBarTitle, title: $title, hint: $hint, loginButtonText: $loginButtonText)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _LoginStateModel &&
+        (other is _AuthStateModel &&
             (identical(other.appBarTitle, appBarTitle) ||
                 const DeepCollectionEquality()
                     .equals(other.appBarTitle, appBarTitle)) &&
@@ -190,16 +190,16 @@ class _$_LoginStateModel implements _LoginStateModel {
 
   @JsonKey(ignore: true)
   @override
-  _$LoginStateModelCopyWith<_LoginStateModel> get copyWith =>
-      __$LoginStateModelCopyWithImpl<_LoginStateModel>(this, _$identity);
+  _$AuthStateModelCopyWith<_AuthStateModel> get copyWith =>
+      __$AuthStateModelCopyWithImpl<_AuthStateModel>(this, _$identity);
 }
 
-abstract class _LoginStateModel implements LoginStateModel {
-  const factory _LoginStateModel(
+abstract class _AuthStateModel implements AuthStateModel {
+  const factory _AuthStateModel(
       {required String appBarTitle,
       required String title,
       required String hint,
-      required String loginButtonText}) = _$_LoginStateModel;
+      required String loginButtonText}) = _$_AuthStateModel;
 
   @override
   String get appBarTitle => throw _privateConstructorUsedError;
@@ -211,6 +211,6 @@ abstract class _LoginStateModel implements LoginStateModel {
   String get loginButtonText => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$LoginStateModelCopyWith<_LoginStateModel> get copyWith =>
+  _$AuthStateModelCopyWith<_AuthStateModel> get copyWith =>
       throw _privateConstructorUsedError;
 }

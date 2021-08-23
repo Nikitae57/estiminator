@@ -1,18 +1,22 @@
-import 'package:estiminator/app/login/login_state_model.dart';
+import 'package:estiminator/app/auth/auth_state_model.dart';
 import 'package:estiminator/app/sessions_overview/models/sessions_bundle_model.dart';
 import 'package:estiminator/app/sessions_overview/sessions_overview_page.dart';
+import 'package:estiminator/domain/credentials/user_credentials_provider.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:mobx/mobx.dart';
 
-part 'login_store.g.dart';
+part 'auth_store.g.dart';
 
-class LoginStore = _LoginStore with _$LoginStore;
+class AuthStore = _AuthStore with _$AuthStore;
 
-abstract class _LoginStore with Store {
+abstract class _AuthStore with Store {
+  _AuthStore(this._credentialsProvider);
+
   String _userName = '';
+  IUserCredentialsprovider _credentialsProvider;
 
   @observable
-  var _loginStateView = const LoginStateModel(
+  var _loginStateView = const AuthStateModel(
     appBarTitle: 'Login',
     title: 'Enter your name here 👇',
     hint: 'Your name',
@@ -20,7 +24,7 @@ abstract class _LoginStore with Store {
   );
 
   @computed
-  LoginStateModel get loginStateView => _loginStateView;
+  AuthStateModel get loginStateView => _loginStateView;
 
   @observable
   var _shouldShowLoginButton = false;
@@ -36,7 +40,10 @@ abstract class _LoginStore with Store {
   }
 
   @action
-  void onLoginButtonPressed() {
+  Future<void> onLogin() async {
+    // I decided to not mess with propper auth so I use username as uId
+    await _credentialsProvider.setUid(_userName);
+
     Modular.to.pushNamed(
       SessionsOverviewPage.route,
       arguments: SessionsBundleModel(userName: _userName),

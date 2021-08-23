@@ -70,6 +70,6 @@ abstract class _SessionOverviewStore with Store {
 
   @action
   void loadUsername() {
-    userNameFuture = ObservableFuture(_userCredentialsProvider.getUserCredentials().then((value) => value.userName));
+    userNameFuture = ObservableFuture(_userCredentialsProvider.getUserCredentials().then((value) => value.uId));
   }
 }

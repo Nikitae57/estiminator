@@ -16,11 +16,9 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$UserCredentialsDomainModelTearOff {
   const _$UserCredentialsDomainModelTearOff();
 
-  _UserCredentialsDomainModel call(
-      {required String uId, required String userName}) {
+  _UserCredentialsDomainModel call({required String uId}) {
     return _UserCredentialsDomainModel(
       uId: uId,
-      userName: userName,
     );
   }
 }
@@ -31,7 +29,6 @@ const $UserCredentialsDomainModel = _$UserCredentialsDomainModelTearOff();
 /// @nodoc
 mixin _$UserCredentialsDomainModel {
   String get uId => throw _privateConstructorUsedError;
-  String get userName => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $UserCredentialsDomainModelCopyWith<UserCredentialsDomainModel>
@@ -43,7 +40,7 @@ abstract class $UserCredentialsDomainModelCopyWith<$Res> {
   factory $UserCredentialsDomainModelCopyWith(UserCredentialsDomainModel value,
           $Res Function(UserCredentialsDomainModel) then) =
       _$UserCredentialsDomainModelCopyWithImpl<$Res>;
-  $Res call({String uId, String userName});
+  $Res call({String uId});
 }
 
 /// @nodoc
@@ -58,16 +55,11 @@ class _$UserCredentialsDomainModelCopyWithImpl<$Res>
   @override
   $Res call({
     Object? uId = freezed,
-    Object? userName = freezed,
   }) {
     return _then(_value.copyWith(
       uId: uId == freezed
           ? _value.uId
           : uId // ignore: cast_nullable_to_non_nullable
-              as String,
-      userName: userName == freezed
-          ? _value.userName
-          : userName // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -81,7 +73,7 @@ abstract class _$UserCredentialsDomainModelCopyWith<$Res>
           $Res Function(_UserCredentialsDomainModel) then) =
       __$UserCredentialsDomainModelCopyWithImpl<$Res>;
   @override
-  $Res call({String uId, String userName});
+  $Res call({String uId});
 }
 
 /// @nodoc
@@ -99,16 +91,11 @@ class __$UserCredentialsDomainModelCopyWithImpl<$Res>
   @override
   $Res call({
     Object? uId = freezed,
-    Object? userName = freezed,
   }) {
     return _then(_UserCredentialsDomainModel(
       uId: uId == freezed
           ? _value.uId
           : uId // ignore: cast_nullable_to_non_nullable
-              as String,
-      userName: userName == freezed
-          ? _value.userName
-          : userName // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -117,16 +104,14 @@ class __$UserCredentialsDomainModelCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_UserCredentialsDomainModel implements _UserCredentialsDomainModel {
-  _$_UserCredentialsDomainModel({required this.uId, required this.userName});
+  _$_UserCredentialsDomainModel({required this.uId});
 
   @override
   final String uId;
-  @override
-  final String userName;
 
   @override
   String toString() {
-    return 'UserCredentialsDomainModel(uId: $uId, userName: $userName)';
+    return 'UserCredentialsDomainModel(uId: $uId)';
   }
 
   @override
@@ -134,17 +119,12 @@ class _$_UserCredentialsDomainModel implements _UserCredentialsDomainModel {
     return identical(this, other) ||
         (other is _UserCredentialsDomainModel &&
             (identical(other.uId, uId) ||
-                const DeepCollectionEquality().equals(other.uId, uId)) &&
-            (identical(other.userName, userName) ||
-                const DeepCollectionEquality()
-                    .equals(other.userName, userName)));
+                const DeepCollectionEquality().equals(other.uId, uId)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(uId) ^
-      const DeepCollectionEquality().hash(userName);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(uId);
 
   @JsonKey(ignore: true)
   @override
@@ -155,14 +135,11 @@ class _$_UserCredentialsDomainModel implements _UserCredentialsDomainModel {
 
 abstract class _UserCredentialsDomainModel
     implements UserCredentialsDomainModel {
-  factory _UserCredentialsDomainModel(
-      {required String uId,
-      required String userName}) = _$_UserCredentialsDomainModel;
+  factory _UserCredentialsDomainModel({required String uId}) =
+      _$_UserCredentialsDomainModel;
 
   @override
   String get uId => throw _privateConstructorUsedError;
-  @override
-  String get userName => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$UserCredentialsDomainModelCopyWith<_UserCredentialsDomainModel>

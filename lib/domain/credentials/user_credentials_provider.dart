@@ -2,4 +2,5 @@ import 'package:estiminator/domain/credentials/user_credentials_domain_model.dar
 
 abstract class IUserCredentialsprovider {
   Future<UserCredentialsDomainModel> getUserCredentials();
+  Future<void> setUid(String uId);
 }
