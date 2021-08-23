@@ -20,12 +20,12 @@ class _$SessionOverviewStateModelTearOff {
       {required String title,
       required String creatorName,
       required String numTasksText,
-      required bool isFinished}) {
+      required String isFinishedLabelText}) {
     return _SessionOverviewStateModel(
       title: title,
       creatorName: creatorName,
       numTasksText: numTasksText,
-      isFinished: isFinished,
+      isFinishedLabelText: isFinishedLabelText,
     );
   }
 }
@@ -38,7 +38,7 @@ mixin _$SessionOverviewStateModel {
   String get title => throw _privateConstructorUsedError;
   String get creatorName => throw _privateConstructorUsedError;
   String get numTasksText => throw _privateConstructorUsedError;
-  bool get isFinished => throw _privateConstructorUsedError;
+  String get isFinishedLabelText => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $SessionOverviewStateModelCopyWith<SessionOverviewStateModel> get copyWith =>
@@ -51,7 +51,10 @@ abstract class $SessionOverviewStateModelCopyWith<$Res> {
           $Res Function(SessionOverviewStateModel) then) =
       _$SessionOverviewStateModelCopyWithImpl<$Res>;
   $Res call(
-      {String title, String creatorName, String numTasksText, bool isFinished});
+      {String title,
+      String creatorName,
+      String numTasksText,
+      String isFinishedLabelText});
 }
 
 /// @nodoc
@@ -68,7 +71,7 @@ class _$SessionOverviewStateModelCopyWithImpl<$Res>
     Object? title = freezed,
     Object? creatorName = freezed,
     Object? numTasksText = freezed,
-    Object? isFinished = freezed,
+    Object? isFinishedLabelText = freezed,
   }) {
     return _then(_value.copyWith(
       title: title == freezed
@@ -83,10 +86,10 @@ class _$SessionOverviewStateModelCopyWithImpl<$Res>
           ? _value.numTasksText
           : numTasksText // ignore: cast_nullable_to_non_nullable
               as String,
-      isFinished: isFinished == freezed
-          ? _value.isFinished
-          : isFinished // ignore: cast_nullable_to_non_nullable
-              as bool,
+      isFinishedLabelText: isFinishedLabelText == freezed
+          ? _value.isFinishedLabelText
+          : isFinishedLabelText // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -99,7 +102,10 @@ abstract class _$SessionOverviewStateModelCopyWith<$Res>
       __$SessionOverviewStateModelCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String title, String creatorName, String numTasksText, bool isFinished});
+      {String title,
+      String creatorName,
+      String numTasksText,
+      String isFinishedLabelText});
 }
 
 /// @nodoc
@@ -119,7 +125,7 @@ class __$SessionOverviewStateModelCopyWithImpl<$Res>
     Object? title = freezed,
     Object? creatorName = freezed,
     Object? numTasksText = freezed,
-    Object? isFinished = freezed,
+    Object? isFinishedLabelText = freezed,
   }) {
     return _then(_SessionOverviewStateModel(
       title: title == freezed
@@ -134,10 +140,10 @@ class __$SessionOverviewStateModelCopyWithImpl<$Res>
           ? _value.numTasksText
           : numTasksText // ignore: cast_nullable_to_non_nullable
               as String,
-      isFinished: isFinished == freezed
-          ? _value.isFinished
-          : isFinished // ignore: cast_nullable_to_non_nullable
-              as bool,
+      isFinishedLabelText: isFinishedLabelText == freezed
+          ? _value.isFinishedLabelText
+          : isFinishedLabelText // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -149,7 +155,7 @@ class _$_SessionOverviewStateModel implements _SessionOverviewStateModel {
       {required this.title,
       required this.creatorName,
       required this.numTasksText,
-      required this.isFinished});
+      required this.isFinishedLabelText});
 
   @override
   final String title;
@@ -158,11 +164,11 @@ class _$_SessionOverviewStateModel implements _SessionOverviewStateModel {
   @override
   final String numTasksText;
   @override
-  final bool isFinished;
+  final String isFinishedLabelText;
 
   @override
   String toString() {
-    return 'SessionOverviewStateModel(title: $title, creatorName: $creatorName, numTasksText: $numTasksText, isFinished: $isFinished)';
+    return 'SessionOverviewStateModel(title: $title, creatorName: $creatorName, numTasksText: $numTasksText, isFinishedLabelText: $isFinishedLabelText)';
   }
 
   @override
@@ -177,9 +183,9 @@ class _$_SessionOverviewStateModel implements _SessionOverviewStateModel {
             (identical(other.numTasksText, numTasksText) ||
                 const DeepCollectionEquality()
                     .equals(other.numTasksText, numTasksText)) &&
-            (identical(other.isFinished, isFinished) ||
+            (identical(other.isFinishedLabelText, isFinishedLabelText) ||
                 const DeepCollectionEquality()
-                    .equals(other.isFinished, isFinished)));
+                    .equals(other.isFinishedLabelText, isFinishedLabelText)));
   }
 
   @override
@@ -188,7 +194,7 @@ class _$_SessionOverviewStateModel implements _SessionOverviewStateModel {
       const DeepCollectionEquality().hash(title) ^
       const DeepCollectionEquality().hash(creatorName) ^
       const DeepCollectionEquality().hash(numTasksText) ^
-      const DeepCollectionEquality().hash(isFinished);
+      const DeepCollectionEquality().hash(isFinishedLabelText);
 
   @JsonKey(ignore: true)
   @override
@@ -203,7 +209,7 @@ abstract class _SessionOverviewStateModel implements SessionOverviewStateModel {
       {required String title,
       required String creatorName,
       required String numTasksText,
-      required bool isFinished}) = _$_SessionOverviewStateModel;
+      required String isFinishedLabelText}) = _$_SessionOverviewStateModel;
 
   @override
   String get title => throw _privateConstructorUsedError;
@@ -212,7 +218,7 @@ abstract class _SessionOverviewStateModel implements SessionOverviewStateModel {
   @override
   String get numTasksText => throw _privateConstructorUsedError;
   @override
-  bool get isFinished => throw _privateConstructorUsedError;
+  String get isFinishedLabelText => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$SessionOverviewStateModelCopyWith<_SessionOverviewStateModel>

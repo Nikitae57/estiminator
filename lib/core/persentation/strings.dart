@@ -17,6 +17,9 @@ class SId {
   static const CREATE_SESSION_TASK_DESCRIPTION = 13;
   static const CREATE_SESSION_TASK_JIRA_LINK = 14;
   static const CREATE_SESSION_DONE_BUTTON_TEXT = 15;
+  static const SESSIONS_OVERVIEW_FINISHED = 16;
+  static const SESSIONS_OVERVIEW_OPEN = 17;
+  static const SESSIONS_OVERVIEW_TASKS_NUMBER_LABEL = 18;
 }
 
 @singleton
@@ -38,6 +41,9 @@ class Strings {
     SId.CREATE_SESSION_TASK_DESCRIPTION: 'description:',
     SId.CREATE_SESSION_TASK_JIRA_LINK: 'jira link:',
     SId.CREATE_SESSION_DONE_BUTTON_TEXT: 'DONE',
+    SId.SESSIONS_OVERVIEW_FINISHED: 'finished',
+    SId.SESSIONS_OVERVIEW_OPEN: 'open',
+    SId.SESSIONS_OVERVIEW_TASKS_NUMBER_LABEL: 'task(s)',
   };
 
   String get(int id) {

@@ -143,6 +143,7 @@ class _SessionsOverviewPageState extends State<SessionsOverviewPage> {
           itemBuilder: (context, index) {
             return SessionListItem(
               stateModel: stateModel.sessions[index],
+              theme: widget._theme,
             );
           }),
     );

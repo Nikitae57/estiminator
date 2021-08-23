@@ -8,6 +8,6 @@ class SessionOverviewStateModel with _$SessionOverviewStateModel {
     required String title,
     required String creatorName,
     required String numTasksText,
-    required bool isFinished,
+    required String isFinishedLabelText,
   }) = _SessionOverviewStateModel;
 }

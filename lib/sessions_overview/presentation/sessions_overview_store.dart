@@ -19,21 +19,22 @@ class SessionsOverviewStore = _SessionOverviewStore with _$SessionsOverviewStore
 ViewState<SessionsOverviewStateModel, ErrorStateModel<SessionsOverviewErrorStateModel>> _mapSessionsOverviewStateModel(
   ResultWrapper<SessionsOverviewDomainModel, ErrorModel> result,
 ) {
-  return result.when(result: (sessionsOverviewDomainModel) {
-    return ViewState<SessionsOverviewStateModel, ErrorStateModel<SessionsOverviewErrorStateModel>>.data(
+  return result.when(
+    result: (sessionsOverviewDomainModel) =>
+        ViewState<SessionsOverviewStateModel, ErrorStateModel<SessionsOverviewErrorStateModel>>.data(
       sessionsOverviewStateModelMapper.map(sessionsOverviewDomainModel),
-    );
-  }, error: (error) {
-    return ViewState<SessionsOverviewStateModel, ErrorStateModel<SessionsOverviewErrorStateModel>>.error(
+    ),
+    error: (error) => ViewState<SessionsOverviewStateModel, ErrorStateModel<SessionsOverviewErrorStateModel>>.error(
       error: ErrorStateModel(
-          stateModel: SessionsOverviewErrorStateModel(
-            errorMessage: "Sorry, we're unable to get estimations sessions 😔. Try again later",
-            retryButtonText: 'RETRY',
-            retryButtonIcon: Icons.replay_rounded,
-          ),
-          errorModel: error),
-    );
-  });
+        stateModel: SessionsOverviewErrorStateModel(
+          errorMessage: "Sorry, we're unable to get estimations sessions 😔. Try again later",
+          retryButtonText: 'RETRY',
+          retryButtonIcon: Icons.replay_rounded,
+        ),
+        errorModel: error,
+      ),
+    ),
+  );
 }
 
 abstract class _SessionOverviewStore with Store {
