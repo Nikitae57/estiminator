@@ -1,5 +1,5 @@
-import 'package:estiminator/domain/core/error_model.dart';
-import 'package:estiminator/domain/core/result_wrapper.dart';
+import 'package:estiminator/core/domain/error_model.dart';
+import 'package:estiminator/core/domain/result_wrapper.dart';
 import 'package:estiminator/domain/session/session_domain_model.dart';
 import 'package:estiminator/domain/session/session_repo.dart';
 import 'package:injectable/injectable.dart';

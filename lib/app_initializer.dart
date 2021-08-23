@@ -1,4 +1,4 @@
-import 'package:estiminator/data/core/firebase.dart';
+import 'package:estiminator/core/data/firebase.dart';
 import 'package:estiminator/di/di.dart';
 import 'package:flutter/widgets.dart';
 

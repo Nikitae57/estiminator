@@ -4,9 +4,9 @@
 
 import 'dart:async' as _i5;
 
-import 'package:estiminator/app/app_theme.dart' as _i6;
-import 'package:estiminator/app/auth/auth_state_model.dart' as _i2;
-import 'package:estiminator/app/auth/auth_store.dart' as _i4;
+import 'package:estiminator/auth/presentation/auth_state_model.dart' as _i2;
+import 'package:estiminator/auth/presentation/auth_store.dart' as _i4;
+import 'package:estiminator/core/persentation/app_theme.dart' as _i6;
 import 'package:flutter/material.dart' as _i3;
 import 'package:mockito/mockito.dart' as _i1;
 

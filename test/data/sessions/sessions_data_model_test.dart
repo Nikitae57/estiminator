@@ -4,7 +4,7 @@ import 'package:estiminator/data/session/estimations/estimation_data_model.dart'
 import 'package:estiminator/data/session/scales/estimation_scale_data_model.dart';
 import 'package:estiminator/data/session/session_data_model.dart';
 import 'package:estiminator/data/session/tasks/task_data_model.dart';
-import 'package:estiminator/data/sessions_overview/sessions_data_model.dart';
+import 'package:estiminator/sessions_overview/data/models/sessions_data_model.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 const _SESSIONS_JSON = '''

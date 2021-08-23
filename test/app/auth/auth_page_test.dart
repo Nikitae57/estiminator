@@ -1,7 +1,7 @@
-import 'package:estiminator/app/app_theme.dart';
-import 'package:estiminator/app/auth/auth_page.dart';
-import 'package:estiminator/app/auth/auth_state_model.dart';
-import 'package:estiminator/app/auth/auth_store.dart';
+import 'package:estiminator/core/persentation/app_theme.dart';
+import 'package:estiminator/auth/presentation/auth_page.dart';
+import 'package:estiminator/auth/presentation/auth_state_model.dart';
+import 'package:estiminator/auth/presentation/auth_store.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
