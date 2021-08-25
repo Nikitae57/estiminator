@@ -104,7 +104,7 @@ class __$UserCredentialsDomainModelCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_UserCredentialsDomainModel implements _UserCredentialsDomainModel {
-  _$_UserCredentialsDomainModel({required this.uId});
+  const _$_UserCredentialsDomainModel({required this.uId});
 
   @override
   final String uId;
@@ -135,7 +135,7 @@ class _$_UserCredentialsDomainModel implements _UserCredentialsDomainModel {
 
 abstract class _UserCredentialsDomainModel
     implements UserCredentialsDomainModel {
-  factory _UserCredentialsDomainModel({required String uId}) =
+  const factory _UserCredentialsDomainModel({required String uId}) =
       _$_UserCredentialsDomainModel;
 
   @override

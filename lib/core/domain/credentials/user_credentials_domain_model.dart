@@ -4,5 +4,5 @@ part 'user_credentials_domain_model.freezed.dart';
 
 @freezed
 class UserCredentialsDomainModel with _$UserCredentialsDomainModel {
-  factory UserCredentialsDomainModel({required String uId}) = _UserCredentialsDomainModel;
+  const factory UserCredentialsDomainModel({required String uId}) = _UserCredentialsDomainModel;
 }
