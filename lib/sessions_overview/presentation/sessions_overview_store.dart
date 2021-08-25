@@ -44,7 +44,7 @@ abstract class _SessionOverviewStore with Store {
   );
 
   final GetSessionsOverviewUseCase _getSessionsOverviewUseCase;
-  final IUserCredentialsprovider _userCredentialsProvider;
+  final IUserCredentialsProvider _userCredentialsProvider;
 
   @observable
   ObservableFuture<String>? userNameFuture;

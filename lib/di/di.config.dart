@@ -62,7 +62,7 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
       () => _i16.CreateSessionUseCase(get<_i12.ICreateSessionService>()));
   gh.factory<_i17.CreateSessionS>(() => appDiModule.createSessionStore);
   gh.singleton<_i18.AppTheme>(appDiModule.appTheme);
-  gh.singleton<_i19.IUserCredentialsprovider>(
+  gh.singleton<_i19.IUserCredentialsProvider>(
       _i20.LocalUserCredentialsProvider());
   gh.singleton<_i15.Strings>(_i15.Strings());
   gh.singleton<_i21.AuthStore>(appDiModule.loginStore);
@@ -82,14 +82,14 @@ class _$AppDiModule extends _i23.AppDiModule {
       _i24.FirebaseSessionsOverviewService();
   @override
   _i21.AuthStore get loginStore =>
-      _i21.AuthStore(_getIt<_i19.IUserCredentialsprovider>());
+      _i21.AuthStore(_getIt<_i19.IUserCredentialsProvider>());
   @override
   _i22.SessionsOverviewStore get sessionsOverviewStore =>
       _i22.SessionsOverviewStore(_getIt<_i11.GetSessionsOverviewUseCase>(),
-          _getIt<_i19.IUserCredentialsprovider>());
+          _getIt<_i19.IUserCredentialsProvider>());
   @override
   _i25.CreateSessionMx get createSessionStore => _i25.CreateSessionMx(
       _getIt<_i10.GetEstimationScalesUseCase>(),
       _getIt<_i16.CreateSessionUseCase>(),
-      _getIt<_i19.IUserCredentialsprovider>());
+      _getIt<dynamic>());
 }

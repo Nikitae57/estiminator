@@ -12,7 +12,7 @@ abstract class _AuthStore with Store {
   _AuthStore(this._credentialsProvider);
 
   String _userName = '';
-  IUserCredentialsprovider _credentialsProvider;
+  IUserCredentialsProvider _credentialsProvider;
 
   @observable
   var _loginStateView = const AuthStateModel(
@@ -40,6 +40,10 @@ abstract class _AuthStore with Store {
 
   @action
   Future<void> onLogin() async {
+    if (_userName.trim().isEmpty) {
+      return;
+    }
+
     // I decided to not mess with propper auth so I use username as uId
     await _credentialsProvider.setUid(_userName);
 

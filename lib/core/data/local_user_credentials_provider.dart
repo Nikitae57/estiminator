@@ -2,8 +2,8 @@ import 'package:estiminator/core/domain/credentials/user_credentials_domain_mode
 import 'package:estiminator/core/domain/credentials/user_credentials_provider.dart';
 import 'package:injectable/injectable.dart';
 
-@Singleton(as: IUserCredentialsprovider)
-class LocalUserCredentialsProvider implements IUserCredentialsprovider {
+@Singleton(as: IUserCredentialsProvider)
+class LocalUserCredentialsProvider implements IUserCredentialsProvider {
   UserCredentialsDomainModel _credentials = UserCredentialsDomainModel(uId: '');
 
   @override
