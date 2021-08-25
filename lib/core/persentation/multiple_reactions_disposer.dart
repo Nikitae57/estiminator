@@ -19,8 +19,6 @@ class MultipleReactionsDisposer implements Disposable {
 
   @override
   FutureOr onDispose() {
-    _disposers.forEach((element) {
-      element.reaction.dispose();
-    });
+    _disposers.forEach((disposer) => disposer.call());
   }
 }

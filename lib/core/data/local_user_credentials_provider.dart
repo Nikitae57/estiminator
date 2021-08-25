@@ -4,7 +4,7 @@ import 'package:injectable/injectable.dart';
 
 @Singleton(as: IUserCredentialsProvider)
 class LocalUserCredentialsProvider implements IUserCredentialsProvider {
-  UserCredentialsDomainModel _credentials = UserCredentialsDomainModel(uId: '');
+  UserCredentialsDomainModel _credentials = const UserCredentialsDomainModel(uId: '');
 
   @override
   Future<UserCredentialsDomainModel> getUserCredentials() => Future.value(_credentials);
