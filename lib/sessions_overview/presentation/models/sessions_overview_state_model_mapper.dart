@@ -4,7 +4,6 @@ import 'package:estiminator/sessions_overview/presentation/models/sessions_overv
 import 'package:estiminator/core/domain/mapper.dart';
 import 'package:estiminator/sessions_overview/domain/session_overview_domain_model.dart';
 import 'package:estiminator/sessions_overview/domain/sessions_overview_domain_model.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:injectable/injectable.dart';
 
 SessionsOverviewStateModelMapper sessionsOverviewStateModelMapper = SessionsOverviewStateModelMapper(Strings());

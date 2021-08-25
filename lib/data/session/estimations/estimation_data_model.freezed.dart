@@ -21,10 +21,10 @@ class _$EstimationDataModelTearOff {
   const _$EstimationDataModelTearOff();
 
   _EstimationDataModel call(
-      {@JsonKey(name: 'value') required String estimationValue,
+      {@JsonKey(name: 'value') required String value,
       @JsonKey(name: 'creator_uid') required String creatorUid}) {
     return _EstimationDataModel(
-      estimationValue: estimationValue,
+      value: value,
       creatorUid: creatorUid,
     );
   }
@@ -40,7 +40,7 @@ const $EstimationDataModel = _$EstimationDataModelTearOff();
 /// @nodoc
 mixin _$EstimationDataModel {
   @JsonKey(name: 'value')
-  String get estimationValue => throw _privateConstructorUsedError;
+  String get value => throw _privateConstructorUsedError;
   @JsonKey(name: 'creator_uid')
   String get creatorUid => throw _privateConstructorUsedError;
 
@@ -56,7 +56,7 @@ abstract class $EstimationDataModelCopyWith<$Res> {
           EstimationDataModel value, $Res Function(EstimationDataModel) then) =
       _$EstimationDataModelCopyWithImpl<$Res>;
   $Res call(
-      {@JsonKey(name: 'value') String estimationValue,
+      {@JsonKey(name: 'value') String value,
       @JsonKey(name: 'creator_uid') String creatorUid});
 }
 
@@ -71,13 +71,13 @@ class _$EstimationDataModelCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? estimationValue = freezed,
+    Object? value = freezed,
     Object? creatorUid = freezed,
   }) {
     return _then(_value.copyWith(
-      estimationValue: estimationValue == freezed
-          ? _value.estimationValue
-          : estimationValue // ignore: cast_nullable_to_non_nullable
+      value: value == freezed
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
               as String,
       creatorUid: creatorUid == freezed
           ? _value.creatorUid
@@ -95,7 +95,7 @@ abstract class _$EstimationDataModelCopyWith<$Res>
       __$EstimationDataModelCopyWithImpl<$Res>;
   @override
   $Res call(
-      {@JsonKey(name: 'value') String estimationValue,
+      {@JsonKey(name: 'value') String value,
       @JsonKey(name: 'creator_uid') String creatorUid});
 }
 
@@ -112,13 +112,13 @@ class __$EstimationDataModelCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? estimationValue = freezed,
+    Object? value = freezed,
     Object? creatorUid = freezed,
   }) {
     return _then(_EstimationDataModel(
-      estimationValue: estimationValue == freezed
-          ? _value.estimationValue
-          : estimationValue // ignore: cast_nullable_to_non_nullable
+      value: value == freezed
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
               as String,
       creatorUid: creatorUid == freezed
           ? _value.creatorUid
@@ -131,8 +131,8 @@ class __$EstimationDataModelCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_EstimationDataModel implements _EstimationDataModel {
-  _$_EstimationDataModel(
-      {@JsonKey(name: 'value') required this.estimationValue,
+  const _$_EstimationDataModel(
+      {@JsonKey(name: 'value') required this.value,
       @JsonKey(name: 'creator_uid') required this.creatorUid});
 
   factory _$_EstimationDataModel.fromJson(Map<String, dynamic> json) =>
@@ -140,23 +140,22 @@ class _$_EstimationDataModel implements _EstimationDataModel {
 
   @override
   @JsonKey(name: 'value')
-  final String estimationValue;
+  final String value;
   @override
   @JsonKey(name: 'creator_uid')
   final String creatorUid;
 
   @override
   String toString() {
-    return 'EstimationDataModel(estimationValue: $estimationValue, creatorUid: $creatorUid)';
+    return 'EstimationDataModel(value: $value, creatorUid: $creatorUid)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _EstimationDataModel &&
-            (identical(other.estimationValue, estimationValue) ||
-                const DeepCollectionEquality()
-                    .equals(other.estimationValue, estimationValue)) &&
+            (identical(other.value, value) ||
+                const DeepCollectionEquality().equals(other.value, value)) &&
             (identical(other.creatorUid, creatorUid) ||
                 const DeepCollectionEquality()
                     .equals(other.creatorUid, creatorUid)));
@@ -165,7 +164,7 @@ class _$_EstimationDataModel implements _EstimationDataModel {
   @override
   int get hashCode =>
       runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(estimationValue) ^
+      const DeepCollectionEquality().hash(value) ^
       const DeepCollectionEquality().hash(creatorUid);
 
   @JsonKey(ignore: true)
@@ -181,8 +180,8 @@ class _$_EstimationDataModel implements _EstimationDataModel {
 }
 
 abstract class _EstimationDataModel implements EstimationDataModel {
-  factory _EstimationDataModel(
-          {@JsonKey(name: 'value') required String estimationValue,
+  const factory _EstimationDataModel(
+          {@JsonKey(name: 'value') required String value,
           @JsonKey(name: 'creator_uid') required String creatorUid}) =
       _$_EstimationDataModel;
 
@@ -191,7 +190,7 @@ abstract class _EstimationDataModel implements EstimationDataModel {
 
   @override
   @JsonKey(name: 'value')
-  String get estimationValue => throw _privateConstructorUsedError;
+  String get value => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'creator_uid')
   String get creatorUid => throw _privateConstructorUsedError;

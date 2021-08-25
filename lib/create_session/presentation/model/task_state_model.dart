@@ -1,4 +1,4 @@
-import 'package:estiminator/domain/create_session/create_session_task_domain_model.dart';
+import 'package:estiminator/create_session/domain/models/create_session_task_domain_model.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'task_state_model.freezed.dart';

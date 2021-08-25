@@ -1,8 +1,8 @@
 import 'package:estiminator/create_session/presentation/model/estimation_scale_state_model.dart';
 import 'package:estiminator/create_session/presentation/model/estimation_scales_state_model.dart';
 import 'package:estiminator/core/domain/mapper.dart';
-import 'package:estiminator/domain/create_session/estimation_scales_domain_model.dart';
-import 'package:estiminator/domain/session/estimation_scale_domain_model.dart';
+import 'package:estiminator/create_session/domain/models/estimation_scales_domain_model.dart';
+import 'package:estiminator/session/domain/model/estimation_scale_domain_model.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter/material.dart';
 

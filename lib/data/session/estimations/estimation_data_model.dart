@@ -5,11 +5,10 @@ part 'estimation_data_model.g.dart';
 
 @freezed
 class EstimationDataModel with _$EstimationDataModel {
-  factory EstimationDataModel({
-    @JsonKey(name: 'value') required String estimationValue,
+  const factory EstimationDataModel({
+    @JsonKey(name: 'value') required String value,
     @JsonKey(name: 'creator_uid') required String creatorUid,
   }) = _EstimationDataModel;
 
-  factory EstimationDataModel.fromJson(Map<String, dynamic> map) =>
-      _$EstimationDataModelFromJson(map);
+  factory EstimationDataModel.fromJson(Map<String, dynamic> map) => _$EstimationDataModelFromJson(map);
 }

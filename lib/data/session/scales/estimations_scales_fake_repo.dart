@@ -1,12 +1,12 @@
 import 'dart:math';
 
-import 'package:estiminator/domain/create_session/estimation_scales_domain_model.dart';
-import 'package:estiminator/domain/create_session/estimation_scales_repo.dart';
-import 'package:estiminator/domain/session/estimation_scale_domain_model.dart';
+import 'package:estiminator/create_session/domain/models/estimation_scales_domain_model.dart';
+import 'package:estiminator/create_session/domain/service/estimation_scales_service.dart';
+import 'package:estiminator/session/domain/model/estimation_scale_domain_model.dart';
 import 'package:injectable/injectable.dart';
 
-@Injectable(as: IEstimationScalesRepo)
-class EstimationScalesFakeRepo implements IEstimationScalesRepo {
+@Injectable(as: IEstimationScalesService)
+class EstimationScalesFakeRepo implements IEstimationScalesService {
   @override
   Future<EstimationScalesDomainModel> getScales() async {
     return Future.delayed(
@@ -21,11 +21,11 @@ class EstimationScalesFakeRepo implements IEstimationScalesRepo {
   }
 
   final _dataModel = EstimationScalesDomainModel(scales: [
-    EstimationScaleDomainModel(
+    const EstimationScaleDomainModel(
       name: 'Fibonacci',
       values: ['0', '1/2', '1', '2', '3', '5', '8', '13', '20', '40', '?'],
     ),
-    EstimationScaleDomainModel(
+    const EstimationScaleDomainModel(
       name: 'Simple',
       values: ['Small', 'Medium', 'Large', '?'],
     ),

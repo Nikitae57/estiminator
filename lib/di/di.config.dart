@@ -14,15 +14,16 @@ import '../core/domain/credentials/user_credentials_provider.dart' as _i19;
 import '../core/persentation/app_theme.dart' as _i18;
 import '../core/persentation/strings.dart' as _i15;
 import '../create_session/data/create_session_fake_service.dart' as _i13;
+import '../create_session/domain/service/create_session_service.dart' as _i12;
+import '../create_session/domain/service/estimation_scales_service.dart' as _i6;
+import '../create_session/domain/use_case/create_session_use_case.dart' as _i16;
+import '../create_session/domain/use_case/get_estimation_scales_use_case.dart'
+    as _i10;
 import '../create_session/presentation/store/mx_create_session.dart' as _i25;
 import '../create_session/presentation/store/s_create_session.dart' as _i17;
 import '../data/session/scales/estimations_scales_fake_repo.dart' as _i7;
-import '../domain/create_session/create_session_service.dart' as _i12;
-import '../domain/create_session/create_session_use_case.dart' as _i16;
-import '../domain/create_session/estimation_scales_repo.dart' as _i6;
-import '../domain/create_session/get_estimation_scales_use_case.dart' as _i10;
-import '../domain/session/get_session_use_case.dart' as _i4;
-import '../domain/session/session_repo.dart' as _i5;
+import '../session/domain/get_session_use_case.dart' as _i4;
+import '../session/domain/session_repo.dart' as _i5;
 import '../sessions_overview/data/firebase/session_overview_service.dart'
     as _i24;
 import '../sessions_overview/domain/get_sessions_overview_use_case.dart'
@@ -41,14 +42,15 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
   final gh = _i2.GetItHelper(get, environment, environmentFilter);
   final appDiModule = _$AppDiModule(get);
   gh.factory<_i3.AuthPage>(() => appDiModule.loginPage());
-  gh.factory<_i4.GetSessionUserCase>(
-      () => _i4.GetSessionUserCase(sessionRepo: get<_i5.ISessionRepo>()));
-  gh.factory<_i6.IEstimationScalesRepo>(() => _i7.EstimationScalesFakeRepo());
+  gh.factory<_i4.GetSessionUseCase>(
+      () => _i4.GetSessionUseCase(get<_i5.ISessionRepo>()));
+  gh.factory<_i6.IEstimationScalesService>(
+      () => _i7.EstimationScalesFakeRepo());
   gh.factory<_i8.ISessionsOverviewRepo>(
       () => appDiModule.firebaseSessionsOverviewService);
   gh.factory<_i9.SessionsOverviewPage>(() => appDiModule.sessionsPage());
-  gh.factory<_i10.GetEstimationScalesUseCase>(
-      () => _i10.GetEstimationScalesUseCase(get<_i6.IEstimationScalesRepo>()));
+  gh.factory<_i10.GetEstimationScalesUseCase>(() =>
+      _i10.GetEstimationScalesUseCase(get<_i6.IEstimationScalesService>()));
   gh.factory<_i11.GetSessionsOverviewUseCase>(() =>
       _i11.GetSessionsOverviewUseCase(
           sessionsRepo: get<_i8.ISessionsOverviewRepo>()));

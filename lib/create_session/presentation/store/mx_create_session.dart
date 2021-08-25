@@ -6,9 +6,9 @@ import 'package:estiminator/create_session/presentation/model/estimation_scales_
 import 'package:estiminator/create_session/presentation/model/scales_state_model_mapper.dart';
 import 'package:estiminator/create_session/presentation/model/task_state_model.dart';
 import 'package:estiminator/create_session/presentation/store/s_create_session.dart';
-import 'package:estiminator/domain/create_session/create_session_use_case.dart';
-import 'package:estiminator/domain/create_session/get_estimation_scales_use_case.dart';
-import 'package:estiminator/domain/create_session/create_session_domain_model.dart';
+import 'package:estiminator/create_session/domain/use_case/create_session_use_case.dart';
+import 'package:estiminator/create_session/domain/use_case/get_estimation_scales_use_case.dart';
+import 'package:estiminator/create_session/domain/models/create_session_domain_model.dart';
 import 'package:estiminator/core/domain/credentials/user_credentials_provider.dart';
 import 'package:mobx/mobx.dart';
 
