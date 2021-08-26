@@ -21,7 +21,7 @@ abstract class _CreateSessionMx with Store implements CreateSessionS {
 
   final GetEstimationScalesUseCase _getEstimationScalesUseCase;
   final CreateSessionUseCase _createSessionUseCase;
-  final IUserCredentialsprovider _userCredentialsprovider;
+  final IUserCredentialsProvider _userCredentialsprovider;
 
   @observable
   @override

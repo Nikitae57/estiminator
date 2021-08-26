@@ -91,5 +91,5 @@ class _$AppDiModule extends _i23.AppDiModule {
   _i25.CreateSessionMx get createSessionStore => _i25.CreateSessionMx(
       _getIt<_i10.GetEstimationScalesUseCase>(),
       _getIt<_i16.CreateSessionUseCase>(),
-      _getIt<dynamic>());
+      _getIt<_i19.IUserCredentialsProvider>());
 }
