@@ -5,7 +5,7 @@ part 'create_session_domain_model.freezed.dart';
 
 @freezed
 class CreateSessionDomainModel with _$CreateSessionDomainModel {
-  factory CreateSessionDomainModel({
+  const factory CreateSessionDomainModel({
     required String creatorUid,
     required String sessionTitle,
     required String scaleName,

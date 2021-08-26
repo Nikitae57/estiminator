@@ -152,7 +152,7 @@ class __$CreateSessionDomainModelCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_CreateSessionDomainModel implements _CreateSessionDomainModel {
-  _$_CreateSessionDomainModel(
+  const _$_CreateSessionDomainModel(
       {required this.creatorUid,
       required this.sessionTitle,
       required this.scaleName,
@@ -205,7 +205,7 @@ class _$_CreateSessionDomainModel implements _CreateSessionDomainModel {
 }
 
 abstract class _CreateSessionDomainModel implements CreateSessionDomainModel {
-  factory _CreateSessionDomainModel(
+  const factory _CreateSessionDomainModel(
           {required String creatorUid,
           required String sessionTitle,
           required String scaleName,
