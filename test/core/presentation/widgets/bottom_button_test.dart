@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:golden_toolkit/golden_toolkit.dart';
-import 'package:mockito/mockito.dart';
 
 import 'package:estiminator/core/persentation/widgets/bottom_button.dart';
-
-import '../../../mock_callback.dart';
 
 const _TEXT = 'Button text';
 
@@ -37,16 +34,16 @@ void main() {
     WHEN it is clicked
     THEN callback should be triggered
     ''', (tester) async {
-      final callback = MockCallback();
+      var triggeredCallback = false;
       await tester.pumpWidget(MaterialApp(
         home: BottomButton(
-          onPressed: callback,
+          onPressed: () => triggeredCallback = true,
         ),
       ));
 
       await tester.tap(find.byType(BottomButton));
 
-      verify(callback()).called(1);
+      expect(triggeredCallback, isTrue);
     });
   });
 }
