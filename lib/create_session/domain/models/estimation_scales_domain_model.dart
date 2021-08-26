@@ -5,7 +5,7 @@ part 'estimation_scales_domain_model.freezed.dart';
 
 @freezed
 class EstimationScalesDomainModel with _$EstimationScalesDomainModel {
-  factory EstimationScalesDomainModel({
+  const factory EstimationScalesDomainModel({
     required List<EstimationScaleDomainModel> scales,
   }) = _EstimationScalesDomainModel;
 }

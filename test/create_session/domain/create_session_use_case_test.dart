@@ -2,7 +2,6 @@ import 'package:estiminator/create_session/domain/models/create_session_domain_m
 import 'package:estiminator/create_session/domain/models/create_session_task_domain_model.dart';
 import 'package:estiminator/create_session/domain/service/create_session_service.dart';
 import 'package:estiminator/create_session/domain/use_case/create_session_use_case.dart';
-import 'package:estiminator/session/domain/model/task_domain_model.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';

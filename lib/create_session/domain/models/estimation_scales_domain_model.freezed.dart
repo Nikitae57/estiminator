@@ -108,7 +108,7 @@ class __$EstimationScalesDomainModelCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_EstimationScalesDomainModel implements _EstimationScalesDomainModel {
-  _$_EstimationScalesDomainModel({required this.scales});
+  const _$_EstimationScalesDomainModel({required this.scales});
 
   @override
   final List<EstimationScaleDomainModel> scales;
@@ -139,7 +139,7 @@ class _$_EstimationScalesDomainModel implements _EstimationScalesDomainModel {
 
 abstract class _EstimationScalesDomainModel
     implements EstimationScalesDomainModel {
-  factory _EstimationScalesDomainModel(
+  const factory _EstimationScalesDomainModel(
           {required List<EstimationScaleDomainModel> scales}) =
       _$_EstimationScalesDomainModel;
 

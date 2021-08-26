@@ -20,12 +20,12 @@ class EstimationScalesFakeRepo implements IEstimationScalesService {
     );
   }
 
-  final _dataModel = EstimationScalesDomainModel(scales: [
-    const EstimationScaleDomainModel(
+  final _dataModel = const EstimationScalesDomainModel(scales: [
+    EstimationScaleDomainModel(
       name: 'Fibonacci',
       values: ['0', '1/2', '1', '2', '3', '5', '8', '13', '20', '40', '?'],
     ),
-    const EstimationScaleDomainModel(
+    EstimationScaleDomainModel(
       name: 'Simple',
       values: ['Small', 'Medium', 'Large', '?'],
     ),

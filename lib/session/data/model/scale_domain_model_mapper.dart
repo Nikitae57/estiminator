@@ -1,4 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:estiminator/core/domain/mapper.dart';
 import 'package:estiminator/session/domain/model/estimation_scale_domain_model.dart';
 
