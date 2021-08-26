@@ -1,3 +1,3 @@
 bool nonEmptyValidator(String? input) {
-  return input?.isNotEmpty ?? false;
+  return input?.trim().isNotEmpty ?? false;
 }
