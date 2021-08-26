@@ -138,7 +138,7 @@ class __$EstimationScalesStateModelCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_EstimationScalesStateModel implements _EstimationScalesStateModel {
-  _$_EstimationScalesStateModel(
+  const _$_EstimationScalesStateModel(
       {required this.title, required this.iconData, required this.scales});
 
   @override
@@ -182,7 +182,7 @@ class _$_EstimationScalesStateModel implements _EstimationScalesStateModel {
 
 abstract class _EstimationScalesStateModel
     implements EstimationScalesStateModel {
-  factory _EstimationScalesStateModel(
+  const factory _EstimationScalesStateModel(
           {required String title,
           required IconData iconData,
           required List<EstimationScaleStateModel> scales}) =

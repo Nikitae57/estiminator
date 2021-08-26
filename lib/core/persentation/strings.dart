@@ -20,6 +20,9 @@ class SId {
   static const SESSIONS_OVERVIEW_FINISHED = 16;
   static const SESSIONS_OVERVIEW_OPEN = 17;
   static const SESSIONS_OVERVIEW_TASKS_NUMBER_LABEL = 18;
+  static const SCALES_TITLE = 19;
+  static const SCALE_NAME_FIBONACCI = 20;
+  static const SCALE_NAME_SIMPLE = 21;
 }
 
 @singleton
@@ -44,6 +47,9 @@ class Strings {
     SId.SESSIONS_OVERVIEW_FINISHED: 'finished',
     SId.SESSIONS_OVERVIEW_OPEN: 'open',
     SId.SESSIONS_OVERVIEW_TASKS_NUMBER_LABEL: 'task(s)',
+    SId.SCALE_NAME_FIBONACCI: 'fibonacci',
+    SId.SCALE_NAME_SIMPLE: 'simple',
+    SId.SCALES_TITLE: 'Pick a scale you like ❤️',
   };
 
   String get(int id) {

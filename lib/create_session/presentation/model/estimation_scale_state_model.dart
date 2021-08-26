@@ -5,7 +5,7 @@ part 'estimation_scale_state_model.freezed.dart';
 
 @freezed
 class EstimationScaleStateModel with _$EstimationScaleStateModel {
-  factory EstimationScaleStateModel({
+  const factory EstimationScaleStateModel({
     required String name,
     required List<String> values,
     required IconData? iconData,

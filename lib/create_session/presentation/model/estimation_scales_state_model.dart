@@ -6,14 +6,14 @@ part 'estimation_scales_state_model.freezed.dart';
 
 @freezed
 class EstimationScalesStateModel with _$EstimationScalesStateModel {
-  factory EstimationScalesStateModel({
+  const factory EstimationScalesStateModel({
     required String title,
     required IconData iconData,
     required List<EstimationScaleStateModel> scales,
   }) = _EstimationScalesStateModel;
 
   static EstimationScalesStateModel empty() {
-    return EstimationScalesStateModel(
+    return const EstimationScalesStateModel(
       title: '',
       iconData: Icons.ac_unit,
       scales: [],
