@@ -2,6 +2,6 @@ import 'package:estiminator/session/domain/model/estimation_scale_domain_model.d
 import 'package:estiminator/session/domain/model/session_domain_model.dart';
 
 abstract class ISessionRepo {
-  Stream<SessionDomainModel> getSessionStream(String id);
+  Stream<SessionDomainModel> getSessionStream(String sessionId);
   Future<EstimationScaleDomainModel> getScale({required String sessionId});
 }

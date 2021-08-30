@@ -39,6 +39,41 @@ mixin _$DataInput<T> on _DataInput<T>, Store {
     });
   }
 
+  final _$_DataInputActionController = ActionController(name: '_DataInput');
+
+  @override
+  void set(T? value) {
+    final _$actionInfo =
+        _$_DataInputActionController.startAction(name: '_DataInput.set');
+    try {
+      return super.set(value);
+    } finally {
+      _$_DataInputActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
+  void validate() {
+    final _$actionInfo =
+        _$_DataInputActionController.startAction(name: '_DataInput.validate');
+    try {
+      return super.validate();
+    } finally {
+      _$_DataInputActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
+  void clear() {
+    final _$actionInfo =
+        _$_DataInputActionController.startAction(name: '_DataInput.clear');
+    try {
+      return super.clear();
+    } finally {
+      _$_DataInputActionController.endAction(_$actionInfo);
+    }
+  }
+
   @override
   String toString() {
     return '''

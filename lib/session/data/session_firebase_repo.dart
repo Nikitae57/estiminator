@@ -18,15 +18,18 @@ class SessionFirebaseRepo implements ISessionRepo {
   final SessionDomainModelMapper _sessionDomainModelMapper;
   final EstimationScaleDomainModelMapper _estimationScaleDomainModelMapper;
 
+  /// Gets stream of session where [sessionId] is a document path
   @override
-  Stream<SessionDomainModel> getSessionStream(String id) {
+  Stream<SessionDomainModel> getSessionStream(String sessionId) {
     final firestore = FirebaseFirestore.instance;
-    return firestore.collection(_SESSIONS_COLLECTION_NAME).doc(id).snapshots().map((sessionDoc) {
+    return firestore.collection(_SESSIONS_COLLECTION_NAME).doc(sessionId).snapshots().map((sessionDoc) {
       final sessionDataModel = SessionDataModel(id: sessionDoc.reference.path, json: sessionDoc.data()!);
       return _sessionDomainModelMapper.map(sessionDataModel);
     });
   }
 
+  /// Gets scale for a session
+  /// [sessionId] in case of firebase is document path
   @override
   Future<EstimationScaleDomainModel> getScale({required String sessionId}) async {
     final firestore = FirebaseFirestore.instance;

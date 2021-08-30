@@ -49,7 +49,7 @@ class _CreateSessionPageState extends State<CreateSessionPage> {
     reaction((_) => widget._store.createdSession, (createdSession) {
       Modular.to.pushNamedAndRemoveUntil(
         SessionsOverviewPage.route,
-        ModalRoute.withName(SessionsOverviewPage.route),
+        (_) => false,
       );
     }).also(multiDisposer.add);
   }

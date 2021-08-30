@@ -6,7 +6,7 @@ import 'package:injectable/injectable.dart';
 class GetEstimationScalesUseCase {
   GetEstimationScalesUseCase(this._estimationScalesRepo);
 
-  final IEstimationScalesService _estimationScalesRepo;
+  final IEstimationScalesRepo _estimationScalesRepo;
 
   Future<EstimationScalesDomainModel> getScales() => _estimationScalesRepo.getScales();
 }

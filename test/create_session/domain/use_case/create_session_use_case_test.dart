@@ -20,9 +20,9 @@ const _CREATE_SESSION_DOMAIN_MODEL = CreateSessionDomainModel(
   tasks: tasks,
 );
 
-@GenerateMocks([ICreateSessionService])
+@GenerateMocks([ICreateSessionRepo])
 void main() {
-  final createSessionService = MockICreateSessionService();
+  final createSessionService = MockICreateSessionRepo();
   group('CreateSessionUseCase tests -', () {
     test('''
     GIVEN service fails

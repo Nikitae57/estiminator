@@ -5,11 +5,9 @@ import 'package:estiminator/create_session/domain/models/create_session_domain_m
 import 'package:estiminator/create_session/domain/service/create_session_service.dart';
 import 'package:estiminator/sessions_overview/domain/session_overview_domain_model.dart';
 import 'package:estiminator/sessions_overview/domain/sessions_overview_repo.dart';
-import 'package:injectable/injectable.dart';
 
-@Injectable(as: ICreateSessionService)
-class CreateSessionFakeService implements ICreateSessionService {
-  CreateSessionFakeService(this.fakeSessionsOverviewRepo);
+class CreateSessionFakeRepo implements ICreateSessionRepo {
+  CreateSessionFakeRepo(this.fakeSessionsOverviewRepo);
 
   final ISessionsOverviewRepo fakeSessionsOverviewRepo;
 
@@ -18,6 +16,7 @@ class CreateSessionFakeService implements ICreateSessionService {
     await Future<void>.delayed(Duration(milliseconds: Random().nextInt(2000)));
 
     final sessionOverviewDomainModel = SessionOverviewDomainModel(
+      id: Random().nextDouble().toString(),
       title: createSessionDomainModel.sessionTitle,
       isFinished: false,
       numTasks: createSessionDomainModel.tasks.length,

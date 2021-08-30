@@ -18,12 +18,12 @@ import 'package:mockito/mockito.dart' as _i1;
 // ignore_for_file: prefer_const_constructors
 // ignore_for_file: unnecessary_parenthesis
 
-/// A class which mocks [ICreateSessionService].
+/// A class which mocks [ICreateSessionRepo].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockICreateSessionService extends _i1.Mock
-    implements _i2.ICreateSessionService {
-  MockICreateSessionService() {
+class MockICreateSessionRepo extends _i1.Mock
+    implements _i2.ICreateSessionRepo {
+  MockICreateSessionRepo() {
     _i1.throwOnMissingStub(this);
   }
 

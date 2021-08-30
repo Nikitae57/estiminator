@@ -6,7 +6,7 @@ import 'package:injectable/injectable.dart';
 class CreateSessionUseCase {
   CreateSessionUseCase(this._createSessionService);
 
-  final ICreateSessionService _createSessionService;
+  final ICreateSessionRepo _createSessionService;
 
   Future<void> createSession(CreateSessionDomainModel createSessionDomainModel) =>
       _createSessionService.createSession(createSessionDomainModel);

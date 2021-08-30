@@ -65,9 +65,11 @@ class CreateSessionPageContent extends StatelessWidget {
               ),
             ),
             SizedBox(height: _theme.defaultMargin),
+
+            /// Create session button
             Observer(builder: (context) {
               return AnimatedOpacity(
-                opacity: _store.tasks.isNotEmpty ? 1.0 : 0.0,
+                opacity: _store.tasks.isNotEmpty && _store.sessionTitle.value?.isNotEmpty == true ? 1.0 : 0.0,
                 duration: _theme.fadeAnimationDuration,
                 child: BottomButton(
                   borderRadius: _theme.defaultBorderRadius,

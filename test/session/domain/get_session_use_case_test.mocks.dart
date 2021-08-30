@@ -31,8 +31,8 @@ class MockISessionRepo extends _i1.Mock implements _i3.ISessionRepo {
   }
 
   @override
-  _i4.Stream<_i5.SessionDomainModel> getSessionStream(String? id) =>
-      (super.noSuchMethod(Invocation.method(#getSessionStream, [id]),
+  _i4.Stream<_i5.SessionDomainModel> getSessionStream(String? sessionId) =>
+      (super.noSuchMethod(Invocation.method(#getSessionStream, [sessionId]),
               returnValue: Stream<_i5.SessionDomainModel>.empty())
           as _i4.Stream<_i5.SessionDomainModel>);
   @override

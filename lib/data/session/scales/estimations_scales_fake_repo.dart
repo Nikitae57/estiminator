@@ -3,10 +3,8 @@ import 'dart:math';
 import 'package:estiminator/create_session/domain/models/estimation_scales_domain_model.dart';
 import 'package:estiminator/create_session/domain/service/estimation_scales_service.dart';
 import 'package:estiminator/session/domain/model/estimation_scale_domain_model.dart';
-import 'package:injectable/injectable.dart';
 
-@Injectable(as: IEstimationScalesService)
-class EstimationScalesFakeRepo implements IEstimationScalesService {
+class EstimationScalesFakeRepo implements IEstimationScalesRepo {
   @override
   Future<EstimationScalesDomainModel> getScales() async {
     return Future.delayed(

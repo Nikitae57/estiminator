@@ -60,9 +60,12 @@ class PlatformPicker extends StatelessWidget {
           _onChanged!(selectedItem);
         },
         childCount: _items?.length ?? 0,
-        itemBuilder: (context, index) => Text(
-          _items![index],
-          style: theme.textTheme.bodyText1,
+        itemBuilder: (context, index) => Center(
+          child: Text(
+            _items![index],
+            style: theme.textTheme.bodyText1,
+            textAlign: TextAlign.center,
+          ),
         ),
         backgroundColor: theme.primaryColor,
       ),

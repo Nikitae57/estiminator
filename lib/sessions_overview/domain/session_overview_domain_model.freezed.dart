@@ -17,11 +17,13 @@ class _$SessionOverviewDomainModelTearOff {
   const _$SessionOverviewDomainModelTearOff();
 
   _SessionOverviewDomainModel call(
-      {required String title,
-      @JsonKey(name: 'is_finished') required bool isFinished,
-      @JsonKey(name: 'num_tasks') required int numTasks,
-      @JsonKey(name: 'creator_uid') required String creatorUid}) {
+      {required String id,
+      required String title,
+      required bool isFinished,
+      required int numTasks,
+      required String creatorUid}) {
     return _SessionOverviewDomainModel(
+      id: id,
       title: title,
       isFinished: isFinished,
       numTasks: numTasks,
@@ -35,12 +37,10 @@ const $SessionOverviewDomainModel = _$SessionOverviewDomainModelTearOff();
 
 /// @nodoc
 mixin _$SessionOverviewDomainModel {
+  String get id => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
-  @JsonKey(name: 'is_finished')
   bool get isFinished => throw _privateConstructorUsedError;
-  @JsonKey(name: 'num_tasks')
   int get numTasks => throw _privateConstructorUsedError;
-  @JsonKey(name: 'creator_uid')
   String get creatorUid => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -54,10 +54,11 @@ abstract class $SessionOverviewDomainModelCopyWith<$Res> {
           $Res Function(SessionOverviewDomainModel) then) =
       _$SessionOverviewDomainModelCopyWithImpl<$Res>;
   $Res call(
-      {String title,
-      @JsonKey(name: 'is_finished') bool isFinished,
-      @JsonKey(name: 'num_tasks') int numTasks,
-      @JsonKey(name: 'creator_uid') String creatorUid});
+      {String id,
+      String title,
+      bool isFinished,
+      int numTasks,
+      String creatorUid});
 }
 
 /// @nodoc
@@ -71,12 +72,17 @@ class _$SessionOverviewDomainModelCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object? id = freezed,
     Object? title = freezed,
     Object? isFinished = freezed,
     Object? numTasks = freezed,
     Object? creatorUid = freezed,
   }) {
     return _then(_value.copyWith(
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
       title: title == freezed
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -106,10 +112,11 @@ abstract class _$SessionOverviewDomainModelCopyWith<$Res>
       __$SessionOverviewDomainModelCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String title,
-      @JsonKey(name: 'is_finished') bool isFinished,
-      @JsonKey(name: 'num_tasks') int numTasks,
-      @JsonKey(name: 'creator_uid') String creatorUid});
+      {String id,
+      String title,
+      bool isFinished,
+      int numTasks,
+      String creatorUid});
 }
 
 /// @nodoc
@@ -126,12 +133,17 @@ class __$SessionOverviewDomainModelCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object? id = freezed,
     Object? title = freezed,
     Object? isFinished = freezed,
     Object? numTasks = freezed,
     Object? creatorUid = freezed,
   }) {
     return _then(_SessionOverviewDomainModel(
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
       title: title == freezed
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -156,32 +168,34 @@ class __$SessionOverviewDomainModelCopyWithImpl<$Res>
 
 class _$_SessionOverviewDomainModel implements _SessionOverviewDomainModel {
   _$_SessionOverviewDomainModel(
-      {required this.title,
-      @JsonKey(name: 'is_finished') required this.isFinished,
-      @JsonKey(name: 'num_tasks') required this.numTasks,
-      @JsonKey(name: 'creator_uid') required this.creatorUid});
+      {required this.id,
+      required this.title,
+      required this.isFinished,
+      required this.numTasks,
+      required this.creatorUid});
 
+  @override
+  final String id;
   @override
   final String title;
   @override
-  @JsonKey(name: 'is_finished')
   final bool isFinished;
   @override
-  @JsonKey(name: 'num_tasks')
   final int numTasks;
   @override
-  @JsonKey(name: 'creator_uid')
   final String creatorUid;
 
   @override
   String toString() {
-    return 'SessionOverviewDomainModel(title: $title, isFinished: $isFinished, numTasks: $numTasks, creatorUid: $creatorUid)';
+    return 'SessionOverviewDomainModel(id: $id, title: $title, isFinished: $isFinished, numTasks: $numTasks, creatorUid: $creatorUid)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _SessionOverviewDomainModel &&
+            (identical(other.id, id) ||
+                const DeepCollectionEquality().equals(other.id, id)) &&
             (identical(other.title, title) ||
                 const DeepCollectionEquality().equals(other.title, title)) &&
             (identical(other.isFinished, isFinished) ||
@@ -198,6 +212,7 @@ class _$_SessionOverviewDomainModel implements _SessionOverviewDomainModel {
   @override
   int get hashCode =>
       runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(id) ^
       const DeepCollectionEquality().hash(title) ^
       const DeepCollectionEquality().hash(isFinished) ^
       const DeepCollectionEquality().hash(numTasks) ^
@@ -213,22 +228,21 @@ class _$_SessionOverviewDomainModel implements _SessionOverviewDomainModel {
 abstract class _SessionOverviewDomainModel
     implements SessionOverviewDomainModel {
   factory _SessionOverviewDomainModel(
-          {required String title,
-          @JsonKey(name: 'is_finished') required bool isFinished,
-          @JsonKey(name: 'num_tasks') required int numTasks,
-          @JsonKey(name: 'creator_uid') required String creatorUid}) =
-      _$_SessionOverviewDomainModel;
+      {required String id,
+      required String title,
+      required bool isFinished,
+      required int numTasks,
+      required String creatorUid}) = _$_SessionOverviewDomainModel;
 
+  @override
+  String get id => throw _privateConstructorUsedError;
   @override
   String get title => throw _privateConstructorUsedError;
   @override
-  @JsonKey(name: 'is_finished')
   bool get isFinished => throw _privateConstructorUsedError;
   @override
-  @JsonKey(name: 'num_tasks')
   int get numTasks => throw _privateConstructorUsedError;
   @override
-  @JsonKey(name: 'creator_uid')
   String get creatorUid => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)

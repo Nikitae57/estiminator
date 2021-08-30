@@ -19,9 +19,9 @@ const _ESTIMATION_SCALES_DOMAIN_MODEL = EstimationScalesDomainModel(scales: [
   EstimationScaleDomainModel(name: _NAME_2, values: _VALUES_2),
 ]);
 
-@GenerateMocks([IEstimationScalesService])
+@GenerateMocks([IEstimationScalesRepo])
 void main() {
-  final scalesRepo = MockIEstimationScalesService();
+  final scalesRepo = MockIEstimationScalesRepo();
   final error = Exception();
 
   group('GetEstimationScalesUseCase tests -', () {

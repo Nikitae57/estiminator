@@ -34,20 +34,23 @@ class TaskCreationCard extends StatelessWidget {
             ConstrainedBox(
               constraints: const BoxConstraints(maxHeight: 200),
               child: Observer(builder: (context) {
-                return RawScrollbar(
-                  thickness: 2,
-                  thumbColor: _theme.theme.accentColor,
-                  child: ListView.builder(
-                      shrinkWrap: true,
-                      itemCount: _store.tasks.length,
-                      itemBuilder: (context, index) {
-                        return TaskListItem(
-                          theme: _theme,
-                          strings: _strings,
-                          taskStateModel: _store.tasks[index],
-                        );
-                      }),
-                );
+                return _store.tasks.isEmpty
+                    ? const SizedBox()
+                    : RawScrollbar(
+                        thickness: 2,
+                        thumbColor: _theme.theme.accentColor,
+                        child: ListView.builder(
+                          shrinkWrap: true,
+                          itemCount: _store.tasks.length,
+                          itemBuilder: (context, index) {
+                            return TaskListItem(
+                              theme: _theme,
+                              strings: _strings,
+                              taskStateModel: _store.tasks[index],
+                            );
+                          },
+                        ),
+                      );
               }),
             ),
             ElevatedButton(

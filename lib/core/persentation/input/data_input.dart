@@ -18,12 +18,15 @@ abstract class _DataInput<T> with Store implements Input<T?> {
   @override
   bool? isValid;
 
+  @action
   @override
   void set(T? value) => this.value = value;
 
+  @action
   @override
   void validate() => isValid = _validator?.call(value) ?? true;
 
+  @action
   @override
   void clear() {
     value = null;

@@ -21,12 +21,12 @@ import 'package:mockito/mockito.dart' as _i1;
 class _FakeEstimationScalesDomainModel_0 extends _i1.Fake
     implements _i2.EstimationScalesDomainModel {}
 
-/// A class which mocks [IEstimationScalesService].
+/// A class which mocks [IEstimationScalesRepo].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockIEstimationScalesService extends _i1.Mock
-    implements _i3.IEstimationScalesService {
-  MockIEstimationScalesService() {
+class MockIEstimationScalesRepo extends _i1.Mock
+    implements _i3.IEstimationScalesRepo {
+  MockIEstimationScalesRepo() {
     _i1.throwOnMissingStub(this);
   }
 

@@ -30,7 +30,6 @@ class SessionsOverviewPage extends StatefulWidget {
 class _SessionsOverviewPageState extends State<SessionsOverviewPage> {
   @override
   void initState() {
-    print('sdfsdf');
     super.initState();
     WidgetsBinding.instance?.addPostFrameCallback((_) {
       widget._store.loadSessions();
