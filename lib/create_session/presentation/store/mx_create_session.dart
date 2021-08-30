@@ -17,11 +17,13 @@ part 'mx_create_session.g.dart';
 class CreateSessionMx = _CreateSessionMx with _$CreateSessionMx;
 
 abstract class _CreateSessionMx with Store implements CreateSessionS {
-  _CreateSessionMx(this._getEstimationScalesUseCase, this._createSessionUseCase, this._userCredentialsprovider);
+  _CreateSessionMx(this._getEstimationScalesUseCase, this._createSessionUseCase, this._userCredentialsprovider,
+      this._scalesStateModelMapper);
 
   final GetEstimationScalesUseCase _getEstimationScalesUseCase;
   final CreateSessionUseCase _createSessionUseCase;
   final IUserCredentialsProvider _userCredentialsprovider;
+  final EstimationScalesStateModelMapper _scalesStateModelMapper;
 
   @observable
   @override
@@ -60,10 +62,11 @@ abstract class _CreateSessionMx with Store implements CreateSessionS {
   @override
   Future<void> loadScales() async {
     estimationScalesFuture = ObservableFuture(
-      _getEstimationScalesUseCase.getScales().then(estimationScalesStateModelMapper.map).then(
+      _getEstimationScalesUseCase.getScales().then(_scalesStateModelMapper.map).then(
         (value) {
           _scalesStateModel = value;
           scale.set(value.scales[0]);
+          print('in then');
           return value;
         },
       ),
@@ -105,7 +108,7 @@ abstract class _CreateSessionMx with Store implements CreateSessionS {
   Future<CreateSessionDomainModel?> _getCreateSessionDomainModel() async {
     sessionTitle.validate();
 
-    if (scale.value == null || !(sessionTitle.isValid ?? false)) {
+    if (scale.value == null || !(sessionTitle.isValid ?? false) || tasks.isEmpty) {
       return null;
     }
 

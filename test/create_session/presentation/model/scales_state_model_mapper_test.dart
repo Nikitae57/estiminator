@@ -14,15 +14,15 @@ const _VALUES = ['1', '2', '3'];
 const _VALUES_1 = ['4', '5', '6'];
 const _VALUES_2 = ['7', '8', '9'];
 
+const _TITLE = 'title';
+const _FIBONACCI = 'fib';
+const _SIMPLE = 'simple';
+
 const _ESTIMATION_SCALES_DOMAIN_MODEL = EstimationScalesDomainModel(scales: [
   EstimationScaleDomainModel(name: _FIBONACCI, values: _VALUES),
   EstimationScaleDomainModel(name: _FIBONACCI, values: _VALUES_1),
   EstimationScaleDomainModel(name: _SIMPLE, values: _VALUES_2),
 ]);
-
-const _TITLE = 'title';
-const _FIBONACCI = 'fib';
-const _SIMPLE = 'simple';
 
 const _ESTIMATION_SCALES_STATE_MODEL = EstimationScalesStateModel(
   title: _TITLE,

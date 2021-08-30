@@ -33,7 +33,7 @@ void main() {
       when(scalesRepo.getScales()).thenAnswer((_) => Future.error(error));
       final useCase = GetEstimationScalesUseCase(scalesRepo);
 
-      expectLater(() => useCase.getScales(), throwsA(equals(error)));
+      expect(() => useCase.getScales(), throwsA(equals(error)));
     });
 
     test('''

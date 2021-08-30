@@ -6,9 +6,11 @@ import 'package:estiminator/create_session/domain/models/estimation_scales_domai
 import 'package:estiminator/session/domain/model/estimation_scale_domain_model.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter/material.dart';
+import 'package:injectable/injectable.dart';
 
 EstimationScalesStateModelMapper estimationScalesStateModelMapper = EstimationScalesStateModelMapper(Strings());
 
+@injectable
 class EstimationScalesStateModelMapper implements Mapper<EstimationScalesDomainModel, EstimationScalesStateModel> {
   EstimationScalesStateModelMapper(this._strings);
 
