@@ -1,4 +1,4 @@
-import 'package:estiminator/data/session/estimations/estimation_data_model.dart';
+import 'package:estiminator/session/data/model/estimation_data_model.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'task_data_model.freezed.dart';
@@ -14,6 +14,5 @@ class TaskDataModel with _$TaskDataModel {
     required List<EstimationDataModel> estimations,
   }) = _TaskDataModel;
 
-  factory TaskDataModel.fromJson(Map<String, dynamic> map) =>
-      _$TaskDataModelFromJson(map);
+  factory TaskDataModel.fromJson(Map<String, dynamic> map) => _$TaskDataModelFromJson(map);
 }

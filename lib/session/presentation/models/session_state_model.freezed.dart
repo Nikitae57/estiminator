@@ -17,11 +17,8 @@ class _$SessionStateModelTearOff {
   const _$SessionStateModelTearOff();
 
   _SessionStateModel call(
-      {required String sessionId,
-      required String sessionTitle,
-      required String creatorName}) {
+      {required String sessionTitle, required String creatorName}) {
     return _SessionStateModel(
-      sessionId: sessionId,
       sessionTitle: sessionTitle,
       creatorName: creatorName,
     );
@@ -33,7 +30,6 @@ const $SessionStateModel = _$SessionStateModelTearOff();
 
 /// @nodoc
 mixin _$SessionStateModel {
-  String get sessionId => throw _privateConstructorUsedError;
   String get sessionTitle => throw _privateConstructorUsedError;
   String get creatorName => throw _privateConstructorUsedError;
 
@@ -47,7 +43,7 @@ abstract class $SessionStateModelCopyWith<$Res> {
   factory $SessionStateModelCopyWith(
           SessionStateModel value, $Res Function(SessionStateModel) then) =
       _$SessionStateModelCopyWithImpl<$Res>;
-  $Res call({String sessionId, String sessionTitle, String creatorName});
+  $Res call({String sessionTitle, String creatorName});
 }
 
 /// @nodoc
@@ -61,15 +57,10 @@ class _$SessionStateModelCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? sessionId = freezed,
     Object? sessionTitle = freezed,
     Object? creatorName = freezed,
   }) {
     return _then(_value.copyWith(
-      sessionId: sessionId == freezed
-          ? _value.sessionId
-          : sessionId // ignore: cast_nullable_to_non_nullable
-              as String,
       sessionTitle: sessionTitle == freezed
           ? _value.sessionTitle
           : sessionTitle // ignore: cast_nullable_to_non_nullable
@@ -89,7 +80,7 @@ abstract class _$SessionStateModelCopyWith<$Res>
           _SessionStateModel value, $Res Function(_SessionStateModel) then) =
       __$SessionStateModelCopyWithImpl<$Res>;
   @override
-  $Res call({String sessionId, String sessionTitle, String creatorName});
+  $Res call({String sessionTitle, String creatorName});
 }
 
 /// @nodoc
@@ -105,15 +96,10 @@ class __$SessionStateModelCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? sessionId = freezed,
     Object? sessionTitle = freezed,
     Object? creatorName = freezed,
   }) {
     return _then(_SessionStateModel(
-      sessionId: sessionId == freezed
-          ? _value.sessionId
-          : sessionId // ignore: cast_nullable_to_non_nullable
-              as String,
       sessionTitle: sessionTitle == freezed
           ? _value.sessionTitle
           : sessionTitle // ignore: cast_nullable_to_non_nullable
@@ -128,15 +114,9 @@ class __$SessionStateModelCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SessionStateModel extends _SessionStateModel {
-  _$_SessionStateModel(
-      {required this.sessionId,
-      required this.sessionTitle,
-      required this.creatorName})
-      : super._();
+class _$_SessionStateModel implements _SessionStateModel {
+  _$_SessionStateModel({required this.sessionTitle, required this.creatorName});
 
-  @override
-  final String sessionId;
   @override
   final String sessionTitle;
   @override
@@ -144,16 +124,13 @@ class _$_SessionStateModel extends _SessionStateModel {
 
   @override
   String toString() {
-    return 'SessionStateModel(sessionId: $sessionId, sessionTitle: $sessionTitle, creatorName: $creatorName)';
+    return 'SessionStateModel(sessionTitle: $sessionTitle, creatorName: $creatorName)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _SessionStateModel &&
-            (identical(other.sessionId, sessionId) ||
-                const DeepCollectionEquality()
-                    .equals(other.sessionId, sessionId)) &&
             (identical(other.sessionTitle, sessionTitle) ||
                 const DeepCollectionEquality()
                     .equals(other.sessionTitle, sessionTitle)) &&
@@ -165,7 +142,6 @@ class _$_SessionStateModel extends _SessionStateModel {
   @override
   int get hashCode =>
       runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(sessionId) ^
       const DeepCollectionEquality().hash(sessionTitle) ^
       const DeepCollectionEquality().hash(creatorName);
 
@@ -175,15 +151,11 @@ class _$_SessionStateModel extends _SessionStateModel {
       __$SessionStateModelCopyWithImpl<_SessionStateModel>(this, _$identity);
 }
 
-abstract class _SessionStateModel extends SessionStateModel {
+abstract class _SessionStateModel implements SessionStateModel {
   factory _SessionStateModel(
-      {required String sessionId,
-      required String sessionTitle,
+      {required String sessionTitle,
       required String creatorName}) = _$_SessionStateModel;
-  _SessionStateModel._() : super._();
 
-  @override
-  String get sessionId => throw _privateConstructorUsedError;
   @override
   String get sessionTitle => throw _privateConstructorUsedError;
   @override

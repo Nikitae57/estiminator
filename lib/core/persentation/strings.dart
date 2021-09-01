@@ -23,6 +23,8 @@ class SId {
   static const SCALES_TITLE = 19;
   static const SCALE_NAME_FIBONACCI = 20;
   static const SCALE_NAME_SIMPLE = 21;
+  static const SESSION_REESTIMATE = 22;
+  static const SESSION_ESTIMATE = 23;
 }
 
 @singleton
@@ -50,6 +52,8 @@ class Strings {
     SId.SCALE_NAME_FIBONACCI: 'fibonacci',
     SId.SCALE_NAME_SIMPLE: 'simple',
     SId.SCALES_TITLE: 'Pick a scale you like ❤️',
+    SId.SESSION_REESTIMATE: 'REESTIMATE',
+    SId.SESSION_ESTIMATE: 'ESTIMATE',
   };
 
   String get(int id) {

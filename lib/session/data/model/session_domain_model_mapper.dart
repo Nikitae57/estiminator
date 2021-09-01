@@ -1,6 +1,6 @@
 import 'package:estiminator/core/domain/mapper.dart';
-import 'package:estiminator/data/session/estimations/estimation_data_model.dart';
-import 'package:estiminator/data/session/tasks/task_data_model.dart';
+import 'package:estiminator/session/data/model/estimation_data_model.dart';
+import 'package:estiminator/session/data/model/task_data_model.dart';
 import 'package:estiminator/session/data/model/session_data_model.dart';
 import 'package:estiminator/session/domain/model/estimation_domain_model.dart';
 import 'package:estiminator/session/domain/model/session_domain_model.dart';

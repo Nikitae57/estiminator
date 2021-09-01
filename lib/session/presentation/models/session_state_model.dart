@@ -5,10 +5,7 @@ part 'session_state_model.freezed.dart';
 @freezed
 class SessionStateModel with _$SessionStateModel {
   factory SessionStateModel({
-    required String sessionId,
     required String sessionTitle,
     required String creatorName,
   }) = _SessionStateModel;
-
-  SessionStateModel._();
 }

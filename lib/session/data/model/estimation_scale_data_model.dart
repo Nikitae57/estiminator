@@ -10,6 +10,5 @@ class EstimationScaleDataModel with _$EstimationScaleDataModel {
     required List<String> values,
   }) = _EstimationScaleDataModel;
 
-  factory EstimationScaleDataModel.fromJson(Map<String, dynamic> map) =>
-      _$EstimationScaleDataModelFromJson(map);
+  factory EstimationScaleDataModel.fromJson(Map<String, dynamic> map) => _$EstimationScaleDataModelFromJson(map);
 }
