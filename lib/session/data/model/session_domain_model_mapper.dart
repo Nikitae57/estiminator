@@ -5,6 +5,7 @@ import 'package:estiminator/session/data/model/session_data_model.dart';
 import 'package:estiminator/session/domain/model/estimation_domain_model.dart';
 import 'package:estiminator/session/domain/model/session_domain_model.dart';
 import 'package:estiminator/session/domain/model/task_domain_model.dart';
+import 'package:injectable/injectable.dart';
 
 const String _SESSION_TITLE_FIELD = 'title';
 const String _SESSION_CREATOR_UID_FIELD = 'creator_uid';
@@ -12,6 +13,7 @@ const String _SESSION_CURRENT_TASK_INDEX_FIELD = 'current_task_index';
 const String _SESSION_IS_FINISHED_FIELD = 'is_finished';
 const String _SESSION_TASKS_FIELD = 'tasks';
 
+@injectable
 class SessionDomainModelMapper implements Mapper<SessionDataModel, SessionDomainModel> {
   const SessionDomainModelMapper();
 

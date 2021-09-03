@@ -28,7 +28,13 @@ class _FakeThemeData_1 extends _i1.Fake implements _i3.ThemeData {
 
 class _FakeDuration_2 extends _i1.Fake implements Duration {}
 
-class _FakeTextTheme_3 extends _i1.Fake implements _i3.TextTheme {
+class _FakeTextStyle_3 extends _i1.Fake implements _i3.TextStyle {
+  @override
+  String toString({_i3.DiagnosticLevel? minLevel = _i3.DiagnosticLevel.info}) =>
+      super.toString();
+}
+
+class _FakeTextTheme_4 extends _i1.Fake implements _i3.TextTheme {
   @override
   String toString({_i3.DiagnosticLevel? minLevel = _i3.DiagnosticLevel.info}) =>
       super.toString();
@@ -99,9 +105,17 @@ class MockAppTheme extends _i1.Mock implements _i6.AppTheme {
       (super.noSuchMethod(Invocation.getter(#bottomButtonHeight),
           returnValue: 0.0) as double);
   @override
+  _i3.TextStyle get textStyleBody1Link =>
+      (super.noSuchMethod(Invocation.getter(#textStyleBody1Link),
+          returnValue: _FakeTextStyle_3()) as _i3.TextStyle);
+  @override
+  _i3.TextStyle get textStyleBody1Thin =>
+      (super.noSuchMethod(Invocation.getter(#textStyleBody1Thin),
+          returnValue: _FakeTextStyle_3()) as _i3.TextStyle);
+  @override
   _i3.TextTheme get textTheme =>
       (super.noSuchMethod(Invocation.getter(#textTheme),
-          returnValue: _FakeTextTheme_3()) as _i3.TextTheme);
+          returnValue: _FakeTextTheme_4()) as _i3.TextTheme);
   @override
   String toString() => super.toString();
 }

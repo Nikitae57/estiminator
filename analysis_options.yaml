@@ -45,6 +45,7 @@ analyzer:
     - "**/*.g.dart"
     - "**/*.freezed.dart"
     - "**/*.mocks.dart"
+    - "**/di.config.dart"
 
 linter:
   rules:

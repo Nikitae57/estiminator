@@ -22,7 +22,7 @@ class FirebaseSessionsOverviewService implements ISessionsOverviewRepo {
       final sessionDoc = sessionsDocs[i];
 
       final sessionOverviewDomainModel = SessionOverviewDomainModel(
-        id: sessionDoc.reference.path,
+        id: sessionDoc.id,
         title: sessionDoc[_SESSION_TITLE_FIELD] as String,
         isFinished: sessionDoc[_IS_SESSION_FINISHED_FIELD] as bool,
         numTasks: (sessionDoc[_TASKS_FIELD] as List<dynamic>).length,

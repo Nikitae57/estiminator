@@ -66,7 +66,6 @@ abstract class _CreateSessionMx with Store implements CreateSessionS {
         (value) {
           _scalesStateModel = value;
           scale.set(value.scales[0]);
-          print('in then');
           return value;
         },
       ),

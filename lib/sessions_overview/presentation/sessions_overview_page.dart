@@ -1,6 +1,8 @@
 import 'package:estiminator/core/persentation/app_theme.dart';
 import 'package:estiminator/core/persentation/error_state_model.dart';
 import 'package:estiminator/create_session/presentation/wdigets/create_session_page.dart';
+import 'package:estiminator/session/presentation/widgets/session_page.dart';
+import 'package:estiminator/sessions_overview/presentation/models/session_state_model.dart';
 import 'package:estiminator/sessions_overview/presentation/models/sessions_overview_error_state_model.dart';
 import 'package:estiminator/sessions_overview/presentation/models/sessions_overview_state_model.dart';
 import 'package:estiminator/sessions_overview/presentation/session_list_item.dart';
@@ -50,6 +52,7 @@ class _SessionsOverviewPageState extends State<SessionsOverviewPage> {
         height: double.infinity,
         child: Column(
           children: <Widget>[
+            /// Account name
             Observer(builder: (context) {
               return FutureBuilder(
                   future: widget._store.userNameFuture,
@@ -140,9 +143,19 @@ class _SessionsOverviewPageState extends State<SessionsOverviewPage> {
       child: ListView.builder(
           itemCount: stateModel.sessions.length,
           itemBuilder: (context, index) {
+            final sessionStateModel = stateModel.sessions[index];
+
             return SessionListItem(
-              stateModel: stateModel.sessions[index],
+              stateModel: sessionStateModel,
               theme: widget._theme,
+              onPressed: () => Modular.to.pushNamed(
+                SessionPage.route,
+                arguments: SessionStateModel(
+                  creatorName: sessionStateModel.creatorName,
+                  sessionTitle: sessionStateModel.title,
+                  sessionId: sessionStateModel.id,
+                ),
+              ),
             );
           }),
     );

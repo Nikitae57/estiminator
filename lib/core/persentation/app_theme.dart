@@ -26,6 +26,7 @@ class AppTheme {
           headline5: ThemeData.dark().textTheme.headline5?.copyWith(fontSize: 20, fontWeight: FontWeight.w200),
           headline6: ThemeData.dark().textTheme.headline6?.copyWith(fontSize: 18, fontWeight: FontWeight.w200),
           bodyText1: ThemeData.dark().textTheme.bodyText1?.copyWith(fontSize: 17, fontWeight: FontWeight.w300),
+          caption: ThemeData.dark().textTheme.bodyText1?.copyWith(fontSize: 14, fontWeight: FontWeight.w200),
         ),
   );
 
@@ -40,6 +41,15 @@ class AppTheme {
   final defaultBorderRadius = 32.0;
 
   final bottomButtonHeight = 48.0;
+
+  TextStyle get textStyleBody1Link => theme.textTheme.bodyText1!.copyWith(
+        fontSize: 18,
+        fontWeight: FontWeight.w300,
+        color: Colors.blue.shade800,
+        decoration: TextDecoration.underline,
+      );
+
+  TextStyle get textStyleBody1Thin => theme.textTheme.bodyText1!.copyWith(fontWeight: FontWeight.w200);
 
   TextTheme get textTheme => theme.textTheme;
 }

@@ -43,5 +43,12 @@ class MockISessionRepo extends _i1.Mock implements _i3.ISessionRepo {
                   _FakeEstimationScaleDomainModel_0()))
           as _i4.Future<_i2.EstimationScaleDomainModel>);
   @override
+  _i4.Future<void> resetTaskEstimations({String? sessionId, int? taskIndex}) =>
+      (super.noSuchMethod(
+          Invocation.method(#resetTaskEstimations, [],
+              {#sessionId: sessionId, #taskIndex: taskIndex}),
+          returnValue: Future<void>.value(),
+          returnValueForMissingStub: Future<void>.value()) as _i4.Future<void>);
+  @override
   String toString() => super.toString();
 }

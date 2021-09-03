@@ -24,64 +24,67 @@ class CreateSessionPageContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Padding(
-        padding: EdgeInsets.all(_theme.defaultMargin),
-        child: Column(
-          children: [
-            /// Session title
-            Observer(
-              builder: (context) {
-                return TextField(
-                  autofocus: false,
-                  decoration: InputDecoration(
-                    labelText: _strings.get(SId.CREATE_SESSION_TITLE_HINT),
-                    errorText: _store.sessionTitle.isValid == false ? 'Enter a session title' : null,
-                  ),
-                  onChanged: _store.sessionTitle.set,
-                );
-              },
-            ),
-
-            /// Estimation scale
-            Container(
-              margin: EdgeInsets.only(top: _theme.defaultMargin, bottom: _theme.smallMargin),
-              width: double.infinity,
-              child: EstimationScaleChooserCard(
-                store: _store,
-                theme: _theme,
-                strings: _strings,
+    return GestureDetector(
+      onTap: () => FocusScope.of(context).unfocus(),
+      child: SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsets.all(_theme.defaultMargin),
+          child: Column(
+            children: [
+              /// Session title
+              Observer(
+                builder: (context) {
+                  return TextField(
+                    autofocus: false,
+                    decoration: InputDecoration(
+                      labelText: _strings.get(SId.CREATE_SESSION_TITLE_HINT),
+                      errorText: _store.sessionTitle.isValid == false ? 'Enter a session title' : null,
+                    ),
+                    onChanged: _store.sessionTitle.set,
+                  );
+                },
               ),
-            ),
 
-            /// Tasks creation
-            Container(
-              margin: EdgeInsets.only(top: _theme.defaultMargin, bottom: _theme.smallMargin),
-              width: double.infinity,
-              child: TaskCreationCard(
-                theme: _theme,
-                store: _store,
-                strings: _strings,
-              ),
-            ),
-            SizedBox(height: _theme.defaultMargin),
-
-            /// Create session button
-            Observer(builder: (context) {
-              return AnimatedOpacity(
-                opacity: _store.tasks.isNotEmpty && _store.sessionTitle.value?.isNotEmpty == true ? 1.0 : 0.0,
-                duration: _theme.fadeAnimationDuration,
-                child: BottomButton(
-                  borderRadius: _theme.defaultBorderRadius,
-                  size: Size(double.infinity, _theme.bottomButtonHeight),
-                  onPressed: () {
-                    _store.createSession();
-                  },
-                  child: Text(_strings.get(SId.CREATE_SESSION_DONE_BUTTON_TEXT)),
+              /// Estimation scale
+              Container(
+                margin: EdgeInsets.only(top: _theme.defaultMargin, bottom: _theme.smallMargin),
+                width: double.infinity,
+                child: EstimationScaleChooserCard(
+                  store: _store,
+                  theme: _theme,
+                  strings: _strings,
                 ),
-              );
-            }),
-          ],
+              ),
+
+              /// Tasks creation
+              Container(
+                margin: EdgeInsets.only(top: _theme.defaultMargin, bottom: _theme.smallMargin),
+                width: double.infinity,
+                child: TaskCreationCard(
+                  theme: _theme,
+                  store: _store,
+                  strings: _strings,
+                ),
+              ),
+              SizedBox(height: _theme.defaultMargin),
+
+              /// Create session button
+              Observer(builder: (context) {
+                return AnimatedOpacity(
+                  opacity: _store.tasks.isNotEmpty && _store.sessionTitle.value?.isNotEmpty == true ? 1.0 : 0.0,
+                  duration: _theme.fadeAnimationDuration,
+                  child: BottomButton(
+                    borderRadius: _theme.defaultBorderRadius,
+                    size: Size(double.infinity, _theme.bottomButtonHeight),
+                    onPressed: () {
+                      _store.createSession();
+                    },
+                    child: Text(_strings.get(SId.CREATE_SESSION_DONE_BUTTON_TEXT)),
+                  ),
+                );
+              }),
+            ],
+          ),
         ),
       ),
     );

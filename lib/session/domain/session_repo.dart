@@ -4,4 +4,5 @@ import 'package:estiminator/session/domain/model/session_domain_model.dart';
 abstract class ISessionRepo {
   Stream<SessionDomainModel> getSessionStream(String sessionId);
   Future<EstimationScaleDomainModel> getScale({required String sessionId});
+  Future<void> resetTaskEstimations({required String sessionId, required int taskIndex});
 }

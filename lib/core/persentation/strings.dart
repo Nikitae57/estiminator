@@ -25,6 +25,8 @@ class SId {
   static const SCALE_NAME_SIMPLE = 21;
   static const SESSION_REESTIMATE = 22;
   static const SESSION_ESTIMATE = 23;
+  static const SESSION_LINK = 24;
+  static const SESSION_DESCRIPTION = 25;
 }
 
 @singleton
@@ -54,6 +56,8 @@ class Strings {
     SId.SCALES_TITLE: 'Pick a scale you like ❤️',
     SId.SESSION_REESTIMATE: 'REESTIMATE',
     SId.SESSION_ESTIMATE: 'ESTIMATE',
+    SId.SESSION_LINK: 'link:',
+    SId.SESSION_DESCRIPTION: 'description:',
   };
 
   String get(int id) {

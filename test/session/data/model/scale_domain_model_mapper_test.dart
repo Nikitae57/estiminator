@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:estiminator/session/data/model/scale_domain_model_mapper.dart';
+import 'package:estiminator/session/data/model/estimation_scale_domain_model_mapper.dart';
 import 'package:estiminator/session/domain/model/estimation_scale_domain_model.dart';
 import 'package:flutter_test/flutter_test.dart';
 
