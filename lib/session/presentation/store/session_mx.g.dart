@@ -34,12 +34,91 @@ mixin _$SessionMx on _SessionMx, Store {
     });
   }
 
+  final _$areCardsFlippedAtom = Atom(name: '_SessionMx.areCardsFlipped');
+
+  @override
+  bool get areCardsFlipped {
+    _$areCardsFlippedAtom.reportRead();
+    return super.areCardsFlipped;
+  }
+
+  @override
+  set areCardsFlipped(bool value) {
+    _$areCardsFlippedAtom.reportWrite(value, super.areCardsFlipped, () {
+      super.areCardsFlipped = value;
+    });
+  }
+
+  final _$hadUserEstimatedCurrentTaskAtom =
+      Atom(name: '_SessionMx.hadUserEstimatedCurrentTask');
+
+  @override
+  bool get hadUserEstimatedCurrentTask {
+    _$hadUserEstimatedCurrentTaskAtom.reportRead();
+    return super.hadUserEstimatedCurrentTask;
+  }
+
+  @override
+  set hadUserEstimatedCurrentTask(bool value) {
+    _$hadUserEstimatedCurrentTaskAtom
+        .reportWrite(value, super.hadUserEstimatedCurrentTask, () {
+      super.hadUserEstimatedCurrentTask = value;
+    });
+  }
+
+  final _$areThereEstimationsForCurrentTaskAtom =
+      Atom(name: '_SessionMx.areThereEstimationsForCurrentTask');
+
+  @override
+  bool get areThereEstimationsForCurrentTask {
+    _$areThereEstimationsForCurrentTaskAtom.reportRead();
+    return super.areThereEstimationsForCurrentTask;
+  }
+
+  @override
+  set areThereEstimationsForCurrentTask(bool value) {
+    _$areThereEstimationsForCurrentTaskAtom
+        .reportWrite(value, super.areThereEstimationsForCurrentTask, () {
+      super.areThereEstimationsForCurrentTask = value;
+    });
+  }
+
+  final _$isSessionFinishedAtom = Atom(name: '_SessionMx.isSessionFinished');
+
+  @override
+  bool get isSessionFinished {
+    _$isSessionFinishedAtom.reportRead();
+    return super.isSessionFinished;
+  }
+
+  @override
+  set isSessionFinished(bool value) {
+    _$isSessionFinishedAtom.reportWrite(value, super.isSessionFinished, () {
+      super.isSessionFinished = value;
+    });
+  }
+
   final _$resetEstimationsAsyncAction =
       AsyncAction('_SessionMx.resetEstimations');
 
   @override
   Future<void> resetEstimations() {
     return _$resetEstimationsAsyncAction.run(() => super.resetEstimations());
+  }
+
+  final _$pickEstimationAsyncAction = AsyncAction('_SessionMx.pickEstimation');
+
+  @override
+  Future<void> pickEstimation(String estimation) {
+    return _$pickEstimationAsyncAction
+        .run(() => super.pickEstimation(estimation));
+  }
+
+  final _$flipTheCardsAsyncAction = AsyncAction('_SessionMx.flipTheCards');
+
+  @override
+  Future<void> flipTheCards() {
+    return _$flipTheCardsAsyncAction.run(() => super.flipTheCards());
   }
 
   final _$_SessionMxActionController = ActionController(name: '_SessionMx');
@@ -59,6 +138,10 @@ mixin _$SessionMx on _SessionMx, Store {
   String toString() {
     return '''
 openedTaskIndex: ${openedTaskIndex},
+areCardsFlipped: ${areCardsFlipped},
+hadUserEstimatedCurrentTask: ${hadUserEstimatedCurrentTask},
+areThereEstimationsForCurrentTask: ${areThereEstimationsForCurrentTask},
+isSessionFinished: ${isSessionFinished},
 sessionStream: ${sessionStream}
     ''';
   }

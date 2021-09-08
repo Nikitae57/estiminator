@@ -1,13 +1,17 @@
+import 'package:estiminator/auth/presentation/auth_page.dart';
 import 'package:estiminator/core/persentation/app_theme.dart';
 import 'package:estiminator/core/persentation/strings.dart';
 import 'package:estiminator/core/persentation/url_launcher.dart';
 import 'package:estiminator/session/domain/model/full_session_domain_model.dart';
 import 'package:estiminator/session/domain/model/task_domain_model.dart';
 import 'package:estiminator/session/presentation/store/session_store.dart';
+import 'package:estiminator/session/presentation/widgets/estimation_picker.dart';
 import 'package:estiminator/session/presentation/widgets/task_subitem.dart';
+import 'package:estiminator/sessions_overview/presentation/sessions_overview_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 
 class SessionPageContent extends StatelessWidget {
   const SessionPageContent({
@@ -33,51 +37,135 @@ class SessionPageContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Observer(builder: (context) {
-      return Column(
-        children: [
-          ExpansionPanelList(
-            expandedHeaderPadding: EdgeInsets.symmetric(vertical: _theme.defaultMargin),
-            children: _getTasksPanels(),
-            expansionCallback: (index, isExpanded) {
-              if (!isExpanded) {
-                _store.openTask(index);
-              }
-            },
-          ),
-
-          /// Estimation buttons
-          Padding(
-            padding: EdgeInsets.all(_theme.defaultMargin),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                /// Reestimate button
-                FutureBuilder(
-                  future: _store.isHost(),
-                  builder: (BuildContext context, AsyncSnapshot<bool> snapshot) {
-                    if (snapshot.hasData && snapshot.data == true) {
-                      return TextButton(
-                        onPressed: () {},
-                        child: Text(_strings.get(SId.SESSION_REESTIMATE)),
-                      );
-                    } else {
-                      return const SizedBox();
-                    }
-                  },
-                ),
-                SizedBox(width: _theme.defaultMargin),
-
-                /// Estimate button
-                ElevatedButton(
-                  onPressed: () {},
-                  child: Text(
-                    _strings.get(SId.SESSION_ESTIMATE),
-                  ),
-                ),
-              ],
+      return SingleChildScrollView(
+        child: Column(
+          children: [
+            ExpansionPanelList(
+              expandedHeaderPadding: EdgeInsets.symmetric(vertical: _theme.defaultMargin),
+              children: _getTasksPanels(),
+              expansionCallback: (index, isExpanded) {
+                if (!isExpanded) {
+                  _store.openTask(index);
+                }
+              },
             ),
-          ),
-        ],
+
+            /// Estimation buttons
+            Padding(
+              padding: EdgeInsets.all(_theme.defaultMargin),
+              child: Observer(
+                builder: (context) {
+                  if (_store.isSessionFinished) {
+                    return ElevatedButton(
+                      onPressed: () => Modular.to.pushNamedAndRemoveUntil(
+                        SessionsOverviewPage.route,
+                        ModalRoute.withName(AuthPage.route),
+                      ),
+                      child: Text(_strings.get(SId.SESSION_CLOSE)),
+                    );
+                  } else {
+                    return FutureBuilder(
+                      future: _store.isHost(),
+                      builder: (BuildContext context, AsyncSnapshot<bool> snapshot) {
+                        if (snapshot.hasData) {
+                          final isHost = snapshot.data!;
+                          if (isHost) {
+                            if (_store.areCardsFlipped) {
+                              return Row(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
+                                  if (_store.areThereEstimationsForCurrentTask)
+                                    TextButton(
+                                      onPressed: _store.resetEstimations,
+                                      child: Text(
+                                        _strings.get(SId.SESSION_RESET_ESTIMATIONS),
+                                      ),
+                                    ),
+                                  SizedBox(width: _theme.defaultMargin),
+                                  ElevatedButton(
+                                    child: Text(_strings.get(SId.SESSION_ESTIMATE)),
+                                    onPressed: () async {
+                                      showDialog<String?>(
+                                        context: context,
+                                        builder: (context) {
+                                          return EstimationPicker(
+                                            theme: _theme,
+                                            scaleModel: _fullSessionDomainModel.estimationScale,
+                                            scaleValuePickedCallback: (estimation) {
+                                              _store.pickEstimation(estimation);
+                                              Modular.to.pop();
+                                            },
+                                          );
+                                        },
+                                      );
+                                    },
+                                  )
+                                ],
+                              );
+                            } else {
+                              /// Host; cards not flipped
+                              if (_store.areThereEstimationsForCurrentTask) {
+                                return ElevatedButton(
+                                  child: Text(_strings.get(SId.SESSION_FLIP_THE_CARDS)),
+                                  onPressed: _store.flipTheCards,
+                                );
+                              } else {
+                                return ElevatedButton(
+                                  child: Text(_strings.get(SId.SESSION_ESTIMATE)),
+                                  onPressed: () async {
+                                    showDialog<String?>(
+                                      context: context,
+                                      builder: (context) {
+                                        return EstimationPicker(
+                                          theme: _theme,
+                                          scaleModel: _fullSessionDomainModel.estimationScale,
+                                          scaleValuePickedCallback: (estimation) {
+                                            _store.pickEstimation(estimation);
+                                            Modular.to.pop();
+                                          },
+                                        );
+                                      },
+                                    );
+                                  },
+                                );
+                              }
+                            }
+                          } else {
+                            /// Not host
+                            if (_store.areCardsFlipped || _store.hadUserEstimatedCurrentTask) {
+                              return const SizedBox();
+                            } else {
+                              return ElevatedButton(
+                                child: Text(_strings.get(SId.SESSION_ESTIMATE)),
+                                onPressed: () async {
+                                  showDialog<String?>(
+                                    context: context,
+                                    builder: (context) {
+                                      return EstimationPicker(
+                                        theme: _theme,
+                                        scaleModel: _fullSessionDomainModel.estimationScale,
+                                        scaleValuePickedCallback: (estimation) {
+                                          _store.pickEstimation(estimation);
+                                          Modular.to.pop();
+                                        },
+                                      );
+                                    },
+                                  );
+                                },
+                              );
+                            }
+                          }
+                        } else {
+                          return const SizedBox();
+                        }
+                      },
+                    );
+                  }
+                },
+              ),
+            ),
+          ],
+        ),
       );
     });
   }
@@ -93,18 +181,31 @@ class SessionPageContent extends StatelessWidget {
           isExpanded: _store.openedTaskIndex == i,
           headerBuilder: (context, isExpanded) {
             return Padding(
-              padding: EdgeInsets.symmetric(horizontal: _theme.defaultMargin),
+              padding: EdgeInsets.all(_theme.defaultMargin),
 
               /// Tast title
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Text(
-                    task.title,
-                    style: _theme.textTheme.headline4,
+                  Flexible(
+                    flex: 8,
+                    fit: FlexFit.tight,
+                    child: Text(
+                      task.title,
+                      style: _theme.textTheme.headline4,
+                    ),
                   ),
-                  const Spacer(),
-                  if (task.finalEstimation == null) const SizedBox() else Text(task.finalEstimation!),
+                  if (task.finalEstimation == null)
+                    const SizedBox()
+                  else
+                    Flexible(
+                      fit: FlexFit.tight,
+                      flex: 1,
+                      child: Text(
+                        task.finalEstimation!,
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
                 ],
               ),
             );
@@ -160,7 +261,10 @@ class SessionPageContent extends StatelessWidget {
             children: [
               Text(estimation.creatorUid),
               const Spacer(),
-              Text(estimation.value),
+              if (taskDomainModel.areCardsFlipped)
+                Text(estimation.value)
+              else
+                const Icon(Icons.check_circle, color: Colors.green)
             ],
           ),
           SizedBox(height: _theme.smallMargin),

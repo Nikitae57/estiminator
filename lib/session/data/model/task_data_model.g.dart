@@ -9,6 +9,7 @@ part of 'task_data_model.dart';
 _$_TaskDataModel _$_$_TaskDataModelFromJson(Map<String, dynamic> json) {
   return _$_TaskDataModel(
     title: json['title'] as String,
+    areCardsFlipped: json['are_cards_flipped'] as bool,
     description: json['description'] as String?,
     finalEstimation: json['final_estimation'] as String?,
     jiraLink: json['jira_link'] as String?,
@@ -21,6 +22,7 @@ _$_TaskDataModel _$_$_TaskDataModelFromJson(Map<String, dynamic> json) {
 Map<String, dynamic> _$_$_TaskDataModelToJson(_$_TaskDataModel instance) =>
     <String, dynamic>{
       'title': instance.title,
+      'are_cards_flipped': instance.areCardsFlipped,
       'description': instance.description,
       'final_estimation': instance.finalEstimation,
       'jira_link': instance.jiraLink,

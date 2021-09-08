@@ -11,10 +11,10 @@ void main() {
     testGoldens('BottomButton with text', (tester) async {
       await loadAppFonts();
       final builder = GoldenBuilder.grid(columns: 1, widthToHeightRatio: 1)
-        ..addScenario('Text only', const BottomButton(child: Text(_TEXT)))
+        ..addScenario('Text only', const RoundedButton(child: Text(_TEXT)))
         ..addScenario(
           'Icon and text',
-          BottomButton(
+          RoundedButton(
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: const [
@@ -36,12 +36,12 @@ void main() {
     ''', (tester) async {
       var triggeredCallback = false;
       await tester.pumpWidget(MaterialApp(
-        home: BottomButton(
+        home: RoundedButton(
           onPressed: () => triggeredCallback = true,
         ),
       ));
 
-      await tester.tap(find.byType(BottomButton));
+      await tester.tap(find.byType(RoundedButton));
 
       expect(triggeredCallback, isTrue);
     });

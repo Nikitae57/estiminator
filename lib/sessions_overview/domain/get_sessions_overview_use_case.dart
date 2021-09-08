@@ -16,9 +16,6 @@ class GetSessionsOverviewUseCase {
 
   Future<ResultWrapper<SessionsOverviewDomainModel, ErrorModel>> getSessionsOverview() async {
     try {
-      if (Random().nextInt(100) > 70) {
-        throw Exception();
-      }
       return ResultWrapper.result(await _sessionsRepo.getSessionsOverview());
     } on Exception catch (ex) {
       return ResultWrapper.error(

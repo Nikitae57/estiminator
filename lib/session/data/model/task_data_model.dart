@@ -8,6 +8,7 @@ part 'task_data_model.g.dart';
 class TaskDataModel with _$TaskDataModel {
   factory TaskDataModel({
     required String title,
+    @JsonKey(name: 'are_cards_flipped') required bool areCardsFlipped,
     String? description,
     @JsonKey(name: 'final_estimation') String? finalEstimation,
     @JsonKey(name: 'jira_link') String? jiraLink,

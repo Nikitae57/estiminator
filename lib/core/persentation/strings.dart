@@ -1,6 +1,8 @@
 import 'package:injectable/injectable.dart';
 
 class SId {
+  SId._();
+
   static const CREATE_SESSION_APPBAR_TITLE = 0;
   static const CREATE_SESSION_TITLE_HINT = 1;
   static const CREATE_SESSION_SCALES_LABEL = 2;
@@ -23,10 +25,13 @@ class SId {
   static const SCALES_TITLE = 19;
   static const SCALE_NAME_FIBONACCI = 20;
   static const SCALE_NAME_SIMPLE = 21;
-  static const SESSION_REESTIMATE = 22;
+  static const SESSION_RESET_ESTIMATIONS = 22;
   static const SESSION_ESTIMATE = 23;
   static const SESSION_LINK = 24;
   static const SESSION_DESCRIPTION = 25;
+  static const UNFLIPPED_ESTIMATION_SYMBOL = 27;
+  static const SESSION_FLIP_THE_CARDS = 28;
+  static const SESSION_CLOSE = 29;
 }
 
 @singleton
@@ -54,10 +59,13 @@ class Strings {
     SId.SCALE_NAME_FIBONACCI: 'fibonacci',
     SId.SCALE_NAME_SIMPLE: 'simple',
     SId.SCALES_TITLE: 'Pick a scale you like ❤️',
-    SId.SESSION_REESTIMATE: 'REESTIMATE',
+    SId.SESSION_RESET_ESTIMATIONS: 'RESET ESTIMATIONS',
     SId.SESSION_ESTIMATE: 'ESTIMATE',
     SId.SESSION_LINK: 'link:',
     SId.SESSION_DESCRIPTION: 'description:',
+    SId.UNFLIPPED_ESTIMATION_SYMBOL: '*',
+    SId.SESSION_FLIP_THE_CARDS: 'Flip cards',
+    SId.SESSION_CLOSE: 'CLOSE',
   };
 
   String get(int id) {

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class BottomButton extends StatelessWidget {
-  const BottomButton({
+class RoundedButton extends StatelessWidget {
+  const RoundedButton({
     Key? key,
     this.borderRadius = 32.0,
     this.child,
@@ -34,9 +34,7 @@ class BottomButton extends StatelessWidget {
           decoration: BoxDecoration(
             borderRadius: radius,
           ),
-          child: Center(
-            child: child,
-          ),
+          child: child,
         ),
       ),
     );

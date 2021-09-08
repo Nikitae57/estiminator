@@ -50,7 +50,6 @@ class SessionPage extends StatelessWidget {
                 return StreamBuilder<FullSessionDomainModel>(
                   stream: snapshot.data,
                   builder: (BuildContext context, AsyncSnapshot<FullSessionDomainModel> snapshot) {
-                    print('stream hasData=${snapshot.hasData}, ${snapshot.hasError}');
                     if (snapshot.hasError) {
                       log('ERROR: ${snapshot.error}');
                       return const Center(

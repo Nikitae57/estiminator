@@ -22,12 +22,14 @@ class _$TaskDataModelTearOff {
 
   _TaskDataModel call(
       {required String title,
+      @JsonKey(name: 'are_cards_flipped') required bool areCardsFlipped,
       String? description,
       @JsonKey(name: 'final_estimation') String? finalEstimation,
       @JsonKey(name: 'jira_link') String? jiraLink,
       required List<EstimationDataModel> estimations}) {
     return _TaskDataModel(
       title: title,
+      areCardsFlipped: areCardsFlipped,
       description: description,
       finalEstimation: finalEstimation,
       jiraLink: jiraLink,
@@ -46,6 +48,8 @@ const $TaskDataModel = _$TaskDataModelTearOff();
 /// @nodoc
 mixin _$TaskDataModel {
   String get title => throw _privateConstructorUsedError;
+  @JsonKey(name: 'are_cards_flipped')
+  bool get areCardsFlipped => throw _privateConstructorUsedError;
   String? get description => throw _privateConstructorUsedError;
   @JsonKey(name: 'final_estimation')
   String? get finalEstimation => throw _privateConstructorUsedError;
@@ -67,6 +71,7 @@ abstract class $TaskDataModelCopyWith<$Res> {
       _$TaskDataModelCopyWithImpl<$Res>;
   $Res call(
       {String title,
+      @JsonKey(name: 'are_cards_flipped') bool areCardsFlipped,
       String? description,
       @JsonKey(name: 'final_estimation') String? finalEstimation,
       @JsonKey(name: 'jira_link') String? jiraLink,
@@ -85,6 +90,7 @@ class _$TaskDataModelCopyWithImpl<$Res>
   @override
   $Res call({
     Object? title = freezed,
+    Object? areCardsFlipped = freezed,
     Object? description = freezed,
     Object? finalEstimation = freezed,
     Object? jiraLink = freezed,
@@ -95,6 +101,10 @@ class _$TaskDataModelCopyWithImpl<$Res>
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
+      areCardsFlipped: areCardsFlipped == freezed
+          ? _value.areCardsFlipped
+          : areCardsFlipped // ignore: cast_nullable_to_non_nullable
+              as bool,
       description: description == freezed
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
@@ -124,6 +134,7 @@ abstract class _$TaskDataModelCopyWith<$Res>
   @override
   $Res call(
       {String title,
+      @JsonKey(name: 'are_cards_flipped') bool areCardsFlipped,
       String? description,
       @JsonKey(name: 'final_estimation') String? finalEstimation,
       @JsonKey(name: 'jira_link') String? jiraLink,
@@ -144,6 +155,7 @@ class __$TaskDataModelCopyWithImpl<$Res>
   @override
   $Res call({
     Object? title = freezed,
+    Object? areCardsFlipped = freezed,
     Object? description = freezed,
     Object? finalEstimation = freezed,
     Object? jiraLink = freezed,
@@ -154,6 +166,10 @@ class __$TaskDataModelCopyWithImpl<$Res>
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
+      areCardsFlipped: areCardsFlipped == freezed
+          ? _value.areCardsFlipped
+          : areCardsFlipped // ignore: cast_nullable_to_non_nullable
+              as bool,
       description: description == freezed
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
@@ -179,6 +195,7 @@ class __$TaskDataModelCopyWithImpl<$Res>
 class _$_TaskDataModel implements _TaskDataModel {
   _$_TaskDataModel(
       {required this.title,
+      @JsonKey(name: 'are_cards_flipped') required this.areCardsFlipped,
       this.description,
       @JsonKey(name: 'final_estimation') this.finalEstimation,
       @JsonKey(name: 'jira_link') this.jiraLink,
@@ -189,6 +206,9 @@ class _$_TaskDataModel implements _TaskDataModel {
 
   @override
   final String title;
+  @override
+  @JsonKey(name: 'are_cards_flipped')
+  final bool areCardsFlipped;
   @override
   final String? description;
   @override
@@ -202,7 +222,7 @@ class _$_TaskDataModel implements _TaskDataModel {
 
   @override
   String toString() {
-    return 'TaskDataModel(title: $title, description: $description, finalEstimation: $finalEstimation, jiraLink: $jiraLink, estimations: $estimations)';
+    return 'TaskDataModel(title: $title, areCardsFlipped: $areCardsFlipped, description: $description, finalEstimation: $finalEstimation, jiraLink: $jiraLink, estimations: $estimations)';
   }
 
   @override
@@ -211,6 +231,9 @@ class _$_TaskDataModel implements _TaskDataModel {
         (other is _TaskDataModel &&
             (identical(other.title, title) ||
                 const DeepCollectionEquality().equals(other.title, title)) &&
+            (identical(other.areCardsFlipped, areCardsFlipped) ||
+                const DeepCollectionEquality()
+                    .equals(other.areCardsFlipped, areCardsFlipped)) &&
             (identical(other.description, description) ||
                 const DeepCollectionEquality()
                     .equals(other.description, description)) &&
@@ -229,6 +252,7 @@ class _$_TaskDataModel implements _TaskDataModel {
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(title) ^
+      const DeepCollectionEquality().hash(areCardsFlipped) ^
       const DeepCollectionEquality().hash(description) ^
       const DeepCollectionEquality().hash(finalEstimation) ^
       const DeepCollectionEquality().hash(jiraLink) ^
@@ -248,6 +272,7 @@ class _$_TaskDataModel implements _TaskDataModel {
 abstract class _TaskDataModel implements TaskDataModel {
   factory _TaskDataModel(
       {required String title,
+      @JsonKey(name: 'are_cards_flipped') required bool areCardsFlipped,
       String? description,
       @JsonKey(name: 'final_estimation') String? finalEstimation,
       @JsonKey(name: 'jira_link') String? jiraLink,
@@ -258,6 +283,9 @@ abstract class _TaskDataModel implements TaskDataModel {
 
   @override
   String get title => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(name: 'are_cards_flipped')
+  bool get areCardsFlipped => throw _privateConstructorUsedError;
   @override
   String? get description => throw _privateConstructorUsedError;
   @override

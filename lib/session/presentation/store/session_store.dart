@@ -8,4 +8,10 @@ abstract class ISessionStore {
   void openTask(int index);
   Future<bool> isHost();
   Future<void> resetEstimations();
+  bool get areCardsFlipped;
+  Future<void> pickEstimation(String estimation);
+  Future<void> flipTheCards();
+  bool get hadUserEstimatedCurrentTask;
+  bool get areThereEstimationsForCurrentTask;
+  bool get isSessionFinished;
 }

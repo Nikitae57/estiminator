@@ -73,13 +73,16 @@ class CreateSessionPageContent extends StatelessWidget {
                 return AnimatedOpacity(
                   opacity: _store.tasks.isNotEmpty && _store.sessionTitle.value?.isNotEmpty == true ? 1.0 : 0.0,
                   duration: _theme.fadeAnimationDuration,
-                  child: BottomButton(
+                  child: RoundedButton(
                     borderRadius: _theme.defaultBorderRadius,
                     size: Size(double.infinity, _theme.bottomButtonHeight),
                     onPressed: () {
                       _store.createSession();
                     },
-                    child: Text(_strings.get(SId.CREATE_SESSION_DONE_BUTTON_TEXT)),
+                    child: Text(
+                      _strings.get(SId.CREATE_SESSION_DONE_BUTTON_TEXT),
+                      textAlign: TextAlign.center,
+                    ),
                   ),
                 );
               }),

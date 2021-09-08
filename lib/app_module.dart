@@ -5,6 +5,8 @@ import 'package:estiminator/core/persentation/strings.dart';
 import 'package:estiminator/create_session/presentation/store/s_create_session.dart';
 import 'package:estiminator/create_session/presentation/wdigets/create_session_page.dart';
 import 'package:estiminator/session/domain/get_session_use_case.dart';
+import 'package:estiminator/session/domain/model/flip_cards_use_case.dart';
+import 'package:estiminator/session/domain/pick_estimation_use_case.dart';
 import 'package:estiminator/session/domain/reset_task_estimations_use_case.dart';
 import 'package:estiminator/session/presentation/widgets/session_page.dart';
 import 'package:estiminator/session/presentation/store/session_mx.dart';
@@ -58,6 +60,8 @@ class AppModule extends Module {
               getSessionUseCase: getIt<GetSessionUseCase>(),
               credentialsProvider: getIt<IUserCredentialsProvider>(),
               resetTaskEstimationsUseCase: getIt<ResetTaskEstimationsUseCase>(),
+              pickEstimationUseCase: getIt<PickEstimationUseCase>(),
+              flipCardsUseCase: getIt<FlipCardsUseCase>(),
             );
 
             return SessionPage(

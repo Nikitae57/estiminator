@@ -36,6 +36,7 @@ class SessionDomainModelMapper implements Mapper<SessionDataModel, SessionDomain
 
     return taskDataModels.map((taskDataModel) {
       return TaskDomainModel(
+        areCardsFlipped: taskDataModel.areCardsFlipped,
         description: taskDataModel.description,
         jiraLink: taskDataModel.jiraLink,
         finalEstimation: taskDataModel.finalEstimation,

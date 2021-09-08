@@ -50,5 +50,40 @@ class MockISessionRepo extends _i1.Mock implements _i3.ISessionRepo {
           returnValue: Future<void>.value(),
           returnValueForMissingStub: Future<void>.value()) as _i4.Future<void>);
   @override
+  _i4.Future<void> pickEstimation(
+          {String? sessionId,
+          int? taskIndex,
+          String? creatorUid,
+          String? estimation}) =>
+      (super.noSuchMethod(
+          Invocation.method(#pickEstimation, [], {
+            #sessionId: sessionId,
+            #taskIndex: taskIndex,
+            #creatorUid: creatorUid,
+            #estimation: estimation
+          }),
+          returnValue: Future<void>.value(),
+          returnValueForMissingStub: Future<void>.value()) as _i4.Future<void>);
+  @override
+  _i4.Future<void> pickFinalEstimation(
+          {String? sessionId,
+          int? taskIndex,
+          String? creatorUid,
+          String? estimation}) =>
+      (super.noSuchMethod(
+          Invocation.method(#pickFinalEstimation, [], {
+            #sessionId: sessionId,
+            #taskIndex: taskIndex,
+            #creatorUid: creatorUid,
+            #estimation: estimation
+          }),
+          returnValue: Future<void>.value(),
+          returnValueForMissingStub: Future<void>.value()) as _i4.Future<void>);
+  @override
+  _i4.Future<void> flipTheCards(String? sessionId, int? taskIndex) => (super
+      .noSuchMethod(Invocation.method(#flipTheCards, [sessionId, taskIndex]),
+          returnValue: Future<void>.value(),
+          returnValueForMissingStub: Future<void>.value()) as _i4.Future<void>);
+  @override
   String toString() => super.toString();
 }

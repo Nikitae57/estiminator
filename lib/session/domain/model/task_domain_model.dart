@@ -8,6 +8,7 @@ part 'task_domain_model.freezed.dart';
 class TaskDomainModel with _$TaskDomainModel {
   const factory TaskDomainModel({
     required String title,
+    required bool areCardsFlipped,
     String? description,
     String? finalEstimation,
     String? jiraLink,
