@@ -76,10 +76,10 @@ class SessionFirebaseRepo implements ISessionRepo {
     // setting empty array to session's tasks field
     // ignore: avoid_dynamic_calls
     sessionJson[_SESSION_TASKS_FIELD][taskIndex][_SESSION_ESTIMATIONS_FIELD] = <Map<String, dynamic>>[];
-    // we want to update only tasks field, not entire session
-    final tasksJson = <String, dynamic>{_SESSION_TASKS_FIELD: sessionJson[_SESSION_TASKS_FIELD]};
+    // ignore: avoid_dynamic_calls
+    sessionJson[_SESSION_TASKS_FIELD][taskIndex][_TASK_ARE_CARDS_FLIPPED_FIELD] = false;
 
-    return FirebaseFirestore.instance.collection(_SESSIONS_COLLECTION_NAME).doc(sessionId).update(tasksJson);
+    return FirebaseFirestore.instance.collection(_SESSIONS_COLLECTION_NAME).doc(sessionId).update(sessionJson);
   }
 
   @override
