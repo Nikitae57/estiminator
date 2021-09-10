@@ -18,6 +18,7 @@ const _JIRA_LINK = 'https://bit.ly/3jbd9Gm';
 const _TITLE = 'title';
 const _NULL = 'null';
 const _ESTIMATION_VALUE = '2';
+const _ARE_CARDS_FLIPPED = false;
 
 const _JSON = '''
 {
@@ -32,6 +33,7 @@ const _JSON = '''
       "final_estimation":"$_FINAL_ESTIMATION",
       "jira_link":"$_JIRA_LINK",
       "title":"$_TITLE",
+      "are_cards_flipped":$_ARE_CARDS_FLIPPED,
       "estimations":[
         {
           "value":"$_ESTIMATION_VALUE",
@@ -44,6 +46,7 @@ const _JSON = '''
       "final_estimation":$_NULL,
       "jira_link":$_NULL,
       "title":"$_TITLE",
+      "are_cards_flipped":$_ARE_CARDS_FLIPPED,
       "estimations":[]
     }
   ]
@@ -62,6 +65,7 @@ const _sessionDomainModel = SessionDomainModel(
       description: _DESCRIPTION,
       finalEstimation: _FINAL_ESTIMATION,
       jiraLink: _JIRA_LINK,
+      areCardsFlipped: _ARE_CARDS_FLIPPED,
       estimations: [
         EstimationDomainModel(
           value: _ESTIMATION_VALUE,
@@ -69,7 +73,7 @@ const _sessionDomainModel = SessionDomainModel(
         ),
       ],
     ),
-    TaskDomainModel(title: _TITLE, estimations: []),
+    TaskDomainModel(title: _TITLE, estimations: [], areCardsFlipped: _ARE_CARDS_FLIPPED),
   ],
 );
 

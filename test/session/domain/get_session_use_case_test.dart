@@ -8,6 +8,7 @@ import 'package:estiminator/session/domain/session_repo.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
+
 import 'get_session_use_case_test.mocks.dart';
 
 const _SCALE_NAME = 'scale name';
@@ -20,6 +21,7 @@ const _CREATOR_UID = 'creator uid';
 const _CURRENT_TASK_INDEX = 1;
 const _IS_FINISHED = false;
 const _ESTIMATION = '1';
+const _ARE_CARDS_FLIPPED = false;
 const _SESSION_DOMAIN_MODEL = SessionDomainModel(
     id: _ID,
     title: _TITLE,
@@ -28,6 +30,7 @@ const _SESSION_DOMAIN_MODEL = SessionDomainModel(
     isFinished: _IS_FINISHED,
     tasks: [
       TaskDomainModel(
+        areCardsFlipped: _ARE_CARDS_FLIPPED,
         title: _TITLE,
         estimations: [EstimationDomainModel(value: _ESTIMATION, creatorUid: _CREATOR_UID)],
       )
